@@ -1,0 +1,145 @@
+ÖĞRENCİ: Ayşe Kaya | 2021401023
+GPA: 2.87
+
+ING106 Matematik I - BB - 7 AKTS
+ING116 Fizik I - CB - 5 AKTS
+ING111 Ekonominin Temelleri - BB - 4 AKTS
+INF112 Programlamaya Giriş - AA - 4 AKTS
+INF113 Bilgisayar Mühendisliğine Giriş - BB - 4 AKTS
+FLF101 Fransızca B2.1 - CC - 2 AKTS
+ING107 Matematik II - CB - 7 AKTS
+ING117 Fizik II - CC - 5 AKTS
+INF114 İleri Bilgisayar Programlama - BB - 5 AKTS
+INF116 Bilgisayar Sistemlerine Giriş - AA - 5 AKTS
+CNT120 Girişimcilik ve Kariyer Planlama - BB - 2 AKTS
+FLF201 Fransızca B2.2 - CC - 2 AKTS
+ING251 Yüksek Matematik I - DC - 4 AKTS
+ING207 Lineer Cebir - CB - 5 AKTS
+INF256 Olasılık - BB - 5 AKTS
+ING229 Analog Elektronik - CC - 7 AKTS
+INF224 Veri Yapısı ve Algoritmalar - AA - 5 AKTS
+ING252 Yüksek Matematik II - CB - 4 AKTS
+ING208 Diferansiyel Denklemler - CC - 4 AKTS
+INF257 İstatistik ve Veri Analizi - BB - 5 AKTS
+ING220 Sayısal Elektronik - CB - 5 AKTS
+INF243 Nesneye Yönelik Programlama - AA - 5 AKTS
+INF291 Staj I - Başarılı - 3 AKTS
+INF356 Veri Analizine Giriş - BB - 4 AKTS
+INF324 Veri Tabanı Tasarımı ve Uygulamaları - AA - 5 AKTS
+INF315 Kesikli Matematik - CB - 4 AKTS
+INF345 Sayısal Sinyal İşleme - CC - 5 AKTS
+CNT250 Proje Risk ve Değişiklik Yönetimi - BB - 2 AKTS
+INF320 Bilgisayar Mimarisi - CB - 5 AKTS
+INF353 Web Programlama - AA - 5 AKTS
+INF323 Otomatlar ve Diller Teorisi - CB - 4 AKTS
+INF333 İşletim Sistemleri - BB - 5 AKTS
+INF325 Sayısal Analiz - CC - 4 AKTS
+INF340 Mikroişlemciler - CB - 5 AKTS
+INF334 Bilgisayar Ağları - BB - 4 AKTS
+INF399 Staj II - Başarılı - 2 AKTS
+INF330 Robotik - BB - 5 AKTS
+INF366 Sayısal Görüntü İşleme - CB - 5 AKTS
+INF443 Dağıtık Sistemler ve Uygulamalar - BB - 4 AKTS
+INF402 Nesnelerin İnternetine Giriş - CB - 3 AKTS
+INF444 Yapay Zeka - AA - 5 AKTS
+INF493 Araştırma Konuları - BB - 3 AKTS
+INF471 Bilişimde Güvenlik - CB - 4 AKTS
+INF400 Veri Derlemesi - BB - 5 AKTS
+INF432 Bilgisayar Grafikleri - CB - 5 AKTS
+INF481 Yazılım Mühendisliği ve Nesneye Yönelik Tasarım - BB - 5 AKTS
+INF482 Gömülü Sistem Tasarım Temelleri - CB - 5 AKTS
+INF494 Bitirme Projesi - AA - 6 AKTS
+INF472 Bulut Bilişim - BB - 5 AKTS
+IND471 Yöneylem Araştırması - CC - 4 AKTS
+                                                                                            
+
+
+
+
+
+  ÖĞRENCİ: Mehmet Demir | 2022401045
+GPA: 1.95
+
+ING106 Matematik I - CC - 7 AKTS
+ING116 Fizik I - DC - 5 AKTS
+ING111 Ekonominin Temelleri - CC - 4 AKTS
+INF112 Programlamaya Giriş - CB - 4 AKTS
+INF113 Bilgisayar Mühendisliğine Giriş - CC - 4 AKTS
+FLF101 Fransızca B2.1 - DD - 2 AKTS
+ING107 Matematik II - FF - 7 AKTS
+ING117 Fizik II - DC - 5 AKTS
+INF114 İleri Bilgisayar Programlama - CB - 5 AKTS
+INF116 Bilgisayar Sistemlerine Giriş - CC - 5 AKTS
+CNT120 Girişimcilik ve Kariyer Planlama - CC - 2 AKTS
+FLF201 Fransızca B2.2 - FF - 2 AKTS
+ING251 Yüksek Matematik I - DC - 4 AKTS
+ING207 Lineer Cebir - CC - 5 AKTS
+INF256 Olasılık - DC - 5 AKTS
+ING229 Analog Elektronik - FF - 7 AKTS
+INF224 Veri Yapısı ve Algoritmalar - CB - 5 AKTS
+ING252 Yüksek Matematik II - FF - 4 AKTS
+ING208 Diferansiyel Denklemler - DC - 4 AKTS
+INF257 İstatistik ve Veri Analizi - CC - 5 AKTS
+ING220 Sayısal Elektronik - DC - 5 AKTS
+INF243 Nesneye Yönelik Programlama - CB - 5 AKTS
+INF291 Staj I - Başarılı - 3 AKTS
+
+
+
+
+
+ÖĞRENCİ: Zeynep Arslan | 2020401007
+GPA: 3.42
+
+ING106 Matematik I - AA - 7 AKTS
+ING116 Fizik I - AA - 5 AKTS
+ING111 Ekonominin Temelleri - BB - 4 AKTS
+INF112 Programlamaya Giriş - AA - 4 AKTS
+INF113 Bilgisayar Mühendisliğine Giriş - AA - 4 AKTS
+FLF101 Fransızca B2.1 - BB - 2 AKTS
+ING107 Matematik II - AA - 7 AKTS
+ING117 Fizik II - BB - 5 AKTS
+INF114 İleri Bilgisayar Programlama - AA - 5 AKTS
+INF116 Bilgisayar Sistemlerine Giriş - AA - 5 AKTS
+CNT120 Girişimcilik ve Kariyer Planlama - AA - 2 AKTS
+FLF201 Fransızca B2.2 - BB - 2 AKTS
+ING251 Yüksek Matematik I - BB - 4 AKTS
+ING207 Lineer Cebir - AA - 5 AKTS
+INF256 Olasılık - AA - 5 AKTS
+ING229 Analog Elektronik - BB - 7 AKTS
+INF224 Veri Yapısı ve Algoritmalar - AA - 5 AKTS
+ING252 Yüksek Matematik II - BB - 4 AKTS
+ING208 Diferansiyel Denklemler - BB - 4 AKTS
+INF257 İstatistik ve Veri Analizi - AA - 5 AKTS
+ING220 Sayısal Elektronik - BB - 5 AKTS
+INF243 Nesneye Yönelik Programlama - AA - 5 AKTS
+INF291 Staj I - Başarılı - 3 AKTS
+INF356 Veri Analizine Giriş - AA - 4 AKTS
+INF324 Veri Tabanı Tasarımı ve Uygulamaları - AA - 5 AKTS
+INF315 Kesikli Matematik - BB - 4 AKTS
+INF345 Sayısal Sinyal İşleme - BB - 5 AKTS
+CNT250 Proje Risk ve Değişiklik Yönetimi - AA - 2 AKTS
+INF320 Bilgisayar Mimarisi - BB - 5 AKTS
+INF353 Web Programlama - AA - 5 AKTS
+INF323 Otomatlar ve Diller Teorisi - BB - 4 AKTS
+INF333 İşletim Sistemleri - AA - 5 AKTS
+INF325 Sayısal Analiz - BB - 4 AKTS
+INF340 Mikroişlemciler - BB - 5 AKTS
+INF334 Bilgisayar Ağları - AA - 4 AKTS
+INF399 Staj II - Başarılı - 2 AKTS
+INF330 Robotik - BB - 5 AKTS
+INF360 Veri Tabanı Yönetimi ve Güvenliği - AA - 5 AKTS
+INF443 Dağıtık Sistemler ve Uygulamalar - BB - 4 AKTS
+INF402 Nesnelerin İnternetine Giriş - BB - 3 AKTS
+INF444 Yapay Zeka - AA - 5 AKTS
+INF493 Araştırma Konuları - BB - 3 AKTS
+INF471 Bilişimde Güvenlik - AA - 4 AKTS
+INF400 Veri Derlemesi - BB - 5 AKTS
+INF438 İleri Veri Tabanları - AA - 5 AKTS
+INF481 Yazılım Mühendisliği ve Nesneye Yönelik Tasarım - AA - 5 AKTS
+INF482 Gömülü Sistem Tasarım Temelleri - BB - 5 AKTS
+INF494 Bitirme Projesi - AA - 6 AKTS
+INF472 Bulut Bilişim - AA - 5 AKTS
+INF473 Üretken Yapay Zekaya Giriş - BB - 5 AKTS
+IND471 Yöneylem Araştırması - BB - 4 AKTS
+CC307 İstanbul'un Kültürel Mirası - AA - 3 AKTS

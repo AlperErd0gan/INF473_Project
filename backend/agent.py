@@ -1,45 +1,154 @@
 import os
-from google import genai
-from google.genai import types
-from pydantic import BaseModel, Field
+import json
+from typing import Optional
+from dotenv import load_dotenv
+from groq import Groq
+from pydantic import BaseModel
+from gsu_requirements import GSU_BIL_REQUIREMENTS
 
-# Ensure GEMINI_API_KEY is set in your environment variables
-client = genai.Client()
+load_dotenv()
 
-class StudentInfo(BaseModel):
-    gpa: float = Field(description="The student's Cumulative Grade Point Average (CGPA)")
-    total_ects: int = Field(description="The total accumulated ECTS credits by the student")
+client = Groq(api_key=os.environ["GROQ_API_KEY"])
+MODEL = "llama-3.3-70b-versatile"
+FAILED_GRADES = {"FF", "DZ"}
 
-class TranscriptAnalysisResult(BaseModel):
-    student_info: StudentInfo
-    is_graduated: bool = Field(description="True if the student meets all graduation requirements, False otherwise")
-    missing_conditions: list[str] = Field(description="List of strings explaining which graduation conditions are not met. Empty if graduated.")
+PARSE_SYSTEM_PROMPT = """You are a university transcript parsing expert. Extract ALL courses from the transcript, including failed ones.
 
-def analyze_transcript_with_gemini(transcript_text: str) -> TranscriptAnalysisResult:
-    # This is a sample prompt. We inject the GSU rules here.
-    system_instruction = """
-    You are an expert academic advisor for the Computer Engineering Department at Galatasaray University (GSU).
-    Your task is to analyze unstructured student transcript text and determine if the student meets the graduation requirements.
-    
-    GSU Computer Engineering Graduation Requirements:
-    1. The student must have a minimum GPA of 2.00.
-    2. The student must have accumulated at least 240 ECTS credits.
-    3. The student must have taken and passed all mandatory courses in the 8-semester curriculum.
-    
-    Analyze the following transcript text. Extract the GPA and total ECTS. Check if the rules are satisfied.
-    Return your findings in a structured format.
-    """
+Return ONLY valid JSON matching this exact schema:
+{
+  "student_name": string or null,
+  "student_number": string or null,
+  "gpa": number,
+  "courses": [
+    {"code": string, "name": string, "grade": string, "ects": integer}
+  ]
+}
 
-    response = client.models.generate_content(
-        model='gemini-2.5-pro',
-        contents=transcript_text,
-        config=types.GenerateContentConfig(
-            system_instruction=system_instruction,
-            response_mime_type="application/json",
-            response_schema=TranscriptAnalysisResult,
-            temperature=0.0
-        ),
+Rules:
+- Include ALL courses even failed ones (FF, DZ, W)
+- Course codes must be uppercase
+- Return raw JSON only, no markdown, no explanation"""
+
+REPORT_SYSTEM_PROMPT = """You are a graduation advisor for the Computer Engineering department at GSU (Galatasaray University).
+
+Write a concise 2-3 sentence graduation status report in Turkish using formal language.
+Base your report strictly on the provided analysis data — do not add or infer anything beyond what is given.
+
+Compare courses strictly by course code. Do not infer missing courses from names. A course is only missing if its exact code does not appear in the passed courses list.
+
+Return ONLY valid JSON: {"report": "Turkish report text here"}"""
+
+
+class CourseEntry(BaseModel):
+    code: str
+    name: str
+    grade: str
+    ects: int
+
+
+class ParsedTranscript(BaseModel):
+    student_name: Optional[str]
+    student_number: Optional[str]
+    gpa: float
+    courses: list[CourseEntry]
+
+
+def _chat(system: str, user: str) -> str:
+    response = client.chat.completions.create(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        response_format={"type": "json_object"},
+        temperature=0.0,
     )
-    
-    # The response.text is a JSON string matching the Pydantic schema
-    return TranscriptAnalysisResult.model_validate_json(response.text)
+    return response.choices[0].message.content
+
+
+def parse_transcript(transcript_text: str) -> ParsedTranscript:
+    raw = _chat(PARSE_SYSTEM_PROMPT, transcript_text)
+    return ParsedTranscript.model_validate_json(raw)
+
+
+def _compute_analysis(parsed: ParsedTranscript) -> dict:
+    passed = [c for c in parsed.courses if c.grade.strip().upper() not in FAILED_GRADES]
+    completed_codes = {c.code.strip().replace(" ", "").upper() for c in passed}
+    total_ects_passed = sum(c.ects for c in passed)
+
+    mandatory = GSU_BIL_REQUIREMENTS["mandatory_courses"]
+    completed_mandatory = [
+        f"{c['code']} - {c['name']}" for c in mandatory if c["code"].strip().replace(" ", "").upper() in completed_codes
+    ]
+    missing_mandatory = [
+        f"{c['code']} - {c['name']}" for c in mandatory if c["code"].strip().replace(" ", "").upper() not in completed_codes
+    ]
+
+    gpa_ok = parsed.gpa >= GSU_BIL_REQUIREMENTS["min_gpa"]
+    ects_ok = total_ects_passed >= GSU_BIL_REQUIREMENTS["min_ects"]
+
+    elective_issues = []
+    for group in GSU_BIL_REQUIREMENTS["elective_groups"]:
+        group_codes = {o["code"].strip().replace(" ", "").upper() for o in group["options"]}
+        taken_count = len(completed_codes & group_codes)
+        required = group["required_count"]
+        if taken_count < required:
+            needed = required - taken_count
+            sem = group["semester"]
+            desc = group.get("description", "INF seçmeli")
+            elective_issues.append(
+                f"Dönem {sem} {desc}: {needed} ders eksik (mevcut {taken_count}/{required})"
+            )
+
+    missing_conditions = []
+    if not gpa_ok:
+        missing_conditions.append(f"GNO yetersiz: {parsed.gpa:.2f} / minimum 2.00")
+    if not ects_ok:
+        missing_conditions.append(f"AKTS yetersiz: {total_ects_passed} / minimum 240")
+    if missing_mandatory:
+        codes = ", ".join(c.split(" - ")[0] for c in missing_mandatory)
+        missing_conditions.append(f"{len(missing_mandatory)} zorunlu ders eksik: {codes}")
+    missing_conditions.extend(elective_issues)
+
+    return {
+        "total_ects_passed": total_ects_passed,
+        "completed_mandatory": completed_mandatory,
+        "missing_mandatory": missing_mandatory,
+        "gpa_ok": gpa_ok,
+        "ects_ok": ects_ok,
+        "is_graduated": len(missing_conditions) == 0,
+        "missing_conditions": missing_conditions,
+    }
+
+
+def _generate_report(parsed: ParsedTranscript, analysis: dict) -> str:
+    summary = {
+        "student_name": parsed.student_name,
+        "gpa": parsed.gpa,
+        "total_ects_passed": analysis["total_ects_passed"],
+        "is_graduated": analysis["is_graduated"],
+        "missing_conditions": analysis["missing_conditions"],
+        "missing_mandatory_count": len(analysis["missing_mandatory"]),
+        "missing_mandatory_courses": analysis["missing_mandatory"],
+        "completed_codes": list({c.code.strip().replace(" ", "").upper() for c in parsed.courses if c.grade.strip().upper() not in FAILED_GRADES})
+    }
+    raw = _chat(REPORT_SYSTEM_PROMPT, json.dumps(summary, ensure_ascii=False, indent=2))
+    return json.loads(raw).get("report", "")
+
+
+def run_analysis_pipeline(transcript_text: str) -> dict:
+    parsed = parse_transcript(transcript_text)
+    analysis = _compute_analysis(parsed)
+    report = _generate_report(parsed, analysis)
+    return {
+        "student_name": parsed.student_name,
+        "student_number": parsed.student_number,
+        "gpa": parsed.gpa,
+        "total_ects": analysis["total_ects_passed"],
+        "is_graduated": analysis["is_graduated"],
+        "completed_courses": [c.model_dump() for c in parsed.courses],
+        "completed_mandatory_courses": analysis["completed_mandatory"],
+        "missing_courses": analysis["missing_mandatory"],
+        "missing_conditions": analysis["missing_conditions"],
+        "report_text": report,
+    }

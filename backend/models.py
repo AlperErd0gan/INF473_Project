@@ -1,13 +1,44 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, JSON
+from sqlalchemy import Column, Integer, String, Float, Boolean, JSON, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
+from datetime import datetime
 from database import Base
 
-class StudentTranscript(Base):
+
+class Student(Base):
+    __tablename__ = "students"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, nullable=True)
+    student_number = Column(String, nullable=True, index=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    transcripts = relationship("Transcript", back_populates="student")
+
+
+class Transcript(Base):
     __tablename__ = "transcripts"
 
     id = Column(Integer, primary_key=True, index=True)
-    student_id = Column(String, index=True)
-    gpa = Column(Float)
-    total_ects = Column(Integer)
+    student_id = Column(Integer, ForeignKey("students.id"), nullable=True)
+    raw_text = Column(String, nullable=False)
+    uploaded_at = Column(DateTime, default=datetime.utcnow)
+
+    student = relationship("Student", back_populates="transcripts")
+    analysis = relationship("AnalysisResult", back_populates="transcript", uselist=False)
+
+
+class AnalysisResult(Base):
+    __tablename__ = "analysis_results"
+
+    id = Column(Integer, primary_key=True, index=True)
+    transcript_id = Column(Integer, ForeignKey("transcripts.id"), nullable=False)
+    gpa = Column(Float, nullable=True)
+    total_ects = Column(Integer, nullable=True)
     is_graduated = Column(Boolean, default=False)
-    missing_conditions = Column(JSON) # Store list of missing conditions
-    raw_text = Column(String) # Store the original text for reference
+    completed_courses = Column(JSON, default=list)
+    missing_courses = Column(JSON, default=list)
+    missing_conditions = Column(JSON, default=list)
+    report_text = Column(String, nullable=True)
+    analyzed_at = Column(DateTime, default=datetime.utcnow)
+
+    transcript = relationship("Transcript", back_populates="analysis")
