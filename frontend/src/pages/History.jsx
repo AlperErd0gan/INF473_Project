@@ -99,7 +99,7 @@ export default function History() {
                     <span className="mono">{rec.gpa?.toFixed(2) ?? "—"}</span>
                   </td>
                   <td style={{ ...styles.td, textAlign: "center" }}>
-                    <span className="mono">{rec.total_ects ?? "—"}</span>
+                    <span className="mono">{rec.transcript_total_ects ?? "—"}</span>
                   </td>
                   <td style={{ ...styles.td, textAlign: "center" }}>
                     <span

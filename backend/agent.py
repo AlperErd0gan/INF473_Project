@@ -14,6 +14,8 @@ FAILED_GRADES = {"FF", "DZ"}
 
 PARSE_SYSTEM_PROMPT = """You are a university transcript parsing expert. Extract ALL courses from the transcript, including failed ones.
 
+Extract the ECTS value exactly as written after the course grade. Every line follows the format: CODE Name - GRADE - X AKTS. Extract X as the ects value.
+
 Return ONLY valid JSON matching this exact schema:
 {
   "student_name": string or null,
@@ -74,7 +76,8 @@ def parse_transcript(transcript_text: str) -> ParsedTranscript:
 def _compute_analysis(parsed: ParsedTranscript) -> dict:
     passed = [c for c in parsed.courses if c.grade.strip().upper() not in FAILED_GRADES]
     completed_codes = {c.code.strip().replace(" ", "").upper() for c in passed}
-    total_ects_passed = sum(c.ects for c in passed)
+    transcript_total_ects = sum(c.ects for c in passed)
+    print(f"[DEBUG] Parsed ECTS sum: {transcript_total_ects}")
 
     mandatory = GSU_BIL_REQUIREMENTS["mandatory_courses"]
     completed_mandatory = [
@@ -85,7 +88,7 @@ def _compute_analysis(parsed: ParsedTranscript) -> dict:
     ]
 
     gpa_ok = parsed.gpa >= GSU_BIL_REQUIREMENTS["min_gpa"]
-    ects_ok = total_ects_passed >= GSU_BIL_REQUIREMENTS["min_ects"]
+    ects_ok = transcript_total_ects >= GSU_BIL_REQUIREMENTS["min_ects"]
 
     elective_issues = []
     for group in GSU_BIL_REQUIREMENTS["elective_groups"]:
@@ -104,14 +107,15 @@ def _compute_analysis(parsed: ParsedTranscript) -> dict:
     if not gpa_ok:
         missing_conditions.append(f"GNO yetersiz: {parsed.gpa:.2f} / minimum 2.00")
     if not ects_ok:
-        missing_conditions.append(f"AKTS yetersiz: {total_ects_passed} / minimum 240")
+        missing_conditions.append(f"AKTS yetersiz: {transcript_total_ects} / minimum {GSU_BIL_REQUIREMENTS['min_ects']}")
     if missing_mandatory:
         codes = ", ".join(c.split(" - ")[0] for c in missing_mandatory)
         missing_conditions.append(f"{len(missing_mandatory)} zorunlu ders eksik: {codes}")
     missing_conditions.extend(elective_issues)
 
     return {
-        "total_ects_passed": total_ects_passed,
+        "transcript_total_ects": transcript_total_ects,
+        "required_ects": GSU_BIL_REQUIREMENTS["min_ects"],
         "completed_mandatory": completed_mandatory,
         "missing_mandatory": missing_mandatory,
         "gpa_ok": gpa_ok,
@@ -125,7 +129,8 @@ def _generate_report(parsed: ParsedTranscript, analysis: dict) -> str:
     summary = {
         "student_name": parsed.student_name,
         "gpa": parsed.gpa,
-        "total_ects_passed": analysis["total_ects_passed"],
+        "transcript_total_ects": analysis["transcript_total_ects"],
+        "required_ects": analysis["required_ects"],
         "is_graduated": analysis["is_graduated"],
         "missing_conditions": analysis["missing_conditions"],
         "missing_mandatory_count": len(analysis["missing_mandatory"]),
@@ -144,7 +149,8 @@ def run_analysis_pipeline(transcript_text: str) -> dict:
         "student_name": parsed.student_name,
         "student_number": parsed.student_number,
         "gpa": parsed.gpa,
-        "total_ects": analysis["total_ects_passed"],
+        "transcript_total_ects": analysis["transcript_total_ects"],
+        "required_ects": analysis["required_ects"],
         "is_graduated": analysis["is_graduated"],
         "completed_courses": [c.model_dump() for c in parsed.courses],
         "completed_mandatory_courses": analysis["completed_mandatory"],

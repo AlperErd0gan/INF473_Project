@@ -62,7 +62,7 @@ export default function Result() {
 
       <div style={styles.statsRow}>
         <StatCard label="Genel Not Ortalaması" value={data.gpa?.toFixed(2) ?? "—"} unit="/ 4.00" highlight={data.gpa >= 2.0} />
-        <StatCard label="Toplam ECTS" value={data.total_ects ?? "—"} unit="/ 240" highlight={data.total_ects >= 240} />
+        <StatCard label="Toplam ECTS" value={data.transcript_total_ects ?? "—"} unit={`/ ${data.required_ects ?? 240}`} highlight={data.transcript_total_ects >= (data.required_ects ?? 240)} />
         <StatCard label="Zorunlu Dersler" value={data.completed_courses?.length ?? 0} unit="/ 29" highlight={(data.completed_courses?.length ?? 0) >= 29} />
       </div>
 
