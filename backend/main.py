@@ -1,7 +1,12 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI, File, UploadFile, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from database import engine, Base, get_db
+from agent import analyze_transcript_with_gemini
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -31,19 +36,22 @@ async def analyze_transcript(
     transcript_text = content.decode("utf-8") # simplified for text files
     
     # 2. Call LLM Agent to process transcript and evaluate rules
-    # This is a stub for the agent logic
-    # result = analyze_with_llm(transcript_text)
-    
-    # Stub response
-    return {
-        "status": "success",
-        "student_info": {
-            "gpa": 3.12,
-            "total_ects": 210,
-        },
-        "graduation_status": "Not Graduated",
-        "missing_conditions": [
-            "Missing 30 ECTS",
-            "Missing ISG402 course"
-        ]
-    }
+    try:
+        analysis_result = analyze_transcript_with_gemini(transcript_text)
+        
+        # 3. Save to database (optional at this point, but good to have)
+        # new_transcript = StudentTranscript(raw_text=transcript_text, gpa=..., is_graduated=...)
+        # db.add(new_transcript)
+        # db.commit()
+        
+        return {
+            "status": "success",
+            "student_info": {
+                "gpa": analysis_result.student_info.gpa,
+                "total_ects": analysis_result.student_info.total_ects,
+            },
+            "graduation_status": "Graduated" if analysis_result.is_graduated else "Not Graduated",
+            "missing_conditions": analysis_result.missing_conditions
+        }
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
