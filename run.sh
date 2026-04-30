@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Add Homebrew and Node to PATH
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$PATH"
+
 echo "Starting the GSU Transcript Agent System..."
 
 # Function to handle cleanup on script exit
