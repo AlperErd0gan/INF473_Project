@@ -15,6 +15,8 @@ const t = {
     upload_title: "Mezuniyet Analizi",
     upload_subtitle:
       "GSU Bilgisayar Mühendisliği transkriptinizi aşağıya yapıştırın veya .txt dosyası sürükleyin. Sistem mezuniyet koşullarını otomatik değerlendirecektir.",
+    upload_rules_label: "Müfredat ve tüm kurallar:",
+    upload_rules_link: "Program detaylarını inceleyin",
     upload_label: "Transkript Metni",
     upload_file_btn: "Dosya seç",
     upload_clear: "Temizle",
@@ -124,6 +126,8 @@ const t = {
     upload_title: "Graduation Analysis",
     upload_subtitle:
       "Paste your GSU Computer Engineering transcript below or drag a .txt file. The system will automatically evaluate graduation requirements.",
+    upload_rules_label: "Curriculum and all rules:",
+    upload_rules_link: "Review program details",
     upload_label: "Transcript Text",
     upload_file_btn: "Choose file",
     upload_clear: "Clear",

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { uploadTranscript, analyzeTranscript } from "../api";
 import { useLang } from "../contexts/LangContext";
 
+const CURRICULUM_RULES_URL = "https://ects.gsu.edu.tr/tr/program/programmedetails/12";
+
 export default function Upload() {
   const { t } = useLang();
   const [text, setText] = useState("");
@@ -70,6 +72,17 @@ export default function Upload() {
       <div style={styles.header}>
         <h1 style={styles.title}>{t.upload_title}</h1>
         <p style={styles.subtitle}>{t.upload_subtitle}</p>
+        <div style={styles.referenceWrap}>
+          <span style={styles.referenceLabel}>{t.upload_rules_label}</span>
+          <a
+            href={CURRICULUM_RULES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.referenceLink}
+          >
+            {t.upload_rules_link}
+          </a>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -206,6 +219,24 @@ const styles = {
     maxWidth: 620,
     lineHeight: 1.7,
     fontSize: 15,
+  },
+  referenceWrap: {
+    marginTop: 14,
+    display: "flex",
+    alignItems: "center",
+    gap: 8,
+    flexWrap: "wrap",
+    fontSize: 13,
+  },
+  referenceLabel: {
+    color: "var(--text-secondary)",
+    fontWeight: 500,
+  },
+  referenceLink: {
+    color: "var(--gold)",
+    textDecoration: "underline",
+    textUnderlineOffset: 2,
+    fontWeight: 600,
   },
   textareaWrapper: {
     marginBottom: 20,
