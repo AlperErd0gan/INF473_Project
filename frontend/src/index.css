@@ -1,59 +1,108 @@
+/* ── Dark mode (default) ─────────────────────────────────────────── */
 :root {
-  --navy: #0b1120;
-  --navy-light: #131d30;
-  --navy-card: #1a2540;
-  --navy-border: #253050;
-  --gold: #d4af37;
-  --gold-light: #e8cb5d;
-  --gold-muted: #8a7020;
-  --text-primary: #e8eaf0;
+  --bg:           #0b1120;
+  --bg-raised:    #131d30;
+  --card:         #1a2540;
+  --border:       #253050;
+
+  --gold:         #d4af37;
+  --gold-light:   #e8cb5d;
+  --gold-muted:   #8a7020;
+  --gold-subtle:  rgba(212,175,55,0.08);
+
+  --text-primary:   #e8eaf0;
   --text-secondary: #8b93a8;
-  --success: #2ecc71;
-  --error: #e74c3c;
-  --success-bg: #0d2b1e;
-  --error-bg: #2b0d0d;
+  --text-muted:     #4a5568;
+
+  --success:    #2ecc71;
+  --error:      #e74c3c;
+  --success-bg: rgba(46,204,113,0.08);
+  --error-bg:   rgba(231,76,60,0.08);
+  --success-border: rgba(46,204,113,0.3);
+  --error-border:   rgba(231,76,60,0.3);
+
+  --code-bg:    rgba(255,255,255,0.07);
+  --row-hover:  rgba(255,255,255,0.03);
+  --overlay:    rgba(255,255,255,0.04);
+
+  /* legacy aliases kept for components */
+  --navy:        var(--bg);
+  --navy-light:  var(--bg-raised);
+  --navy-card:   var(--card);
+  --navy-border: var(--border);
 }
 
+/* ── Light mode ──────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:           #f0f4f8;
+  --bg-raised:    #ffffff;
+  --card:         #ffffff;
+  --border:       #dde3ef;
+
+  --gold:         #a07918;
+  --gold-light:   #c49a20;
+  --gold-muted:   #d4b060;
+  --gold-subtle:  rgba(160,121,24,0.08);
+
+  --text-primary:   #0f172a;
+  --text-secondary: #475569;
+  --text-muted:     #94a3b8;
+
+  --success:    #16a34a;
+  --error:      #dc2626;
+  --success-bg: rgba(22,163,74,0.08);
+  --error-bg:   rgba(220,38,38,0.08);
+  --success-border: rgba(22,163,74,0.3);
+  --error-border:   rgba(220,38,38,0.3);
+
+  --code-bg:    rgba(0,0,0,0.06);
+  --row-hover:  rgba(0,0,0,0.025);
+  --overlay:    rgba(0,0,0,0.025);
+
+  --navy:        var(--bg);
+  --navy-light:  var(--bg-raised);
+  --navy-card:   var(--card);
+  --navy-border: var(--border);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
+/* ── Base ────────────────────────────────────────────────────────── */
 body {
-  background-color: var(--navy);
+  background-color: var(--bg);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
   color: var(--text-primary);
 }
 
 code, .mono {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'Fira Mono', monospace;
 }
 
 a {
   color: var(--gold);
   text-decoration: none;
 }
-
-a:hover {
-  color: var(--gold-light);
-}
+a:hover { color: var(--gold-light); }
 
 button {
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 #root {
@@ -62,14 +111,55 @@ button {
   flex-direction: column;
 }
 
+/* ── Animations ──────────────────────────────────────────────────── */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-tr:hover td {
-  background-color: rgba(255, 255, 255, 0.03);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
+.fade-in { animation: fadeIn 0.25s ease; }
+
+/* ── Table hover ─────────────────────────────────────────────────── */
+tr:hover td {
+  background-color: var(--row-hover);
+}
+
+/* ── Textarea focus ──────────────────────────────────────────────── */
 textarea:focus {
   border-color: var(--gold-muted) !important;
+  box-shadow: 0 0 0 3px var(--gold-subtle);
 }
+
+/* ── Drag-over highlight ─────────────────────────────────────────── */
+.drag-over {
+  border-color: var(--gold) !important;
+  background-color: var(--gold-subtle) !important;
+}
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 14px;
+  color: var(--text-primary);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease;
+  z-index: 9999;
+  max-width: 320px;
+}
+.toast-error { border-color: var(--error-border); color: var(--error); }
+.toast-success { border-color: var(--success-border); color: var(--success); }
+
+/* ── Scrollbar (dark) ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }

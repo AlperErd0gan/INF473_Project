@@ -1,116 +1,264 @@
+import { useState, useEffect, useCallback } from "react";
 import { Outlet, NavLink } from "react-router-dom";
+import { useLang } from "../contexts/LangContext";
+
+function SunIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  );
+}
+
+function Toast({ message, type, onClose }) {
+  useEffect(() => {
+    const t = setTimeout(onClose, 3500);
+    return () => clearTimeout(t);
+  }, [onClose]);
+
+  return (
+    <div className={`toast toast-${type}`} onClick={onClose}>
+      {message}
+    </div>
+  );
+}
+
+export const ToastContext = { listeners: [] };
+export function showToast(message, type = "info") {
+  ToastContext.listeners.forEach((fn) => fn({ message, type, id: Date.now() }));
+}
 
 export default function Layout() {
+  const { lang, toggle: toggleLang, t } = useLang();
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+  const [toasts, setToasts] = useState([]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const addToast = useCallback((toast) => {
+    setToasts((prev) => [...prev, toast]);
+  }, []);
+
+  useEffect(() => {
+    ToastContext.listeners.push(addToast);
+    return () => {
+      ToastContext.listeners = ToastContext.listeners.filter((fn) => fn !== addToast);
+    };
+  }, [addToast]);
+
+  const removeToast = (id) => setToasts((prev) => prev.filter((t) => t.id !== id));
+
+  const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
+
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <header style={styles.header}>
         <div style={styles.headerInner}>
           <div style={styles.brand}>
-            <span style={styles.brandInitials}>GSU</span>
+            <div style={styles.brandBadge}>GSU</div>
             <div>
-              <div style={styles.brandTitle}>Sanal Akademik Danışman</div>
-              <div style={styles.brandSub}>Bilgisayar Mühendisliği Bölümü</div>
+              <div style={styles.brandTitle}>{t.brand_title}</div>
+              <div style={styles.brandSub}>{t.brand_sub}</div>
             </div>
           </div>
-          <nav style={styles.nav}>
-            <NavLink
-              to="/"
-              end
-              style={({ isActive }) => ({ ...styles.navLink, ...(isActive ? styles.navLinkActive : {}) })}
+
+          <div style={styles.headerRight}>
+            <nav style={styles.nav}>
+              <NavLink
+                to="/"
+                end
+                style={({ isActive }) => ({ ...styles.navLink, ...(isActive ? styles.navLinkActive : {}) })}
+              >
+                {t.nav_analyze}
+              </NavLink>
+              <NavLink
+                to="/history"
+                style={({ isActive }) => ({ ...styles.navLink, ...(isActive ? styles.navLinkActive : {}) })}
+              >
+                {t.nav_history}
+              </NavLink>
+            </nav>
+
+            <button
+              onClick={toggleLang}
+              style={styles.langBtn}
+              title={lang === "tr" ? "Switch to English" : "Türkçeye geç"}
+              aria-label="Change language"
             >
-              Analiz
-            </NavLink>
-            <NavLink
-              to="/history"
-              style={({ isActive }) => ({ ...styles.navLink, ...(isActive ? styles.navLinkActive : {}) })}
+              {lang === "tr" ? "EN" : "TR"}
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              style={styles.themeBtn}
+              title={theme === "dark" ? t.theme_to_light : t.theme_to_dark}
+              aria-label="Toggle theme"
             >
-              Geçmiş
-            </NavLink>
-          </nav>
+              {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+            </button>
+          </div>
         </div>
       </header>
 
       <main style={styles.main}>
-        <Outlet />
+        <div className="fade-in">
+          <Outlet />
+        </div>
       </main>
 
       <footer style={styles.footer}>
-        <span>Galatasaray Üniversitesi &mdash; Mezuniyet Analiz Sistemi</span>
+        <span>{t.footer_uni} &mdash; {t.footer_sys}</span>
+        <span style={styles.footerSep}>·</span>
+        <span>{t.footer_dept}</span>
       </footer>
+
+      {toasts.map((t) => (
+        <Toast key={t.id} message={t.message} type={t.type} onClose={() => removeToast(t.id)} />
+      ))}
     </div>
   );
 }
 
 const styles = {
   header: {
-    backgroundColor: "var(--navy-light)",
-    borderBottom: "1px solid var(--navy-border)",
+    backgroundColor: "var(--bg-raised)",
+    borderBottom: "1px solid var(--border)",
     padding: "0 24px",
+    position: "sticky",
+    top: 0,
+    zIndex: 100,
+    backdropFilter: "blur(8px)",
   },
   headerInner: {
-    maxWidth: 960,
+    maxWidth: 1040,
     margin: "0 auto",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    height: 72,
+    height: 68,
   },
   brand: {
     display: "flex",
     alignItems: "center",
     gap: 14,
   },
-  brandInitials: {
+  brandBadge: {
     fontFamily: "'Playfair Display', serif",
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 700,
     color: "var(--gold)",
     border: "2px solid var(--gold)",
     padding: "4px 10px",
     letterSpacing: 2,
+    lineHeight: 1,
+    borderRadius: 2,
   },
   brandTitle: {
     fontFamily: "'Playfair Display', serif",
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: 600,
     color: "var(--text-primary)",
-    lineHeight: 1.2,
+    lineHeight: 1.25,
   },
   brandSub: {
-    fontSize: 12,
+    fontSize: 11,
     color: "var(--text-secondary)",
     marginTop: 2,
+    letterSpacing: "0.03em",
+  },
+  headerRight: {
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
   },
   nav: {
     display: "flex",
-    gap: 8,
+    gap: 4,
   },
   navLink: {
-    padding: "6px 16px",
+    padding: "6px 14px",
     fontSize: 14,
     fontWeight: 500,
     color: "var(--text-secondary)",
-    borderRadius: 4,
+    borderRadius: 6,
     border: "1px solid transparent",
     transition: "all 0.15s",
+    textDecoration: "none",
   },
   navLinkActive: {
     color: "var(--gold)",
     border: "1px solid var(--gold-muted)",
-    backgroundColor: "rgba(212,175,55,0.08)",
+    backgroundColor: "var(--gold-subtle)",
+  },
+  langBtn: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 36,
+    padding: "0 12px",
+    borderRadius: 8,
+    border: "1px solid var(--border)",
+    backgroundColor: "var(--overlay)",
+    color: "var(--text-secondary)",
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: "0.06em",
+    cursor: "pointer",
+    transition: "all 0.15s",
+    flexShrink: 0,
+    fontFamily: "'Inter', sans-serif",
+  },
+  themeBtn: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 36,
+    height: 36,
+    borderRadius: 8,
+    border: "1px solid var(--border)",
+    backgroundColor: "var(--overlay)",
+    color: "var(--text-secondary)",
+    transition: "all 0.15s",
+    flexShrink: 0,
   },
   main: {
     flex: 1,
-    maxWidth: 960,
+    maxWidth: 1040,
     width: "100%",
     margin: "0 auto",
     padding: "40px 24px",
   },
   footer: {
     textAlign: "center",
-    padding: "16px 24px",
-    fontSize: 13,
-    color: "var(--text-secondary)",
-    borderTop: "1px solid var(--navy-border)",
+    padding: "14px 24px",
+    fontSize: 12,
+    color: "var(--text-muted)",
+    borderTop: "1px solid var(--border)",
+    display: "flex",
+    justifyContent: "center",
+    gap: 8,
+    alignItems: "center",
+  },
+  footerSep: {
+    opacity: 0.4,
   },
 };
