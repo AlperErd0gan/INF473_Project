@@ -22,7 +22,7 @@ export default function Upload() {
 
     try {
       const stepTimer = setInterval(() => {
-        setStepIndex((prev) => (prev < STEPS.length - 1 ? prev + 1 : prev));
+        setStepIndex((prev) => (prev < t.steps.length - 1 ? prev + 1 : prev));
       }, 2200);
 
       const { transcript_id } = await uploadTranscript(text);
