@@ -49,3 +49,6 @@ yarn-error.log*
 # Database
 *.sqlite3
 *.db
+
+# Logs
+backend/logs/

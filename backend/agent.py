@@ -1,10 +1,12 @@
 import os
+import re
 import json
 from typing import Optional
 from dotenv import load_dotenv
 from groq import Groq
 from pydantic import BaseModel
 from gsu_requirements import GSU_BIL_REQUIREMENTS
+from logger import CaseLogger
 
 load_dotenv()
 
@@ -83,6 +85,7 @@ class ParsedTranscript(BaseModel):
 class AgentVerdict(BaseModel):
     agent: str
     verdict: str  # "pass" | "fail"
+    statement: str
     issues: list[str]
     details: dict
 
@@ -90,8 +93,6 @@ class AgentVerdict(BaseModel):
 def _normalize_code(code: str) -> str:
     """Strip section suffix (e.g. INF112-B → INF112) and normalize whitespace/case."""
     normalized = code.strip().replace(" ", "").upper()
-    # Remove trailing -[A-Z] or -[A-Z][0-9] section indicators
-    import re
     normalized = re.sub(r"-[A-Z][0-9]?$", "", normalized)
     return normalized
 
@@ -141,9 +142,21 @@ class CourseVerifierAgent:
             codes = ", ".join(c.split(" - ")[0] for c in missing_mandatory)
             issues.append(f"{len(missing_mandatory)} zorunlu ders eksik: {codes}")
 
+        total = len(mandatory)
+        done = len(completed_mandatory)
+        if not missing_mandatory:
+            statement = f"Tüm {total} zorunlu ders tamamlandı. Eksik ders yok."
+        else:
+            statement = (
+                f"{done}/{total} zorunlu ders tamamlandı. "
+                f"{len(missing_mandatory)} ders eksik: "
+                + ", ".join(c.split(" - ")[0] for c in missing_mandatory)
+            )
+
         return AgentVerdict(
             agent="CourseVerifier",
             verdict="pass" if not missing_mandatory else "fail",
+            statement=statement,
             issues=issues,
             details={
                 "completed_mandatory": completed_mandatory,
@@ -151,6 +164,16 @@ class CourseVerifierAgent:
                 "completed_codes": sorted(completed_codes),
             },
         )
+
+    def cross_examine(self, ects_verdict: "AgentVerdict") -> str:
+        """Comment on ECTS result from a course perspective."""
+        failed_ects = ects_verdict.details["required_ects"] - ects_verdict.details["transcript_total_ects"]
+        if ects_verdict.verdict == "fail":
+            return (
+                f"AKTS açığı ({failed_ects} AKTS) kısmen başarısız derslerden kaynaklanıyor olabilir. "
+                f"Eksik zorunlu dersler tamamlanırsa AKTS açığı da kapanabilir."
+            )
+        return "AKTS durumu yeterli, ders tamamlama açısından ek sorun yok."
 
 
 class ECTSVerifierAgent:
@@ -167,15 +190,38 @@ class ECTSVerifierAgent:
         if not ects_ok:
             issues.append(f"AKTS yetersiz: {transcript_total_ects} / minimum {required_ects}")
 
+        if ects_ok:
+            surplus = transcript_total_ects - required_ects
+            statement = f"Toplam AKTS {transcript_total_ects} / {required_ects}. Eşik sağlandı (+{surplus} fazla)."
+        else:
+            deficit = required_ects - transcript_total_ects
+            statement = f"Toplam AKTS {transcript_total_ects} / {required_ects}. {deficit} AKTS açığı var."
+
         return AgentVerdict(
             agent="ECTSVerifier",
             verdict="pass" if ects_ok else "fail",
+            statement=statement,
             issues=issues,
             details={
                 "transcript_total_ects": transcript_total_ects,
                 "required_ects": required_ects,
             },
         )
+
+    def cross_examine(self, course_verdict: "AgentVerdict") -> str:
+        """Comment on course situation from an ECTS perspective."""
+        missing = course_verdict.details["missing_mandatory"]
+        if missing:
+            missing_ects = sum(
+                c["ects"]
+                for c in GSU_BIL_REQUIREMENTS["mandatory_courses"]
+                if f"{c['code']} - {c['name']}" in missing
+            )
+            return (
+                f"Eksik {len(missing)} zorunlu dersin toplam AKTS değeri yaklaşık {missing_ects}. "
+                f"Bu dersler tamamlanırsa AKTS dengesi de iyileşebilir."
+            )
+        return "Zorunlu ders durumu AKTS hesabını olumsuz etkilemiyor."
 
 
 class RequirementsAgent:
@@ -206,9 +252,21 @@ class RequirementsAgent:
 
         issues.extend(elective_issues)
 
+        parts = []
+        if gpa_ok:
+            parts.append(f"GNO {parsed.gpa:.2f} ≥ 2.00 (geçer)")
+        else:
+            parts.append(f"GNO {parsed.gpa:.2f} < 2.00 (yetersiz)")
+        if elective_issues:
+            parts.append(f"{len(elective_issues)} seçmeli grup eksik")
+        else:
+            parts.append("tüm seçmeli gruplar tamamlandı")
+        statement = "; ".join(parts) + "."
+
         return AgentVerdict(
             agent="RequirementsChecker",
             verdict="pass" if not issues else "fail",
+            statement=statement,
             issues=issues,
             details={
                 "gpa": parsed.gpa,
@@ -216,6 +274,17 @@ class RequirementsAgent:
                 "elective_issues": elective_issues,
             },
         )
+
+    def cross_examine(self, course_verdict: "AgentVerdict", ects_verdict: "AgentVerdict") -> str:
+        """Comment on overall picture from a requirements perspective."""
+        comments = []
+        if course_verdict.verdict == "fail":
+            comments.append("Eksik zorunlu dersler not ortalamasını olumsuz etkilemiş olabilir.")
+        if ects_verdict.verdict == "fail":
+            comments.append("AKTS açığı seçmeli ders eksikliğiyle bağlantılı olabilir.")
+        if not comments:
+            return "GNO ve seçmeli ders koşulları diğer bulgularla çelişmiyor."
+        return " ".join(comments)
 
 
 class MasterAgent:
@@ -231,16 +300,63 @@ class MasterAgent:
         self.requirements_agent = RequirementsAgent()
 
     def run(self, transcript_text: str) -> dict:
+        # Step 1: Parse
         parsed = self.parser.parse(transcript_text)
 
+        logger = CaseLogger(parsed.student_name, parsed.student_number)
+
+        passed_courses = [c for c in parsed.courses if c.grade.strip().upper() not in FAILED_GRADES]
+        passed_ects = sum(c.ects for c in passed_courses)
+        logger.open_case(parsed.gpa, len(parsed.courses), passed_ects)
+
+        # Step 2: Independent evaluation
+        logger.open_deliberation()
         course_verdict = self.course_agent.evaluate(parsed)
         ects_verdict = self.ects_agent.evaluate(parsed)
         req_verdict = self.requirements_agent.evaluate(parsed)
 
+        logger.log_verdict(
+            course_verdict.agent, course_verdict.verdict,
+            course_verdict.statement, course_verdict.issues,
+        )
+        logger.log_verdict(
+            ects_verdict.agent, ects_verdict.verdict,
+            ects_verdict.statement, ects_verdict.issues,
+        )
+        logger.log_verdict(
+            req_verdict.agent, req_verdict.verdict,
+            req_verdict.statement, req_verdict.issues,
+        )
+
+        # Step 3: Cross-examination — agents comment on each other's findings
+        logger.open_cross_examination()
+        logger.log_cross_comment(
+            "CourseVerifier",
+            self.course_agent.cross_examine(ects_verdict),
+        )
+        logger.log_cross_comment(
+            "ECTSVerifier",
+            self.ects_agent.cross_examine(course_verdict),
+        )
+        logger.log_cross_comment(
+            "RequirementsChecker",
+            self.requirements_agent.cross_examine(course_verdict, ects_verdict),
+        )
+
+        # Step 4: Master deliberation + final decision
         all_issues = course_verdict.issues + ects_verdict.issues + req_verdict.issues
         is_graduated = all(
             v.verdict == "pass" for v in [course_verdict, ects_verdict, req_verdict]
         )
+
+        verdict_map = {
+            course_verdict.agent: course_verdict.verdict,
+            ects_verdict.agent: ects_verdict.verdict,
+            req_verdict.agent: req_verdict.verdict,
+        }
+        logger.log_master_deliberation(verdict_map, all_issues)
+        logger.log_final_decision(is_graduated, all_issues)
+        logger.flush()
 
         report = self._generate_report(parsed, ects_verdict, all_issues, is_graduated, course_verdict)
 
