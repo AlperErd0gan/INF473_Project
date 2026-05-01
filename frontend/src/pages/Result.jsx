@@ -108,7 +108,6 @@ export default function Result() {
           unit=""
           sub={graduated ? t.result_stat_conditions_ok : t.result_stat_conditions_fail}
           ok={!(data.missing_conditions?.length)}
-          invertColor
         />
       </div>
 
@@ -212,8 +211,8 @@ export default function Result() {
   );
 }
 
-function StatCard({ label, value, unit, sub, ok, invertColor }) {
-  const isGood = invertColor ? !ok : ok;
+function StatCard({ label, value, unit, sub, ok }) {
+  const isGood = ok;
   return (
     <div style={{ ...styles.statCard, borderColor: isGood ? "var(--success-border)" : "var(--error-border)" }}>
       <div style={{ ...styles.statValue, color: isGood ? "var(--success)" : "var(--error)" }} className="mono">
