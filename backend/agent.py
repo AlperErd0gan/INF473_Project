@@ -12,7 +12,7 @@ load_dotenv()
 
 client = Groq(api_key=os.environ["GROQ_API_KEY"])
 MODEL = "llama-3.3-70b-versatile"
-FAILED_GRADES = {"FF", "DZ", "F"}
+FAILED_GRADES = {"FF", "DZ", "F", "IA", "NP"}
 
 PARSE_SYSTEM_PROMPT = """You are a university transcript parsing expert. Extract ALL courses from a GSU (Galatasaray University) transcript, including failed ones.
 
@@ -97,6 +97,37 @@ def _normalize_code(code: str) -> str:
     return normalized
 
 
+def _accepted_codes_for_requirement(code: str) -> set[str]:
+    """
+    Return all normalized course codes that satisfy a requirement code,
+    including official curriculum equivalencies.
+    """
+    normalized = _normalize_code(code)
+    accepted = {normalized}
+    equivalencies = GSU_BIL_REQUIREMENTS.get("course_equivalencies", {})
+    for eq in equivalencies.get(normalized, []):
+        accepted.add(_normalize_code(eq))
+    return accepted
+
+
+def _is_legacy_curriculum(completed_codes: set[str]) -> bool:
+    """
+    Heuristic for older CE curriculum variants (e.g. ayid=32),
+    where some semester elective counts differ from the current plan.
+    """
+    legacy_markers = {
+        "ING127",  # old plan semester 1 chemistry
+        "INF316",  # old plan mandatory (later mapped to INF345)
+        "CNT350",  # old plan mandatory (later mapped to CNT250)
+        "INF470",  # old plan mandatory course
+        "INF211",  # old plan mandatory course
+        "INF223",  # old plan OOP code family
+        "INF299",  # old plan internship code
+        "ING204",  # old plan high math II
+    }
+    return bool(completed_codes & legacy_markers)
+
+
 def _chat(system: str, user: str) -> str:
     response = client.chat.completions.create(
         model=MODEL,
@@ -129,12 +160,12 @@ class CourseVerifierAgent:
         completed_mandatory = [
             f"{c['code']} - {c['name']}"
             for c in mandatory
-            if _normalize_code(c["code"]) in completed_codes
+            if completed_codes & _accepted_codes_for_requirement(c["code"])
         ]
         missing_mandatory = [
             f"{c['code']} - {c['name']}"
             for c in mandatory
-            if _normalize_code(c["code"]) not in completed_codes
+            if not (completed_codes & _accepted_codes_for_requirement(c["code"]))
         ]
 
         issues = []
@@ -230,6 +261,7 @@ class RequirementsAgent:
     def evaluate(self, parsed: ParsedTranscript) -> AgentVerdict:
         passed = [c for c in parsed.courses if c.grade.strip().upper() not in FAILED_GRADES]
         completed_codes = {_normalize_code(c.code) for c in passed}
+        legacy_curriculum = _is_legacy_curriculum(completed_codes)
 
         gpa_ok = parsed.gpa >= GSU_BIL_REQUIREMENTS["min_gpa"]
         issues = []
@@ -239,9 +271,14 @@ class RequirementsAgent:
 
         elective_issues = []
         for group in GSU_BIL_REQUIREMENTS["elective_groups"]:
-            group_codes = {_normalize_code(o["code"]) for o in group["options"]}
+            group_codes = set()
+            for option in group["options"]:
+                group_codes.update(_accepted_codes_for_requirement(option["code"]))
             taken_count = len(completed_codes & group_codes)
             required = group["required_count"]
+            # Legacy plan (e.g., ayid=32) requires 1 INF elective in semester 6.
+            if legacy_curriculum and group["semester"] == 6 and group.get("description", "INF seçmeli") == "INF seçmeli":
+                required = 1
             if taken_count < required:
                 needed = required - taken_count
                 sem = group["semester"]

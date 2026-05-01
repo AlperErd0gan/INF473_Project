@@ -128,6 +128,19 @@ GSU_BIL_REQUIREMENTS = {
             ],
         },
     ],
+    "course_equivalencies": {
+        # Program değişikliği notlarına göre (2024-2025 ve öncesi)
+        "ING111": ["ING127"],  # Kimya -> Ekonominin Temelleri
+        "INF345": ["INF316"],  # Sinyaller ve Sistemler -> Sayısal Sinyal İşleme
+        "CNT250": ["CNT350"],  # Proje/Risk dersi kod değişimi
+        "INF330": ["INF430"],  # Robotik kod değişimi (7. yarıyıl notu)
+        # Eski öğretim planı seçmeli kodları
+        "INF454": ["INF352"],  # İnsan Bilgisayar Etkileşimi kod değişimi
+        # 2020-2021 ve öncesi kod karşılıkları
+        "INF112": ["INF102"],
+        "INF113": ["INF101"],
+        "INF114": ["INF103"],
+    },
     "notes": [
         "If total ECTS < 240, student must take additional INF electives to fill the gap.",
     ],
