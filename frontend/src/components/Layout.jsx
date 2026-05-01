@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import { useLang } from "../contexts/LangContext";
+import gsuLogo from "../assets/gsu-university-logo.png";
 
 function SunIcon() {
   return (
@@ -74,7 +75,7 @@ export default function Layout() {
       <header style={styles.header}>
         <div style={styles.headerInner}>
           <div style={styles.brand}>
-            <div style={styles.brandBadge}>GSU</div>
+            <img src={gsuLogo} alt="Galatasaray Üniversitesi logosu" style={styles.brandLogo} />
             <div>
               <div style={styles.brandTitle}>{t.brand_title}</div>
               <div style={styles.brandSub}>{t.brand_sub}</div>
@@ -161,16 +162,11 @@ const styles = {
     alignItems: "center",
     gap: 14,
   },
-  brandBadge: {
-    fontFamily: "'Playfair Display', serif",
-    fontSize: 20,
-    fontWeight: 700,
-    color: "var(--gold)",
-    border: "2px solid var(--gold)",
-    padding: "4px 10px",
-    letterSpacing: 2,
-    lineHeight: 1,
-    borderRadius: 2,
+  brandLogo: {
+    width: 44,
+    height: 44,
+    objectFit: "contain",
+    flexShrink: 0,
   },
   brandTitle: {
     fontFamily: "'Playfair Display', serif",
