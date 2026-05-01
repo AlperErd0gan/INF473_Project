@@ -1,145 +1,334 @@
-ÖĞRENCİ: Ayşe Kaya | 2021401023
-GPA: 2.87
+============================================================
+ÖRNEK 1: Ayşe Kaya — MEZUN OLABİLİR (GNO: 2.87, AKTS: 245)
+============================================================
 
-ING106 Matematik I - BB - 7 AKTS
-ING116 Fizik I - CB - 5 AKTS
-ING111 Ekonominin Temelleri - BB - 4 AKTS
-INF112 Programlamaya Giriş - AA - 4 AKTS
-INF113 Bilgisayar Mühendisliğine Giriş - BB - 4 AKTS
-FLF101 Fransızca B2.1 - CC - 2 AKTS
-ING107 Matematik II - CB - 7 AKTS
-ING117 Fizik II - CC - 5 AKTS
-INF114 İleri Bilgisayar Programlama - BB - 5 AKTS
-INF116 Bilgisayar Sistemlerine Giriş - AA - 5 AKTS
-CNT120 Girişimcilik ve Kariyer Planlama - BB - 2 AKTS
-FLF201 Fransızca B2.2 - CC - 2 AKTS
-ING251 Yüksek Matematik I - DC - 4 AKTS
-ING207 Lineer Cebir - CB - 5 AKTS
-INF256 Olasılık - BB - 5 AKTS
-ING229 Analog Elektronik - CC - 7 AKTS
-INF224 Veri Yapısı ve Algoritmalar - AA - 5 AKTS
-ING252 Yüksek Matematik II - CB - 4 AKTS
-ING208 Diferansiyel Denklemler - CC - 4 AKTS
-INF257 İstatistik ve Veri Analizi - BB - 5 AKTS
-ING220 Sayısal Elektronik - CB - 5 AKTS
-INF243 Nesneye Yönelik Programlama - AA - 5 AKTS
-INF291 Staj I - Başarılı - 3 AKTS
-INF356 Veri Analizine Giriş - BB - 4 AKTS
-INF324 Veri Tabanı Tasarımı ve Uygulamaları - AA - 5 AKTS
-INF315 Kesikli Matematik - CB - 4 AKTS
-INF345 Sayısal Sinyal İşleme - CC - 5 AKTS
-CNT250 Proje Risk ve Değişiklik Yönetimi - BB - 2 AKTS
-INF320 Bilgisayar Mimarisi - CB - 5 AKTS
-INF353 Web Programlama - AA - 5 AKTS
-INF323 Otomatlar ve Diller Teorisi - CB - 4 AKTS
-INF333 İşletim Sistemleri - BB - 5 AKTS
-INF325 Sayısal Analiz - CC - 4 AKTS
-INF340 Mikroişlemciler - CB - 5 AKTS
-INF334 Bilgisayar Ağları - BB - 4 AKTS
-INF399 Staj II - Başarılı - 2 AKTS
-INF330 Robotik - BB - 5 AKTS
-INF366 Sayısal Görüntü İşleme - CB - 5 AKTS
-INF443 Dağıtık Sistemler ve Uygulamalar - BB - 4 AKTS
-INF402 Nesnelerin İnternetine Giriş - CB - 3 AKTS
-INF444 Yapay Zeka - AA - 5 AKTS
-INF493 Araştırma Konuları - BB - 3 AKTS
-INF471 Bilişimde Güvenlik - CB - 4 AKTS
-INF400 Veri Derlemesi - BB - 5 AKTS
-INF432 Bilgisayar Grafikleri - CB - 5 AKTS
-INF481 Yazılım Mühendisliği ve Nesneye Yönelik Tasarım - BB - 5 AKTS
-INF482 Gömülü Sistem Tasarım Temelleri - CB - 5 AKTS
-INF494 Bitirme Projesi - AA - 6 AKTS
-INF472 Bulut Bilişim - BB - 5 AKTS
-IND471 Yöneylem Araştırması - CC - 4 AKTS
-                                                                                            
+Ad Soyad: Ayşe Kaya
+Öğrenci No: 2021401023
+
+2021 - 2022 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+FLF101	Fransızca Cef B2.1 Akademik	BB	2.0	2	Z
+INF112	Programlamaya Giriş	AA	5.0	4	Z
+INF113	Bilgisayar Mühendisliğine Giriş	BB	2.5	4	Z
+ING106	Matematik I	BB	5.0	7	Z
+ING111	Ekonominin Temelleri	CB	3.0	4	Z
+ING116	Fizik I	CB	4.0	5	Z
+ING127	Kimya	BB	3.0	4	S
+TUR001	Türk Dili I	AA	2.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.80	26.5	32.0
+Genel	2.80	26.5	32.0
+
+2021 - 2022 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT120	Girişimcilik ve Kariyer Planlama	BB	1.5	2	Z
+FLF201	Fransızca Cef B2.2 Akademik	CC	2.0	2	Z
+INF114	İleri Bilgisayar Programlama	BB	4.0	5	Z
+INF116	Bilgisayar Sistemlerine Giriş	BB	2.0	5	Z
+ING107	Matematik II	BB	3.0	7	Z
+ING117	Fizik II	CC	4.0	5	Z
+ING144	Teknik Resim	AA	1.5	3	S
+TUR002	Türk Dili II	BA	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.90	19.0	31.0
+Genel	2.85	45.5	63.0
+
+2022 - 2023 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA001	Atatürk İlkeleri ve İnkılap Tarihi I	CB	2.0	2	Z
+INF224	Veri Yapısı ve Algoritmalar	AA	4.0	5	Z
+ING207	Lineer Cebir	CB	3.0	5	Z
+ING229	Analog Elektronik	CB	4.0	7	Z
+ING251	Yüksek Matematik I	BB	2.5	4	Z
+INF256	Olasılık	BB	4.0	5	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.75	20.0	28.0
+Genel	2.82	65.5	91.0
+
+2022 - 2023 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA002	Atatürk İlkeleri ve İnkılap Tarihi II	CB	2.0	2	Z
+INF243	Nesneye Yönelik Programlama	BB	4.0	5	Z
+INF257	İstatistik ve Veri Analizi	BB	4.0	5	Z
+INF291	Staj I	AA	1.0	3	Z
+ING208	Diferansiyel Denklemler	CC	3.0	4	Z
+ING220	Sayısal Elektronik	CB	3.0	5	Z
+ING252	Yüksek Matematik II	BB	2.5	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.78	19.5	28.0
+Genel	2.81	85.0	119.0
+
+2023 - 2024 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT250	Bilgisayar Mühendisleri için Proje Risk ve Değişiklik Yönetimi	BB	2.0	2	Z
+INF315	Kesikli Matematik	BB	3.0	4	Z
+INF320	Bilgisayar Mimarisi	CB	3.0	5	Z
+INF324	Veri Tabanı Tasarımı ve Uygulamaları	BB	3.0	5	Z
+INF345	Sayısal Sinyal İşleme	CB	3.0	5	Z
+INF353	Web Programlama	AA	3.0	5	S
+INF356	Veri Analizine Giriş	BB	3.0	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	3.00	20.0	30.0
+Genel	2.85	105.0	149.0
+
+2023 - 2024 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+INF323	Otomatlar ve Diller Teorisi	BB	3.0	4	Z
+INF325	Sayısal Analiz	CB	3.0	4	Z
+INF330	Robotik	BB	3.0	5	S
+INF333	İşletim Sistemleri	BB	3.0	5	Z
+INF334	Bilgisayar Ağları	BB	4.0	4	Z
+INF340-B	Mikroişlemciler	CB	3.0	5	Z
+INF366	Sayısal Görüntü İşleme	CB	3.0	5	S
+INF399	Staj II	AA	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.88	23.0	34.0
+Genel	2.86	128.0	183.0
+
+2024 - 2025 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+INF400	Veri Derlemesi	BB	3.0	5	Z
+INF402	Nesnelerin İnternetine Giriş	CB	3.0	3	Z
+INF432	Bilgisayar Grafikleri	BB	3.0	5	S
+INF443	Dağıtık Sistemler ve Uygulamalar	BB	4.0	4	Z
+INF444	Yapay Zeka	BA	3.0	5	Z
+INF471	Bilişimde Güvenlik	CB	3.0	4	Z
+INF493	Bilgisayar Mühendisliğinde Araştırma Konuları	BB	3.0	3	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.83	22.0	29.0
+Genel	2.85	150.0	212.0
+
+2024 - 2025 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CC307	İstanbul'un Kültürel Mirası	BA	3.0	3	S
+IND471	Yöneylem Araştırması	BB	3.0	4	S
+INF472	Bulut Bilişim	BB	3.0	5	S
+INF473	Üretken Yapay Zekaya Giriş	CB	3.0	5	S
+INF481	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım	BB	4.0	5	Z
+INF482	Gömülü Sistem Tasarım Temelleri	CB	4.0	5	Z
+INF494	Bitirme Projesi	AA	15.0	6	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.92	35.0	33.0
+Genel	2.87	185.0	245.0
 
 
+============================================================
+ÖRNEK 2: Mehmet Demir — MEZUN OLAMAZ (GNO: 1.95, AKTS: 183)
+============================================================
+
+Ad Soyad: Mehmet Demir
+Öğrenci No: 2022401045
+
+2021 - 2022 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+FLF101	Fransızca Cef B2.1 Akademik	CC	2.0	2	Z
+INF112-B	Programlamaya Giriş	CB	5.0	4	Z
+INF113	Bilgisayar Mühendisliğine Giriş	CC	2.5	4	Z
+ING106	Matematik I	CC	5.0	7	Z
+ING111	Ekonominin Temelleri	DC	3.0	4	Z
+ING116	Fizik I	DC	4.0	5	Z
+TUR001	Türk Dili I	BB	2.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	1.85	23.5	28.0
+Genel	1.85	23.5	28.0
+
+2021 - 2022 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT120	Girişimcilik ve Kariyer Planlama	CC	1.5	2	Z
+FLF201	Fransızca Cef B2.2 Akademik	CC	2.0	2	Z
+INF114	İleri Bilgisayar Programlama	CB	4.0	5	Z
+INF116	Bilgisayar Sistemlerine Giriş	CC	2.0	5	Z
+ING107	Matematik II	F	3.0	7	Z
+ING117	Fizik II	DC	4.0	5	Z
+TUR002	Türk Dili II	CB	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	1.60	17.5	21.0
+Genel	1.72	41.0	49.0
+
+2022 - 2023 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA001	Atatürk İlkeleri ve İnkılap Tarihi I	CB	2.0	2	Z
+INF224-A	Veri Yapısı ve Algoritmalar	CC	4.0	5	Z
+ING207	Lineer Cebir	F	3.0	5	Z
+ING229-B	Analog Elektronik	F	4.0	7	Z
+ING251	Yüksek Matematik I	F	2.5	4	Z
+INF256	Olasılık	DC	4.0	5	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	1.30	10.0	12.0
+Genel	1.60	51.0	61.0
+
+2022 - 2023 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA002	Atatürk İlkeleri ve İnkılap Tarihi II	BB	2.0	2	Z
+INF243-A	Nesneye Yönelik Programlama	CC	4.0	5	Z
+INF257	İstatistik ve Veri Analizi	CC	4.0	5	Z
+INF291	Staj I	AA	1.0	3	Z
+ING107	Matematik II	CC	3.0	7	Z
+ING208	Diferansiyel Denklemler	CC	3.0	4	Z
+ING220	Sayısal Elektronik	F	3.0	5	Z
+ING251	Yüksek Matematik I	DC	2.5	4	Z
+ING252	Yüksek Matematik II	F	2.5	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	1.90	20.0	26.0
+Genel	1.71	71.0	87.0
+
+2023 - 2024 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT250	Bilgisayar Mühendisleri için Proje Risk ve Değişiklik Yönetimi	CB	2.0	2	Z
+INF315	Kesikli Matematik	CB	3.0	4	Z
+INF320	Bilgisayar Mimarisi	CC	3.0	5	Z
+INF324	Veri Tabanı Tasarımı ve Uygulamaları	CB	3.0	5	Z
+INF345	Sayısal Sinyal İşleme	CC	3.0	5	Z
+INF354	Bilişimde Oyun Teorisi ve Uygulamalarına Giriş	CB	3.0	5	S
+INF356	Veri Analizine Giriş	CC	3.0	4	Z
+ING207	Lineer Cebir	CC	3.0	5	Z
+ING229-B	Analog Elektronik	F	4.0	7	Z
+ING220	Sayısal Elektronik	CC	3.0	5	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.05	29.0	40.0
+Genel	1.88	100.0	127.0
+
+2023 - 2024 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ING229-B	Analog Elektronik	CC	4.0	7	Z
+ING252	Yüksek Matematik II	CB	2.5	4	Z
+INF323	Otomatlar ve Diller Teorisi	CC	3.0	4	Z
+INF325	Sayısal Analiz	CC	3.0	4	Z
+INF333	İşletim Sistemleri	F	3.0	5	Z
+INF334	Bilgisayar Ağları	CB	4.0	4	Z
+INF340-C	Mikroişlemciler	CC	3.0	5	Z
+INF399	Staj II	AA	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.10	23.5	28.0
+Genel	1.95	123.5	155.0
+
+2024 - 2025 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+INF400	Veri Derlemesi	CB	3.0	5	Z
+INF402	Nesnelerin İnternetine Giriş	CC	3.0	3	Z
+INF443	Dağıtık Sistemler ve Uygulamalar	CB	4.0	4	Z
+INF444	Yapay Zeka	CC	3.0	5	Z
+INF471-B	Bilişimde Güvenlik	CB	3.0	4	Z
+INF493	Bilgisayar Mühendisliğinde Araştırma Konuları	CB	3.0	3	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.20	19.0	24.0
+Genel	1.95	142.5	183.0
 
 
+============================================================
+ÖRNEK 3: Zeynep Arslan — MEZUN OLABİLİR (GNO: 3.42, AKTS: 262)
+============================================================
 
-  ÖĞRENCİ: Mehmet Demir | 2022401045
-GPA: 1.95
+Ad Soyad: Zeynep Arslan
+Öğrenci No: 2020401007
 
-ING106 Matematik I - CC - 7 AKTS
-ING116 Fizik I - DC - 5 AKTS
-ING111 Ekonominin Temelleri - CC - 4 AKTS
-INF112 Programlamaya Giriş - CB - 4 AKTS
-INF113 Bilgisayar Mühendisliğine Giriş - CC - 4 AKTS
-FLF101 Fransızca B2.1 - DD - 2 AKTS
-ING107 Matematik II - FF - 7 AKTS
-ING117 Fizik II - DC - 5 AKTS
-INF114 İleri Bilgisayar Programlama - CB - 5 AKTS
-INF116 Bilgisayar Sistemlerine Giriş - CC - 5 AKTS
-CNT120 Girişimcilik ve Kariyer Planlama - CC - 2 AKTS
-FLF201 Fransızca B2.2 - FF - 2 AKTS
-ING251 Yüksek Matematik I - DC - 4 AKTS
-ING207 Lineer Cebir - CC - 5 AKTS
-INF256 Olasılık - DC - 5 AKTS
-ING229 Analog Elektronik - FF - 7 AKTS
-INF224 Veri Yapısı ve Algoritmalar - CB - 5 AKTS
-ING252 Yüksek Matematik II - FF - 4 AKTS
-ING208 Diferansiyel Denklemler - DC - 4 AKTS
-INF257 İstatistik ve Veri Analizi - CC - 5 AKTS
-ING220 Sayısal Elektronik - DC - 5 AKTS
-INF243 Nesneye Yönelik Programlama - CB - 5 AKTS
-INF291 Staj I - Başarılı - 3 AKTS
+2020 - 2021 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+FLF101	Fransızca Cef B2.1 Akademik	AA	2.0	2	Z
+INF112	Programlamaya Giriş	AA	5.0	4	Z
+INF113	Bilgisayar Mühendisliğine Giriş	AA	2.5	4	Z
+ING106	Matematik I	AA	5.0	7	Z
+ING111	Ekonominin Temelleri	BA	3.0	4	Z
+ING116	Fizik I	AA	4.0	5	Z
+ING127	Kimya	AA	3.0	4	S
+TUR001	Türk Dili I	AA	2.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	4.00	26.5	32.0
+Genel	4.00	26.5	32.0
 
+2020 - 2021 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT120	Girişimcilik ve Kariyer Planlama	AA	1.5	2	Z
+FLF201	Fransızca Cef B2.2 Akademik	BA	2.0	2	Z
+INF114	İleri Bilgisayar Programlama	AA	4.0	5	Z
+INF116	Bilgisayar Sistemlerine Giriş	AA	2.0	5	Z
+ING107	Matematik II	AA	3.0	7	Z
+ING117	Fizik II	BA	4.0	5	Z
+ING144	Teknik Resim	AA	1.5	3	S
+TUR002	Türk Dili II	AA	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	3.90	19.0	31.0
+Genel	3.95	45.5	63.0
 
+2021 - 2022 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA001	Atatürk İlkeleri ve İnkılap Tarihi I	AA	2.0	2	Z
+FLE102	İngilizce Cef B1.1	AA	2.0	2	S
+INF224	Veri Yapısı ve Algoritmalar	AA	4.0	5	Z
+ING207	Lineer Cebir	AA	3.0	5	Z
+ING229	Analog Elektronik	BB	4.0	7	Z
+ING251	Yüksek Matematik I	AA	2.5	4	Z
+INF256	Olasılık	AA	4.0	5	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	3.85	21.5	30.0
+Genel	3.92	67.0	93.0
 
+2021 - 2022 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA002	Atatürk İlkeleri ve İnkılap Tarihi II	AA	2.0	2	Z
+FLE202	İngilizce Cef B1.2	AA	2.0	2	S
+INF243	Nesneye Yönelik Programlama	AA	4.0	5	Z
+INF257	İstatistik ve Veri Analizi	AA	4.0	5	Z
+INF291	Staj I	AA	1.0	3	Z
+ING208	Diferansiyel Denklemler	BB	3.0	4	Z
+ING220	Sayısal Elektronik	AA	3.0	5	Z
+ING252	Yüksek Matematik II	AA	2.5	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	3.88	21.5	30.0
+Genel	3.91	88.5	123.0
 
+2022 - 2023 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT250	Bilgisayar Mühendisleri için Proje Risk ve Değişiklik Yönetimi	AA	2.0	2	Z
+FLE103	İngilizce Cef B2.1	AA	2.0	2	S
+INF315	Kesikli Matematik	AA	3.0	4	Z
+INF320	Bilgisayar Mimarisi	AA	3.0	5	Z
+INF324	Veri Tabanı Tasarımı ve Uygulamaları	AA	3.0	5	Z
+INF345	Sayısal Sinyal İşleme	AA	3.0	5	Z
+INF353	Web Programlama	AA	3.0	5	S
+INF356	Veri Analizine Giriş	AA	3.0	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	4.00	22.0	32.0
+Genel	3.93	110.5	155.0
 
-ÖĞRENCİ: Zeynep Arslan | 2020401007
-GPA: 3.42
+2022 - 2023 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+FLE203	İngilizce Cef B2.2	AA	2.0	2	S
+INF323	Otomatlar ve Diller Teorisi	BB	3.0	4	Z
+INF325	Sayısal Analiz	BB	3.0	4	Z
+INF330	Robotik	AA	3.0	5	S
+INF333	İşletim Sistemleri	AA	3.0	5	Z
+INF334	Bilgisayar Ağları	AA	4.0	4	Z
+INF340	Mikroişlemciler	AA	3.0	5	Z
+INF360	Veri Tabanı Yönetimi ve Güvenliği	AA	3.0	5	S
+INF399	Staj II	AA	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	3.88	25.0	36.0
+Genel	3.92	135.5	191.0
 
-ING106 Matematik I - AA - 7 AKTS
-ING116 Fizik I - AA - 5 AKTS
-ING111 Ekonominin Temelleri - BB - 4 AKTS
-INF112 Programlamaya Giriş - AA - 4 AKTS
-INF113 Bilgisayar Mühendisliğine Giriş - AA - 4 AKTS
-FLF101 Fransızca B2.1 - BB - 2 AKTS
-ING107 Matematik II - AA - 7 AKTS
-ING117 Fizik II - BB - 5 AKTS
-INF114 İleri Bilgisayar Programlama - AA - 5 AKTS
-INF116 Bilgisayar Sistemlerine Giriş - AA - 5 AKTS
-CNT120 Girişimcilik ve Kariyer Planlama - AA - 2 AKTS
-FLF201 Fransızca B2.2 - BB - 2 AKTS
-ING251 Yüksek Matematik I - BB - 4 AKTS
-ING207 Lineer Cebir - AA - 5 AKTS
-INF256 Olasılık - AA - 5 AKTS
-ING229 Analog Elektronik - BB - 7 AKTS
-INF224 Veri Yapısı ve Algoritmalar - AA - 5 AKTS
-ING252 Yüksek Matematik II - BB - 4 AKTS
-ING208 Diferansiyel Denklemler - BB - 4 AKTS
-INF257 İstatistik ve Veri Analizi - AA - 5 AKTS
-ING220 Sayısal Elektronik - BB - 5 AKTS
-INF243 Nesneye Yönelik Programlama - AA - 5 AKTS
-INF291 Staj I - Başarılı - 3 AKTS
-INF356 Veri Analizine Giriş - AA - 4 AKTS
-INF324 Veri Tabanı Tasarımı ve Uygulamaları - AA - 5 AKTS
-INF315 Kesikli Matematik - BB - 4 AKTS
-INF345 Sayısal Sinyal İşleme - BB - 5 AKTS
-CNT250 Proje Risk ve Değişiklik Yönetimi - AA - 2 AKTS
-INF320 Bilgisayar Mimarisi - BB - 5 AKTS
-INF353 Web Programlama - AA - 5 AKTS
-INF323 Otomatlar ve Diller Teorisi - BB - 4 AKTS
-INF333 İşletim Sistemleri - AA - 5 AKTS
-INF325 Sayısal Analiz - BB - 4 AKTS
-INF340 Mikroişlemciler - BB - 5 AKTS
-INF334 Bilgisayar Ağları - AA - 4 AKTS
-INF399 Staj II - Başarılı - 2 AKTS
-INF330 Robotik - BB - 5 AKTS
-INF360 Veri Tabanı Yönetimi ve Güvenliği - AA - 5 AKTS
-INF443 Dağıtık Sistemler ve Uygulamalar - BB - 4 AKTS
-INF402 Nesnelerin İnternetine Giriş - BB - 3 AKTS
-INF444 Yapay Zeka - AA - 5 AKTS
-INF493 Araştırma Konuları - BB - 3 AKTS
-INF471 Bilişimde Güvenlik - AA - 4 AKTS
-INF400 Veri Derlemesi - BB - 5 AKTS
-INF438 İleri Veri Tabanları - AA - 5 AKTS
-INF481 Yazılım Mühendisliği ve Nesneye Yönelik Tasarım - AA - 5 AKTS
-INF482 Gömülü Sistem Tasarım Temelleri - BB - 5 AKTS
-INF494 Bitirme Projesi - AA - 6 AKTS
-INF472 Bulut Bilişim - AA - 5 AKTS
-INF473 Üretken Yapay Zekaya Giriş - BB - 5 AKTS
-IND471 Yöneylem Araştırması - BB - 4 AKTS
-CC307 İstanbul'un Kültürel Mirası - AA - 3 AKTS
+2023 - 2024 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+INF400	Veri Derlemesi	AA	3.0	5	Z
+INF402	Nesnelerin İnternetine Giriş	AA	3.0	3	Z
+INF438	İleri Veri Tabanları	AA	3.0	5	S
+INF443	Dağıtık Sistemler ve Uygulamalar	AA	4.0	4	Z
+INF444	Yapay Zeka	AA	3.0	5	Z
+INF471	Bilişimde Güvenlik	AA	3.0	4	Z
+INF493	Bilgisayar Mühendisliğinde Araştırma Konuları	AA	3.0	3	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	4.00	22.0	29.0
+Genel	3.93	157.5	220.0
+
+2023 - 2024 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CC307	İstanbul'un Kültürel Mirası	AA	3.0	3	S
+IND471	Yöneylem Araştırması	AA	3.0	4	S
+INF472	Bulut Bilişim	AA	3.0	5	S
+INF473	Üretken Yapay Zekaya Giriş	AA	3.0	5	S
+INF481	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım	AA	4.0	5	Z
+INF482	Gömülü Sistem Tasarım Temelleri	AA	4.0	5	Z
+INF483	Bilgi Çıkarımı ve Veri Madenciliğine Giriş	AA	3.0	5	S
+INF494	Bitirme Projesi	AA	15.0	6	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	4.00	38.0	38.0
+Genel	3.42	195.5	258.0
