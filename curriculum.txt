@@ -1,0 +1,1030 @@
+2021-2022
+
+
+1. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING106 	- 	Matematik I 	Zorunlu 	4 	2 	0 	7 	
+2 	ING116 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+3 	ING127 	- 	Kimya 	Zorunlu 	2 	0 	2 	4 	
+4 	INF113 	- 	Bilgisayar Mühendisliğine Giriş 	Zorunlu 	2 	1 	0 	4 	
+5 	TUR001 	- 	Türk Dili I 	Zorunlu 	2 	0 	0 	2 	
+6 	TUR001 	- 	Türk Dili I 	Zorunlu 	2 	0 	0 	2 	
+7 	INF112-A 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	
+8 	INF112-B 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6
+
+Kurallar
+
+Not 2 : 2020-2021 öğretim yılı ve öncesinde “ING 104 Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 106 Matematik I” ve 1. Sınıf Bahar yarıyılından "INF 115 Programlama Dillerinin Prensipleri" ile "INF 116 Bilgisayar Sistemlerine Giriş" derslerini alırlar.
+
+Not 3 : 2020-2021 öğretim yılı ve öncesinde “ING 114 Fizik I” dersinden kalan öğrenciler, bu ders yerine “ING 116 Fizik I” 1. Sınıf Bahar yarıyılından "INF 115 Programlama Dillerinin Prensipleri" ve derslerini alırlar.
+
+Not 4 : 2020-2021 öğretim yılı ve öncesinde “ING 125 Kimya I” dersinden kalan öğrenciler, bu ders yerine “ING 127 Kimya” dersini alırlar.
+
+Not 5 : 2020-2021 öğretim yılı ve öncesinde “INF 102 Programlamaya Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 112 Programlamaya Giriş” dersini alırlar.
+
+Not 6 : 2020-2021 öğretim yılı ve öncesinde “INF 101 Bilgisayar Mühendisliğine Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 113 Bilgisayar Mühendisliğine Giriş” dersini alırlar.
+
+
+2. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING107 	- 	Matematik II 	Zorunlu 	4 	2 	0 	7 	
+2 	ING117 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+3 	INF114 	- 	Algoritma ve İleri Bilgisayar Programlama 	Zorunlu 	3 	0 	2 	5 	
+4 	INF115 	- 	Programlama Dillerinin Prensipleri 	Zorunlu 	2 	0 	0 	2 	
+5 	INF116 	- 	Bilgisayar Sistemlerine Giriş 	Zorunlu 	2 	0 	0 	2 	
+6 	ING144 	- 	Teknik Resim 	Zorunlu 	1 	1 	0 	3 	
+7 	CNT120 	- 	Kariyer Planlama 	Zorunlu 	1 	1 	0 	2 	
+8 	TUR002 	- 	Türk Dili II 	Zorunlu 	0 	2 	0 	2
+
+Kurallar
+
+Not 7 : 2020-2021 öğretim yılı ve öncesinde “ING 105 Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 107 Matematik II” ve “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 8: 2020-2021 öğretim yılı ve öncesinde “ING 115 Fizik II” dersinden kalan öğrenciler, bu ders yerine “ING 117 Fizik II” ve “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 9: 2020-2021 öğretim yılı ve öncesinde “ING 126 Kimya II” dersinden kalan öğrenciler, bu ders yerine “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 10: 2020-2021 öğretim yılı ve öncesinde “INF 103 Algoritma ve İleri Bilgisayar Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 114 Algoritma ve İleri Bilgisayar Programlama” dersini alırlar.
+
+
+3. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING203 	- 	Yüksek Matematik I 	Zorunlu 	3 	2 	0 	5 	
+2 	ING207 	- 	Lineer Cebir 	Zorunlu 	2 	2 	0 	5 	
+3 	INF204 	- 	Elektromanyetik Dalgalar 	Zorunlu 	3 	0 	0 	3 	
+4 	ATA001 	- 	Atatürk İlkeleri ve İnkılap Tarihi I 	Zorunlu 	2 	0 	0 	2 	
+5 	INF236-A 	- 	Programlama Uygulamaları 	Zorunlu 	0 	0 	2 	2 	
+6 	INF236-B 	- 	Programlama Uygulamaları 	Zorunlu 	0 	0 	2 	2 	
+7 	INF224-A 	INF103 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+8 	INF224-B 	INF103 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+9 	ING229-A 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+10 	ING229-B 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7
+
+Kurallar
+
+
+
+
+4. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING204 	- 	Yüksek Matematik II 	Zorunlu 	4 	2 	0 	6 	
+2 	ING208 	- 	Diferansiyel Denklemler 	Zorunlu 	2 	1 	0 	4 	
+3 	INF211 	- 	Bilgisayar Mühendisliği İçin Olasılık ve İstatistiğe Giriş 	Zorunlu 	3 	0 	0 	4 	
+4 	ATA002 	- 	Atatürk İlkeleri ve İnkılap Tarihi II 	Zorunlu 	2 	0 	0 	2 	
+5 	INF223-A 	INF 102 VEYA INF 112-A VEYA INF 112-B 	Nesneye Yönelik Programlama 	Zorunlu 	3 	0 	2 	6 	
+6 	INF223-B 	INF 102 VEYA INF 112-A VEYA INF 112-B 	Nesneye Yönelik Programlama 	Zorunlu 	3 	0 	2 	6 	
+7 	ING220-A 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+8 	ING220-B 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+9 	INF299 	- 	Staj 	Zorunlu 	0 	0 	2 	2 	
+
+Kurallar
+
+
+
+5. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF356 	IND211 VEYA INF211 	Veri Analizine Giriş 	Zorunlu 	3 	0 	0 	4 	
+2 	INF324 	- 	İlişkisel Veri Tabanları 	Zorunlu 	2 	0 	2 	4 	
+3 	INF315 	- 	Kesikli Matematik 	Zorunlu 	3 	0 	0 	4 	
+4 	INF316 	- 	Sinyaller ve Sistemler 	Zorunlu 	3 	0 	0 	4 	
+5 	INF320 	ING220 	Bilgisayar Mimarisi 	Zorunlu 	4 	0 	0 	6 	
+6 	CNT350 	- 	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi 	Zorunlu 	2 	0 	0 	2 	
+7 	INF352 	- 	İnsan Bilgisayar Etkileşimine Giriş 	Seçmeli 	3 	0 	0 	4 	
+8 	INF353 	- 	Web Programlamaya Giriş 	Seçmeli 	3 	0 	0 	4 	
+9 	INF354 	- 	Bilişimde Oyun Teorisi ve Uygulamalarına Giriş 	Seçmeli 	3 	0 	0 	4
+
+Kurallar
+
+
+
+
+6. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF323 	- 	Otomatlar ve Diller Teorisi 	Zorunlu 	3 	0 	0 	4 	✓
+2 	INF333 	INF103 	İşletim Sistemleri 	Zorunlu 	2 	0 	2 	5 	
+3 	INF325 	ING207 	Sayısal Analiz 	Zorunlu 	3 	0 	0 	4 	✓
+4 	INF334 	IND211 VEYA INF211 	Bilgisayar Ağları 	Zorunlu 	3 	0 	0 	4 	
+5 	INF340-A 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+6 	INF340-B 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+7 	INF399 	INF299 	Staj 	Zorunlu 	0 	0 	2 	2 	
+8 	INF360 	- 	Veritabanı Yönetimi ve Güvenliği 	Seçmeli 	3 	0 	0 	4 	✓
+9 	INF365 	- 	Bilgi Teorisi 	Seçmeli 	3 	0 	0 	4 	✓ 
+
+Kurallar
+
+
+
+
+7. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF443 	INF103 VE INF223 	Dağıtık Sistemler ve Uygulamalar 	Zorunlu 	4 	0 	0 	6 	
+2 	INF400 	INF103 	Veri Derlemesi 	Zorunlu 	3 	0 	0 	5 	
+3 	INF444 	INF223 	Yapay Zeka 	Zorunlu 	3 	0 	0 	5 	
+4 	INF470 	INF334 	Bilgisayar Ağ Laboratuvarı 	Zorunlu 	2 	0 	2 	3 	
+5 	INF493 	- 	Bilgisayar Mühendisliğinde Araştırma Konuları 	Zorunlu 	3 	0 	0 	3 	
+6 	INF471-B 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+7 	INF471-A 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+8 	INF438 	INF324 	İleri Veri Tabanları 	Seçmeli 	3 	0 	0 	4 	
+9 	INF432 	- 	Bilgisayar Grafikleri 	Seçmeli 	3 	0 	0 	4 	
+
+Kurallar
+
+
+
+
+8. Dönem
+
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF481 	- 	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım 	Zorunlu 	4 	0 	0 	5 	✓
+2 	INF482 	- 	Gömülü Sistem Tasarım Temelleri 	Zorunlu 	4 	0 	0 	5 	✓
+3 	INF494 	INF493 	Bitirme Projesi 	Zorunlu 	0 	3 	0 	6 	
+4 	IND471 	ING207 	Yöneylem Araştırması 	Seçmeli 	2 	2 	0 	4 	
+5 	INF483 	IND211 VEYA INF211 	Bilgi Çıkarımı ve Veri Madenciliğine Giriş 	Seçmeli 	3 	0 	0 	4 	✓
+6 	INF446 	- 	Bilgisayar Mühendisliğinde Özel Konular 	Seçmeli 	3 	0 	0 	4 	
+7 	CNT416 	- 	Sosyal Medya 	Seçmeli 	2 	0 	0 	2
+
+Kurallar
+
+
+---
+
+2022-2023
+
+1. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING106 	- 	Matematik I 	Zorunlu 	4 	2 	0 	7 	
+2 	ING116-A 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+3 	ING116-B 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+4 	ING127-A 	- 	Kimya 	Zorunlu 	2 	0 	2 	4 	
+5 	ING127-B 	- 	Kimya 	Zorunlu 	2 	0 	2 	4 	
+6 	INF112-A 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	
+7 	INF112-B 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	
+8 	INF113 	- 	Bilgisayar Mühendisliğine Giriş 	Zorunlu 	2 	1 	0 	4
+
+Kurallar
+
+Not 2 : 2020-2021 öğretim yılı ve öncesinde “ING 104 Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 106 Matematik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 3 : 2020-2021 öğretim yılı ve öncesinde “ING 114 Fizik I” dersinden kalan öğrenciler, bu ders yerine “ING 116 Fizik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” derslerini alırlar.
+
+Not 4 : 2020-2021 öğretim yılı ve öncesinde “ING 125 Kimya I” dersinden kalan öğrenciler, bu ders yerine “ING 127 Kimya” dersini alırlar.
+
+Not 5 : 2020-2021 öğretim yılı ve öncesinde “INF 102 Programlamaya Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 112 Programlamaya Giriş” dersini alırlar.
+
+Not 6 : 2020-2021 öğretim yılı ve öncesinde “INF 101 Bilgisayar Mühendisliğine Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 113 Bilgisayar Mühendisliğine Giriş” dersini alırlar. 
+
+2. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING107 	- 	Matematik II 	Zorunlu 	4 	2 	0 	7 	
+2 	ING117-A 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+3 	ING117-B 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+4 	INF114 	- 	Algoritma ve İleri Bilgisayar Programlama 	Zorunlu 	3 	0 	2 	5 	
+5 	INF115 	- 	Programlama Dillerinin Prensipleri 	Zorunlu 	2 	0 	0 	2 	
+6 	INF116 	- 	Bilgisayar Sistemlerine Giriş 	Zorunlu 	2 	0 	0 	2 	
+7 	ING144 	- 	Teknik Resim 	Zorunlu 	1 	1 	0 	3 	
+8 	CNT120 	- 	Kariyer Planlama 	Zorunlu 	1 	1 	0 	2 	
+9 	TUR002 	- 	Türk Dili II 	Zorunlu 	2 	0 	0 	2 	
+
+Kurallar
+
+Not 7 : 2020-2021 öğretim yılı ve öncesinde “ING 105 Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 107 Matematik II” ve “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+Not 8 : 2020-2021 öğretim yılı ve öncesinde “ING 115 Fizik II” dersinden kalan öğrenciler, bu ders yerine “ING 117 Fizik II” ve “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+Not 9 : 2020-2021 öğretim yılı ve öncesinde “ING 126 Kimya II” dersinden kalan öğrenciler, bu ders yerine “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+Not 10 : 2020-2021 öğretim yılı ve öncesinde “INF 103 Algoritma ve İleri Bilgisayar Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 114 Algoritma ve İleri Bilgisayar Programlama” dersini alırlar. 
+
+
+3. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING251 	- 	Yüksek Matematik I 	Zorunlu 	2 	1 	0 	4 	
+2 	ING207 	- 	Lineer Cebir 	Zorunlu 	2 	2 	0 	5 	
+3 	INF204 	- 	Elektromanyetik Dalgalar 	Zorunlu 	3 	0 	0 	3 	
+4 	INF246 	- 	Programlama Uygulamaları 	Zorunlu 	1 	0 	2 	3 	
+5 	INF224-A 	INF103 VEYA INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+6 	INF224-B 	INF103 VEYA INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+7 	ING229-A 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+8 	ING229-B 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+9 	ATA001 	- 	Atatürk İlkeleri ve İnkılap Tarihi I 	Zorunlu 	2 	0 	0 	2 	
+
+Kurallar
+
+Not 11 : 2021-2022 öğretim yılı ve öncesinde “ING 203 Yüksek Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 251 Yüksek Matematik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ya da “INF 112 Programlamaya Giriş” derslerini alırlar.
+
+Not 12 : 2021-2022 öğretim yılı ve öncesinde “INF 236 Programlama Uygulamaları” dersinden kalan öğrenciler, bu ders yerine “INF 246 Programlama Uygulamaları” dersini alırlar.
+
+
+4. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING252 	- 	Yüksek Matematik II 	Zorunlu 	2 	1 	0 	4 	
+2 	ING208 	- 	Diferansiyel Denklemler 	Zorunlu 	2 	1 	0 	4 	
+3 	INF211 	- 	Bilgisayar Mühendisliği İçin Olasılık ve İstatistiğe Giriş 	Zorunlu 	3 	0 	0 	4 	
+4 	ING220-A 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+5 	ING220-B 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+6 	INF243-A 	INF112 	Nesneye Yönelik Programlama 	Zorunlu 	4 	0 	2 	7 	
+7 	INF243 	INF112 	Nesneye Yönelik Programlama 	Zorunlu 	4 	0 	2 	7 	
+8 	ATA002 	- 	Atatürk İlkeleri ve İnkılap Tarihi II 	Zorunlu 	2 	0 	0 	2 	
+9 	INF291 	- 	Staj 	Zorunlu 	0 	0 	2 	3 	
+
+Kurallar
+
+Not 13 : 2021-2022 öğretim yılı ve öncesinde “ING 204 Yüksek Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 252 Yüksek Matematik II” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ya da “INF 112 Programlamaya Giriş” derslerini alırlar.
+
+Not 14 :  2021-2022 öğretim yılı ve öncesinde “INF 223 Nesneye Yönelik Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 243 Nesneye Yönelik Programlama” dersini alırlar.
+
+Not 15 : 2021-2022 öğretim yılı ve öncesinde “INF 299 Staj” dersinden kalan öğrenciler, bu ders yerine “INF 291 Staj” dersini alırlar. 
+
+5. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF356 	IND211 VEYA INF 211 	Veri Analizine Giriş 	Zorunlu 	3 	0 	0 	4 	
+2 	INF324 	- 	İlişkisel Veri Tabanları 	Zorunlu 	2 	0 	2 	4 	
+3 	INF315 	- 	Kesikli Matematik 	Zorunlu 	3 	0 	0 	4 	
+4 	INF316 	- 	Sinyaller ve Sistemler 	Zorunlu 	3 	0 	0 	4 	
+5 	INF320 	ING220 	Bilgisayar Mimarisi 	Zorunlu 	4 	0 	0 	6 	
+6 	CNT350 	- 	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi 	Zorunlu 	2 	0 	0 	2 	
+7 	INF352 	- 	İnsan Bilgisayar Etkileşimine Giriş 	Seçmeli 	3 	0 	0 	4 	
+8 	INF353 	- 	Web Programlamaya Giriş 	Seçmeli 	3 	0 	0 	4 	
+9 	INF354 	- 	Bilişimde Oyun Teorisi ve Uygulamalarına Giriş 	Seçmeli 	3 	0 	0 	4 	
+
+Kurallar
+
+
+
+
+6. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF323 	- 	Otomatlar ve Diller Teorisi 	Zorunlu 	3 	0 	0 	4 	
+2 	INF333 	INF103 	İşletim Sistemleri 	Zorunlu 	2 	0 	2 	5 	
+3 	INF325 	ING207 	Sayısal Analiz 	Zorunlu 	3 	0 	0 	4 	
+4 	INF340-A 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+5 	INF340-B 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+6 	INF334 	IND211 VEYA INF211 	Bilgisayar Ağları 	Zorunlu 	3 	0 	0 	4 	
+7 	INF345 	INF316 	Sayısal İşaret İşleme 	Seçmeli 	3 	0 	0 	4 	
+8 	INF360 	- 	Veritabanı Yönetimi ve Güvenliği 	Seçmeli 	3 	0 	0 	4 	
+9 	INF365 	- 	Bilgi Teorisi 	Seçmeli 	3 	0 	0 	4 	
+10 	INF399 	INF299 	Staj 	Zorunlu 	0 	0 	2 	2
+
+Kurallar
+
+
+
+
+7. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF443 	INF 103 VE INF 223 	Dağıtık Sistemler ve Uygulamalar 	Zorunlu 	4 	0 	0 	6 	
+2 	INF400 	INF103 	Veri Derlemesi 	Zorunlu 	3 	0 	0 	5 	
+3 	INF444 	INF223 	Yapay Zeka 	Zorunlu 	3 	0 	0 	5 	
+4 	INF470 	INF334 	Bilgisayar Ağ Laboratuvarı 	Zorunlu 	2 	0 	2 	3 	
+5 	INF493 	- 	Bilgisayar Mühendisliğinde Araştırma Konuları 	Zorunlu 	3 	0 	0 	3 	
+6 	INF471-A 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+7 	INF471-B 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+8 	INF438 	INF324 	İleri Veri Tabanları 	Seçmeli 	3 	0 	0 	4 	
+9 	INF430 	ING220 	Robotik 	Seçmeli 	3 	0 	0 	4 	
+10 	INF432 	- 	Bilgisayar Grafikleri 	Seçmeli 	3 	0 	0 	4 	
+
+Kurallar
+
+
+
+
+8. Dönem
+
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF481 	- 	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım 	Zorunlu 	4 	0 	0 	5 	
+2 	INF482 	- 	Gömülü Sistem Tasarım Temelleri 	Zorunlu 	4 	0 	0 	5 	
+3 	INF494 	INF493 	Bitirme Projesi 	Zorunlu 	0 	3 	0 	6 	
+4 	IND471 	ING207 	Yöneylem Araştırması 	Seçmeli 	2 	2 	0 	4 	
+5 	IND472 	- 	Mühendislik Ekonomisi 	Seçmeli 	2 	2 	0 	4 	
+6 	INF483 	IND211 VEYA INF211 	Bilgi Çıkarımı ve Veri Madenciliğine Giriş 	Seçmeli 	3 	0 	0 	4 	
+7 	INF437 	INF334 	Sistem Mühendisliği 	Seçmeli 	3 	0 	0 	4 	
+8 	INF446 	- 	Bilgisayar Mühendisliğinde Özel Konular 	Seçmeli 	3 	0 	0 	4 	
+9 	INF441 	INF315 	Şifrelemeye Giriş 	Seçmeli 	3 	0 	0 	4 	
+10 	CNT417 	- 	Girişimcilik 	Seçmeli 	2 	0 	0 	2 	
+11 	CNT416 	- 	Sosyal Medya 	Seçmeli 	2 	0 	0 	2 	
+12 	CNT411 	- 	Fotoğrafçılık 	Seçmeli 	2 	0 	0 	2 	
+
+Kurallar
+
+Genel Kural :
+
+1. Mezun olabilmek için öğrencinin en az 2.00 ağırlıklı not ortalaması şartını sağlaması gerekmektedir.
+
+2. Önerilen seçmeli derslerden, CNT grubundan 1 adet, INF grubundan 2 adet, IND grubundan 1 adet olmak üzere 4 adet ders seçilecektir.
+
+3. Mezun olabilmek için, öğrencinin toplam 12 kredilik yabancı dil dersini başarmış olması veya İngilizce seviyesinin en az B2 seviyesinde olması gerekmektedir.
+
+4. Öğrenciler, aynı yarıyıl içinde en fazla 45 AKTS kredilik derse yazılabilirler.
+
+AKTS toplamı 240’ın altında kalan öğrenciler, mezuniyet şartı olan 240 AKTS’ye ulaşmak için S ile belirtilen INF grubu seçmeli derslerden alırlar.
+
+
+
+---
+
+2023-2024
+
+1. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING106 	- 	Matematik I 	Zorunlu 	4 	2 	0 	7 	✓
+2 	ING116-A 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	✓
+3 	ING116-B 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+4 	ING127 	- 	Kimya 	Zorunlu 	2 	0 	2 	4 	✓
+5 	INF112-A 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	✓
+6 	INF112-B 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	
+7 	INF113 	- 	Bilgisayar Mühendisliğine Giriş 	Zorunlu 	2 	1 	0 	4 	✓
+8 	TUR001 	- 	Türk Dili I 	Zorunlu 	2 	0 	0 	2 	
+9 	FLF101 	- 	Fransızca Cef B2.1 Akademik 	Zorunlu 	4 	0 	0 	2 	
+
+Kurallar
+
+Not 2 : 2020-2021 öğretim yılı ve öncesinde “ING 104 Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 106 Matematik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 3 : 2020-2021 öğretim yılı ve öncesinde “ING 114 Fizik I” dersinden kalan öğrenciler, bu ders yerine “ING 116 Fizik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” derslerini alırlar.
+
+Not 4 : 2020-2021 öğretim yılı ve öncesinde “ING 125 Kimya I” dersinden kalan öğrenciler, bu ders yerine “ING 127 Kimya” dersini alırlar.
+
+Not 5 : 2020-2021 öğretim yılı ve öncesinde “INF 102 Programlamaya Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 112 Programlamaya Giriş” dersini alırlar.
+
+Not 6 : 2020-2021 öğretim yılı ve öncesinde “INF 101 Bilgisayar Mühendisliğine Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 113 Bilgisayar Mühendisliğine Giriş” dersini alırlar. 
+
+2. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING107 	- 	Matematik II 	Zorunlu 	4 	2 	0 	7 	✓
+2 	ING117-A 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+3 	ING117-B 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+4 	INF114 	- 	Algoritma ve İleri Bilgisayar Programlama 	Zorunlu 	3 	0 	2 	5 	✓
+5 	INF115 	- 	Programlama Dillerinin Prensipleri 	Zorunlu 	2 	0 	0 	2 	✓
+6 	INF116 	- 	Bilgisayar Sistemlerine Giriş 	Zorunlu 	2 	0 	0 	2 	✓
+7 	ING144 	- 	Teknik Resim 	Zorunlu 	1 	1 	0 	3 	✓
+8 	CNT120 	- 	Kariyer Planlama 	Zorunlu 	1 	1 	0 	2 	✓
+9 	TUR002 	- 	Türk Dili II 	Zorunlu 	2 	0 	0 	2 	
+10 	FLF201 	- 	Fransızca Cef B2.2 Akademik 	Zorunlu 	4 	0 	0 	2
+
+Kurallar
+
+Not 7 : 2020-2021 öğretim yılı ve öncesinde “ING 105 Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 107 Matematik II” ve “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 8 : 2020-2021 öğretim yılı ve öncesinde “ING 115 Fizik II” dersinden kalan öğrenciler, bu ders yerine “ING 117 Fizik II” ve “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 9 : 2020-2021 öğretim yılı ve öncesinde “ING 126 Kimya II” dersinden kalan öğrenciler, bu ders yerine “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 10 : 2020-2021 öğretim yılı ve öncesinde “INF 103 Algoritma ve İleri Bilgisayar Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 114 Algoritma ve İleri Bilgisayar Programlama” dersini alırlar. 
+
+3. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING251 	- 	Yüksek Matematik I 	Zorunlu 	2 	1 	0 	4 	✓
+2 	ING207 	- 	Lineer Cebir 	Zorunlu 	2 	2 	0 	5 	✓
+3 	INF256 	- 	Olasılık 	Zorunlu 	3 	0 	0 	3 	✓
+4 	INF246 	- 	Programlama Uygulamaları 	Zorunlu 	1 	0 	2 	3 	✓
+5 	INF224-A 	INF103/INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	✓
+6 	INF224-B 	INF103/INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+7 	ING229-A 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	✓
+8 	ING229-B 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+9 	ATA001 	- 	Atatürk İlkeleri ve İnkılap Tarihi I 	Zorunlu 	2 	0 	0 	2 	
+
+Kurallar
+
+Not 11 : 2021-2022 öğretim yılı ve öncesinde “ING 203 Yüksek Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 251 Yüksek Matematik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ya da “INF 112 Programlamaya Giriş” derslerini alırlar.
+
+Not 12 : 2021-2022 öğretim yılı ve öncesinde “INF 236 Programlama Uygulamaları” dersinden kalan öğrenciler, bu ders yerine “INF 246 Programlama Uygulamaları” dersini alırlar.
+
+Not 13 : 2022-2023 öğretim yılı ve öncesinde “INF 204 Elektromanyetik Dalgalar” ve “INF 211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş” dersinden kalan öğrenciler, bu dersler yerine “INF 256 Olasılık” ve “INF 257 İstatistik” derslerini alırlar.
+
+Not 14 : 2022-2023 öğretim yılı ve öncesinde “INF 204 Elektromanyetik Dalgalar” dersinden kalan ve “INF 211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş” dersini alıp başarılı olan öğrenciler, 5. yarıyıl itibariyle seçmeleri gereken INF derslerine ilaveten 1 adet INF seçmeli ders alırlar.
+
+
+4. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING252 	- 	Yüksek Matematik II 	Zorunlu 	2 	1 	0 	4 	✓
+2 	ING208 	- 	Diferansiyel Denklemler 	Zorunlu 	2 	1 	0 	4 	✓
+3 	INF257 	- 	İstatistik 	Zorunlu 	3 	0 	0 	4 	✓
+4 	ING220-A 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+5 	ING220-B 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+6 	INF243-A 	INF102 	Nesneye Yönelik Programlama 	Zorunlu 	4 	0 	2 	7 	✓
+7 	INF243 	INF102 	Nesneye Yönelik Programlama 	Zorunlu 	4 	0 	2 	7 	
+8 	ATA002 	- 	Atatürk İlkeleri ve İnkılap Tarihi II 	Zorunlu 	2 	0 	0 	2 	
+9 	INF291 	- 	Staj 	Zorunlu 	0 	0 	2 	3 	
+
+Kurallar
+
+Not 15 : 2021-2022 öğretim yılı ve öncesinde “ING 204 Yüksek Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 252 Yüksek Matematik II” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ya da “INF 112 Programlamaya Giriş” derslerini alırlar.
+
+Not 16 : 2021-2022 öğretim yılı ve öncesinde “INF 223 Nesneye Yönelik Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 243 Nesneye Yönelik Programlama” dersini alırlar.
+
+Not 17 : 2021-2022 öğretim yılı ve öncesinde “INF 299 Staj” dersinden kalan öğrenciler, bu ders yerine “INF 291 Staj” dersini alırlar.
+
+Not 18 : 2022-2023 öğretim yılı ve öncesinde “INF 204 Elektromanyetik Dalgalar” dersinden başarılı olan ve “INF 211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş” dersinden kalan öğrenciler, “INF 257 İstatistik” dersini alırlar. 
+
+5. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF356 	IND211/INF256/INF257/INF211 	Veri Analizine Giriş 	Zorunlu 	3 	0 	0 	4 	
+2 	INF324 	- 	İlişkisel Veri Tabanları 	Zorunlu 	2 	0 	2 	4 	✓
+3 	INF315 	- 	Kesikli Matematik 	Zorunlu 	3 	0 	0 	4 	✓
+4 	INF316 	- 	Sinyaller ve Sistemler 	Zorunlu 	3 	0 	0 	4 	✓
+5 	INF320 	ING220 	Bilgisayar Mimarisi 	Zorunlu 	4 	0 	0 	6 	
+6 	CNT350 	- 	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi 	Zorunlu 	2 	0 	0 	2 	
+7 	INF352 	- 	İnsan Bilgisayar Etkileşimine Giriş 	Seçmeli 	3 	0 	0 	4 	✓
+8 	INF353 	- 	Web Programlamaya Giriş 	Seçmeli 	3 	0 	0 	4 	✓
+9 	INF354 	- 	Bilişimde Oyun Teorisi ve Uygulamalarına Giriş 	Seçmeli 	3 	0 	0 	4 	✓ 
+
+Kurallar
+
+
+
+
+6. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF323 	- 	Otomatlar ve Diller Teorisi 	Zorunlu 	3 	0 	0 	4 	✓
+2 	INF333 	INF103 	İşletim Sistemleri 	Zorunlu 	2 	0 	2 	5 	
+3 	INF325 	ING207 	Sayısal Analiz 	Zorunlu 	3 	0 	0 	4 	✓
+4 	INF340-A 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+5 	INF340-B 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+6 	INF340-C 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+7 	INF334 	IND211/INF256/INF257/INF211 	Bilgisayar Ağları 	Zorunlu 	2 	0 	2 	4 	
+8 	INF345 	INF316 	Sayısal İşaret İşleme 	Seçmeli 	3 	0 	0 	4 	✓
+9 	INF360 	- 	Veritabanı Yönetimi ve Güvenliği 	Seçmeli 	3 	0 	0 	4 	
+10 	INF365 	- 	Bilgi Teorisi 	Seçmeli 	3 	0 	0 	4 	✓
+11 	INF399 	- 	Staj 	Zorunlu 	0 	0 	2 	2 	
+
+Kurallar
+
+
+
+7. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF443 	INF103/INF223 	Dağıtık Sistemler ve Uygulamalar 	Zorunlu 	4 	0 	0 	6 	✓
+2 	INF400 	INF103 	Veri Derlemesi 	Zorunlu 	3 	0 	0 	5 	✓
+3 	INF444 	INF223 	Yapay Zeka 	Zorunlu 	3 	0 	0 	5 	✓
+4 	INF402 	- 	Nesnelerin İnternetine Giriş 	Zorunlu 	2 	0 	2 	3 	✓
+5 	INF493 	- 	Bilgisayar Mühendisliğinde Araştırma Konuları 	Zorunlu 	3 	0 	0 	3 	
+6 	INF471-A 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+7 	INF471-B 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+8 	INF438 	INF324 	İleri Veri Tabanları 	Seçmeli 	3 	0 	0 	4 	✓
+9 	INF430 	ING220 	Robotik 	Seçmeli 	3 	0 	0 	4 	✓
+10 	INF432 	- 	Bilgisayar Grafikleri 	Seçmeli 	3 	0 	0 	4 	✓ 
+
+
+Kurallar
+
+Not 19 : 2022-2023 öğretim yılı ve öncesinde “INF 470 Bilgisayar Ağ Laboratuvarı” dersinden kalan öğrenciler “INF 402 Nesnelerin İnternetine Giriş” dersini alırlar.
+
+
+
+8. Dönem
+
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF481 	- 	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım 	Zorunlu 	4 	0 	0 	5 	
+2 	INF482 	- 	Gömülü Sistem Tasarım Temelleri 	Zorunlu 	4 	0 	0 	5 	✓
+3 	INF494 	INF493 	Bitirme Projesi 	Zorunlu 	0 	3 	0 	6 	
+4 	IND471 	ING207 	Yöneylem Araştırması 	Seçmeli 	2 	2 	0 	4 	✓
+5 	IND472 	- 	Mühendislik Ekonomisi 	Seçmeli 	2 	2 	0 	4 	✓
+6 	INF483 	IND211/INF256/INF257/INF211 	Bilgi Çıkarımı ve Veri Madenciliğine Giriş 	Seçmeli 	3 	0 	0 	4 	
+7 	INF437 	INF334 	Sistem Mühendisliği 	Seçmeli 	3 	0 	0 	4 	
+8 	INF446 	- 	Bilgisayar Mühendisliğinde Özel Konular 	Seçmeli 	3 	0 	0 	4 	✓
+9 	INF441 	INF315 	Şifrelemeye Giriş 	Seçmeli 	3 	0 	0 	4 	
+10 	CNT412 	- 	Bilişim Hukuku 	Seçmeli 	2 	0 	0 	2 	
+11 	CNT417 	- 	Girişimcilik 	Seçmeli 	2 	0 	0 	2 	
+12 	CNT411 	- 	Fotoğrafçılık 	Seçmeli 	2 	0 	0 	2 	✓ 
+
+Kurallar
+
+Genel Kural :
+
+1. Mezun olabilmek için öğrencinin en az 2.00 ağırlıklı not ortalaması şartını sağlaması gerekmektedir.
+
+2. Önerilen seçmeli derslerden, CNT grubundan 1 adet, INF grubundan 2 adet, IND grubundan 1 adet olmak üzere 4 adet ders seçilecektir.Öğrenciler, yukarıdaki tabloda bulunan CNT seçmeli ders alternatiflerine ek olarak "MAT 393 Matematik ve Toplum" ve IND seçmeli ders alternatiflerine ek olarak "MAT 383 Matematiksel Modelleme ve Simülasyona Giriş" derslerini seçebilirler.
+
+3. Mezun olabilmek için, öğrencinin toplam 12 kredilik yabancı dil dersini başarmış olması veya İngilizce seviyesinin en az B2 seviyesinde olması gerekmektedir.
+
+4. Öğrenciler, aynı yarıyıl içinde en fazla 45 AKTS kredilik derse yazılabilirler.
+
+---
+
+2024-2025
+
+1. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING106 	- 	Matematik I 	Zorunlu 	4 	2 	0 	7 	
+2 	ING116-A 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+3 	ING116-B 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+4 	ING127 	- 	Kimya 	Zorunlu 	2 	0 	2 	4 	
+5 	INF112-A 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	
+6 	INF112-B 	- 	Programlamaya Giriş 	Zorunlu 	4 	0 	2 	6 	
+7 	INF113 	- 	Bilgisayar Mühendisliğine Giriş 	Zorunlu 	2 	1 	0 	4 	
+8 	FLF101 	- 	Fransızca Cef B2.1 Akademik 	Zorunlu 	4 	0 	0 	2 	
+
+Kurallar
+
+Not 2 : 2020-2021 öğretim yılı ve öncesinde “ING 104 Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 106 Matematik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 3 : 2020-2021 öğretim yılı ve öncesinde “ING 114 Fizik I” dersinden kalan öğrenciler, bu ders yerine “ING 116 Fizik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” derslerini alırlar.
+
+Not 4 : 2020-2021 öğretim yılı ve öncesinde “ING 125 Kimya I” dersinden kalan öğrenciler, bu ders yerine “ING 127 Kimya” dersini alırlar.
+
+Not 5 : 2020-2021 öğretim yılı ve öncesinde “INF 102 Programlamaya Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 112 Programlamaya Giriş” dersini alırlar.
+
+Not 6 : 2020-2021 öğretim yılı ve öncesinde “INF 101 Bilgisayar Mühendisliğine Giriş” dersinden kalan öğrenciler, bu ders yerine “INF 113 Bilgisayar Mühendisliğine Giriş” dersini alırlar. 
+
+2. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING107 	- 	Matematik II 	Zorunlu 	4 	2 	0 	7 	
+2 	ING117-A 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+3 	ING117-B 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+4 	INF114 	- 	Algoritma ve İleri Bilgisayar Programlama 	Zorunlu 	3 	0 	2 	5 	
+5 	INF115 	- 	Programlama Dillerinin Prensipleri 	Zorunlu 	2 	0 	0 	2 	
+6 	INF116 	- 	Bilgisayar Sistemlerine Giriş 	Zorunlu 	2 	0 	0 	2 	
+7 	ING144 	- 	Teknik Resim 	Zorunlu 	1 	1 	0 	3 	
+8 	CNT120 	- 	Kariyer Planlama 	Zorunlu 	1 	1 	0 	2 	
+9 	FLF201 	- 	Fransızca Cef B2.2 Akademik 	Zorunlu 	4 	0 	0 	2 	
+
+Kurallar
+
+ot 7 : 2020-2021 öğretim yılı ve öncesinde “ING 105 Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 107 Matematik II” ve “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 8 : 2020-2021 öğretim yılı ve öncesinde “ING 115 Fizik II” dersinden kalan öğrenciler, bu ders yerine “ING 117 Fizik II” ve “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 9 : 2020-2021 öğretim yılı ve öncesinde “ING 126 Kimya II” dersinden kalan öğrenciler, bu ders yerine “INF 115 Programlama Dillerinin Prensipleri” ile “INF 116 Bilgisayar Sistemlerine Giriş” derslerini alırlar.
+
+Not 10 : 2020-2021 öğretim yılı ve öncesinde “INF 103 Algoritma ve İleri Bilgisayar Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 114 Algoritma ve İleri Bilgisayar Programlama” dersini alırlar. 
+
+
+3. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING251 	- 	Yüksek Matematik I 	Zorunlu 	2 	1 	0 	4 	
+2 	ING207 	- 	Lineer Cebir 	Zorunlu 	2 	2 	0 	5 	
+3 	INF256 	- 	Olasılık 	Zorunlu 	3 	0 	0 	3 	
+4 	INF246 	- 	Programlama Uygulamaları 	Zorunlu 	1 	0 	2 	3 	
+5 	INF224-A 	INF103/INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+6 	INF224-B 	INF103/INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	3 	0 	2 	4 	
+7 	ING229-A 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+8 	ING229-B 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+
+Kurallar
+
+Not 11 : 2021-2022 öğretim yılı ve öncesinde “ING 203 Yüksek Matematik I” dersinden kalan öğrenciler, bu ders yerine “ING 251 Yüksek Matematik I” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ya da “INF 112 Programlamaya Giriş” derslerini alırlar.
+
+Not 12 : 2021-2022 öğretim yılı ve öncesinde “INF 236 Programlama Uygulamaları” dersinden kalan öğrenciler, bu ders yerine “INF 246 Programlama Uygulamaları” dersini alırlar.
+
+Not 13 : 2022-2023 öğretim yılı ve öncesinde “INF 204 Elektromanyetik Dalgalar” ve “INF 211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş” dersinden kalan öğrenciler, bu dersler yerine “INF 256 Olasılık” ve “INF 257 İstatistik” derslerini alırlar.
+
+Not 14 : 2022-2023 öğretim yılı ve öncesinde “INF 204 Elektromanyetik Dalgalar” dersinden kalan ve “INF 211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş” dersini alıp başarılı olan öğrenciler, 5. yarıyıl itibariyle seçmeleri gereken INF derslerine ilaveten 1 adet INF seçmeli ders alırlar. 
+
+4. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING252 	- 	Yüksek Matematik II 	Zorunlu 	2 	1 	0 	4 	
+2 	ING208 	- 	Diferansiyel Denklemler 	Zorunlu 	2 	1 	0 	4 	
+3 	INF257 	- 	İstatistik 	Zorunlu 	3 	0 	0 	4 	
+4 	ING220-A 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+5 	ING220-B 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	4 	
+6 	INF243-A 	INF102 	Nesneye Yönelik Programlama 	Zorunlu 	4 	0 	2 	7 	
+7 	INF243-B 	INF102 	Nesneye Yönelik Programlama 	Zorunlu 	4 	0 	2 	7 	
+8 	ATA002 	- 	Atatürk İlkeleri ve İnkılap Tarihi II 	Zorunlu 	2 	0 	0 	2 	
+9 	INF291 	- 	Staj 	Zorunlu 	0 	0 	2 	3 	
+
+Kurallar
+
+Not 15 : 2021-2022 öğretim yılı ve öncesinde “ING 204 Yüksek Matematik II” dersinden kalan öğrenciler, bu ders yerine “ING 252 Yüksek Matematik II” ve 1. Sınıf / Bahar Yarıyılından “INF 115 Programlama Dillerinin Prensipleri” ya da “INF 112 Programlamaya Giriş” derslerini alırlar.
+
+Not 16 : 2021-2022 öğretim yılı ve öncesinde “INF 223 Nesneye Yönelik Programlama” dersinden kalan öğrenciler, bu ders yerine “INF 243 Nesneye Yönelik Programlama” dersini alırlar.
+
+Not 17 : 2021-2022 öğretim yılı ve öncesinde “INF 299 Staj” dersinden kalan öğrenciler, bu ders yerine “INF 291 Staj” dersini alırlar.
+
+Not 18 : 2022-2023 öğretim yılı ve öncesinde “INF 204 Elektromanyetik Dalgalar” dersinden başarılı olan ve “INF 211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş” dersinden kalan öğrenciler, “INF 257 İstatistik” dersini alırlar. 
+
+5. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF356 	IND211/INF256/INF257/INF211 	Veri Analizine Giriş 	Zorunlu 	3 	0 	0 	4 	
+2 	INF324 	- 	İlişkisel Veri Tabanları 	Zorunlu 	2 	0 	2 	4 	
+3 	INF315 	- 	Kesikli Matematik 	Zorunlu 	3 	0 	0 	4 	
+4 	INF316 	- 	Sinyaller ve Sistemler 	Zorunlu 	3 	0 	0 	4 	
+5 	INF320 	INF220 	Bilgisayar Mimarisi 	Zorunlu 	4 	0 	0 	6 	
+6 	CNT350 	- 	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi 	Zorunlu 	2 	0 	0 	2 	
+7 	INF352 	- 	İnsan Bilgisayar Etkileşimine Giriş 	Seçmeli 	3 	0 	0 	4 	
+8 	INF353 	- 	Web Programlamaya Giriş 	Seçmeli 	3 	0 	0 	4 	
+9 	INF354 	- 	Bilişimde Oyun Teorisi ve Uygulamalarına Giriş 	Seçmeli 	3 	0 	0 	4 	
+
+Kurallar
+
+
+
+
+6. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF323 	- 	Otomatlar ve Diller Teorisi 	Zorunlu 	3 	0 	0 	4 	
+2 	INF333 	INF103 	İşletim Sistemleri 	Zorunlu 	2 	0 	2 	5 	
+3 	INF325 	ING207 	Sayısal Analiz 	Zorunlu 	3 	0 	0 	4 	
+4 	INF340-A 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+5 	INF340-B 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+6 	INF334 	IND211/INF256/INF257/INF211 	Bilgisayar Ağları 	Zorunlu 	2 	0 	2 	4 	
+7 	INF345 	INF316 	Sayısal İşaret İşleme 	Seçmeli 	3 	0 	0 	4 	
+8 	INF360 	- 	Veritabanı Yönetimi ve Güvenliği 	Seçmeli 	3 	0 	0 	4 	
+9 	INF365 	- 	Bilgi Teorisi 	Seçmeli 	3 	0 	0 	4 	
+10 	INF399 	- 	Staj 	Zorunlu 	0 	0 	2 	2
+
+Kurallar
+
+
+
+
+7. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF443 	INF103/INF223 	Dağıtık Sistemler ve Uygulamalar 	Zorunlu 	4 	0 	0 	6 	
+2 	INF400 	INF103 	Veri Derlemesi 	Zorunlu 	3 	0 	0 	5 	
+3 	INF444 	INF223 	Yapay Zeka 	Zorunlu 	3 	0 	0 	5 	
+4 	INF402 	- 	Nesnelerin İnternetine Giriş 	Zorunlu 	2 	0 	2 	3 	
+5 	INF493 	- 	Bilgisayar Mühendisliğinde Araştırma Konuları 	Zorunlu 	3 	0 	0 	3 	
+6 	INF471-A 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+7 	INF471-B 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+8 	INF438 	INF324 	İleri Veri Tabanları 	Seçmeli 	3 	0 	0 	4 	
+9 	INF430 	ING220 	Robotik 	Seçmeli 	3 	0 	0 	4 	
+10 	INF432 	- 	Bilgisayar Grafikleri 	Seçmeli 	3 	0 	0 	4 	
+
+Kurallar
+
+Not 19 : 2022-2023 öğretim yılı ve öncesinde “INF 470 Bilgisayar Ağ Laboratuvarı” dersinden kalan öğrenciler “INF 402 Nesnelerin İnternetine Giriş” dersini alırlar. 
+
+
+8. Dönem
+
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF481 	- 	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım 	Zorunlu 	4 	0 	0 	5 	
+2 	INF482 	- 	Gömülü Sistem Tasarım Temelleri 	Zorunlu 	4 	0 	0 	5 	
+3 	INF494 	INF493 	Bitirme Projesi 	Zorunlu 	0 	3 	0 	6 	
+4 	IND471 	ING207 	Yöneylem Araştırması 	Seçmeli 	2 	2 	0 	4 	
+5 	IND472 	- 	Mühendislik Ekonomisi 	Seçmeli 	2 	2 	0 	4 	
+6 	INF483 	IND211/INF256/INF257/INF211 	Bilgi Çıkarımı ve Veri Madenciliğine Giriş 	Seçmeli 	3 	0 	0 	4 	
+7 	INF437 	INF334 	Sistem Mühendisliği 	Seçmeli 	3 	0 	0 	4 	
+8 	INF446 	- 	Bilgisayar Mühendisliğinde Özel Konular 	Seçmeli 	3 	0 	0 	4 	
+9 	INF441 	INF315 	Şifrelemeye Giriş 	Seçmeli 	3 	0 	0 	4 	
+10 	CNT412 	- 	Bilişim Hukuku 	Seçmeli 	2 	0 	0 	2 	
+11 	CNT417 	- 	Girişimcilik 	Seçmeli 	2 	0 	0 	2 	
+12 	CNT416 	- 	Sosyal Medya 	Seçmeli 	2 	0 	0 	2 	
+
+Kurallar
+
+1. Mezun olabilmek için öğrencinin en az 2.00 ağırlıklı not ortalaması şartını sağlaması gerekmektedir.
+
+2. Önerilen seçmeli derslerden, CNT grubundan 1 adet, INF grubundan 2 adet, IND grubundan 1 adet olmak üzere 4 adet ders seçilecektir.Öğrenciler, yukarıdaki tabloda bulunan CNT seçmeli ders alternatiflerine ek olarak "MAT 393 Matematik ve Toplum" ve IND seçmeli ders alternatiflerine ek olarak "MAT 383 Matematiksel Modelleme ve Simülasyona Giriş" derslerini seçebilirler.
+
+3. Mezun olabilmek için, öğrencinin toplam 12 kredilik yabancı dil dersini başarmış olması veya İngilizce seviyesinin en az B2 seviyesinde olması gerekmektedir.
+
+4. Öğrenciler, aynı yarıyıl içinde en fazla 45 AKTS kredilik derse yazılabilirler.
+
+AKTS toplamı 240’ın altında kalan öğrenciler, mezuniyet şartı olan 240 AKTS’ye ulaşmak için S ile belirtilen INF grubu seçmeli derslerden alırlar.
+
+ Ortak Bölüm Dersleri :
+
+ # 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	CC302 	- 	Disiplinlerarası Yapay Zeka ve Uygulamaları 	Seçmeli 	2 	0 	0 	3 	✓
+2 	CC304 	- 	Denizcilik Tarihi ve Kültürü 	Seçmeli 	2 	0 	0 	3 	✓
+3 	CC306 	- 	Medeniyetler Tarihi 	Seçmeli 	2 	0 	0 	3 	✓
+4 	CC308 	- 	Klasik Türk Müziği’ne Giriş 	Seçmeli 	2 	0 	0 	3 	✓
+5 	CC310 	- 	Çağlar Boyunca Türk Sanatı 	Seçmeli 	2 	0 	0 	3 	✓
+6 	CC312 	- 	I·stanbul Tarihi ve Ku¨ltu¨rel Mirası 	Seçmeli 	2 	0 	0 	3 	✓
+7 	CC314 	- 	Kültür Mirası 	Seçmeli 	2 	0 	0 	3 	✓
+
+
+
+---
+
+2025-2026
+
+1. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING106 	- 	Matematik I 	Zorunlu 	4 	2 	0 	7 	
+2 	ING116-A 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+3 	ING116-B 	- 	Fizik I 	Zorunlu 	3 	0 	2 	5 	
+4 	ING111 	- 	Ekonominin Temelleri 	Zorunlu 	3 	0 	0 	4 	
+5 	INF112-A 	- 	Programlamaya Giriş 	Zorunlu 	2 	0 	2 	4 	
+6 	INF112-B 	- 	Programlamaya Giriş 	Zorunlu 	2 	0 	2 	4 	
+7 	INF113 	- 	Bilgisayar Mühendisliğine Giriş 	Zorunlu 	2 	1 	0 	4 	
+8 	FLF101 	- 	Fransızca Cef B2.1 Akademik 	Zorunlu 	4 	0 	0 	2
+
+Kurallar
+
+Not 2 : 2020-2021 öğretim yılı ve öncesinde:
+
+• ING104 Matematik I dersinden kalanlar, yerine ING106 Matematik I, INF116 Bilgisayar Sistemlerine Giriş ve ING111 Ekonominin Temelleri derslerini,
+
+• ING114 Fizik I dersinden kalanlar, yerine ING116 Fizik I ve ING111 Ekonominin Temelleri derslerini,
+
+• ING125 Kimya I dersinden kalanlar, yerine ING111 Ekonominin Temelleri dersini,
+
+• INF102 Programlamaya Giriş dersinden kalanlar, yerine INF112 Programlamaya Giriş dersini,
+
+• INF101 Bilgisayar Mühendisliğine Giriş dersinden kalanlar, yerine INF113 Bilgisayar Mühendisliğine Giriş dersini alırlar.
+
+Not 3 : 2024-2025 öğretim yılı ve öncesinde:
+
+• ING127 Kimya dersinden kalanlar, yerine ING111 Ekonominin Temelleri dersini,
+
+• INF112 Programlamaya Giriş dersinden kalanlar, yerine INF112 Programlamaya Giriş ve seçmeleri gereken sosyal seçmeli derslere ilaveten bir tane ders alırlar. 
+
+2. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING107 	- 	Matematik II 	Zorunlu 	4 	2 	0 	7 	
+2 	ING117-A 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+3 	ING117-B 	- 	Fizik II 	Zorunlu 	3 	0 	2 	5 	
+4 	INF114-B 	- 	İleri Bilgisayar Programlama 	Zorunlu 	2 	0 	2 	5 	
+5 	INF114-A 	- 	İleri Bilgisayar Programlama 	Zorunlu 	2 	0 	2 	5 	
+6 	INF116 	- 	Bilgisayar Sistemlerine Giriş 	Zorunlu 	3 	0 	0 	5 	
+7 	CNT120 	- 	Girişimcilik ve Kariyer Planlama 	Zorunlu 	1 	1 	0 	2 	
+8 	FLF201 	- 	Fransızca Cef B2.2 Akademik 	Zorunlu 	4 	0 	0 	2
+
+Kurallar
+
+Not 4 : 2020-2021 öğretim yılı ve öncesinde:
+
+• ING105 Matematik II dersinden kalanlar, yerine ING107 Matematik II ve ING111 Ekonominin Temelleri ile INF116 Bilgisayar Sistemlerine Giriş derslerini,
+
+• ING115 Fizik II dersinden kalanlar, yerine ING117 Fizik II ve INF116 Bilgisayar Sistemlerine Giriş derslerini,
+
+• ING126 Kimya II dersinden kalanlar, yerine ING111 Ekonominin Temelleri ile INF116 Bilgisayar Sistemlerine Giriş derslerini,
+
+• INF103 Algoritma ve İleri Bilgisayar Programlama dersinden kalanlar, yerine INF114 İleri Bilgisayar Programlama dersini alırlar.
+
+Not 5 : 2024-2025 öğretim yılı ve öncesinde:
+
+• ING144 Teknik Resim dersinden kalanlar, yerine 5. yarıyıldaki INF321 Teknik Resim dersini,
+
+• INF115 Programlama Dillerinin Prensipleri dersinden kalanlar, yerine 5. yarıyıl itibariyle seçmeleri gereken INF kodlu seçmeli derslere ilaveten bir tane ders,
+
+• CNT120 Kariyer Planlama dersinden kalanlar, yerine CNT120 Girişimcilik ve Kariyer Planlama dersini,
+
+• INF114 Algoritma ve İleri Bilgisayar Programlama dersinden kalanlar, INF114 İleri Bilgisayar Programlama dersini alırlar. 
+
+
+3. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING251 	- 	Yüksek Matematik I 	Zorunlu 	2 	1 	0 	4 	
+2 	ING207 	- 	Lineer Cebir 	Zorunlu 	2 	2 	0 	5 	
+3 	INF256 	- 	Olasılık 	Zorunlu 	3 	0 	0 	5 	
+4 	ING229-A 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+5 	ING229-B 	- 	Analog Elektronik 	Zorunlu 	2 	2 	2 	7 	
+6 	INF224-A 	INF112/INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	2 	0 	2 	5 	
+7 	INF224-B 	INF112/INF114 	Veri Yapısı ve Algoritmalar 	Zorunlu 	2 	0 	2 	5 	
+
+Kurallar
+
+Not 7 : 2021-2022 öğretim yılı ve öncesinde ING203 Yüksek Matematik I dersinden kalan öğrenciler, bu ders yerine ING251 Yüksek Matematik I ve ING111 Ekonominin Temelleri ya da INF112 Programlamaya Giriş derslerini alırlar.
+
+Not 8 : 2022-2023 öğretim yılı ve öncesinde:
+
+• INF204 Elektromanyetik Dalgalar ve INF211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş dersinden kalanlar, yerine INF256 Olasılık ve INF257 İstatistik ve Veri Analizi derslerini,
+
+• INF204 Elektromanyetik Dalgalar dersinden kalan ve INF211 Bilgisayar Mühendisliği için Olasılık ve İstatistiğe Giriş dersini alıp başarılı olanlar, 5. yarıyıl itibariyle seçmeleri gereken INF derslerine ilaveten bir adet seçmeli ders alırlar.
+
+Not 9 : 2024-2025 öğretim yılı ve öncesinde:
+
+• INF236 Programlama Uygulamaları dersinden kalanlar, yerine 5. yarıyıl itibariyle seçmeleri gereken INF kodlu seçmeli derslere ilaveten bir adet seçmeli ders alırlar.
+
+
+4. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	ING252 	- 	Yüksek Matematik II 	Zorunlu 	2 	1 	0 	4 	
+2 	ING208 	- 	Diferansiyel Denklemler 	Zorunlu 	2 	1 	0 	4 	
+3 	INF257 	- 	İstatistik ve Veri Analizi 	Zorunlu 	3 	0 	0 	5 	
+4 	ING220-A 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	5 	
+5 	ING220-B 	- 	Sayısal Elektronik 	Zorunlu 	2 	0 	2 	5 	
+6 	INF243-A 	INF114 	Nesneye Yönelik Programlama 	Zorunlu 	2 	0 	2 	5 	
+7 	INF243-B 	INF114 	Nesneye Yönelik Programlama 	Zorunlu 	2 	0 	2 	5 	
+8 	INF291 	- 	Staj 	Zorunlu 	0 	0 	2 	3 	
+
+Kurallar
+
+Not 10 : 2021-2022 öğretim yılı ve öncesinde ING204 Yüksek Matematik II dersinden kalan öğrenciler, bu ders yerine ING252 Yüksek Matematik II ve ING111 Ekonominin Temelleri ya da INF112 Programlamaya Giriş derslerini alırlar.
+
+Not 11 : 2024-2025 öğretim yılı ve öncesinde:
+
+• INF257 İstatistik dersinden kalanlar, yerine INF257 İstatistik ve Veri Analizi dersini alırlar.
+
+5. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF356 	IND211/INF256/INF257/INF211 	Veri Analizine Giriş 	Zorunlu 	3 	0 	0 	4 	
+2 	INF324 	- 	Veri Tabanı Tasarımı ve Uygulamaları 	Zorunlu 	2 	0 	2 	5 	
+3 	INF315 	- 	Kesikli Matematik 	Zorunlu 	3 	0 	0 	4 	
+4 	INF345 	- 	Sayısal Sinyal İşleme 	Zorunlu 	3 	0 	0 	5 	
+5 	CNT250 	- 	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi 	Zorunlu 	2 	0 	0 	2 	
+6 	INF320 	ING220 	Bilgisayar Mimarisi 	Zorunlu 	3 	0 	0 	5 	
+7 	INF353 	- 	Web Programlama 	Seçmeli 	3 	0 	0 	5 	
+8 	INF354 	- 	Bilişimde Oyun Teorisi ve Uygulamaları 	Seçmeli 	3 	0 	0 	5 	
+9 	INF454 	- 	İnsan Bilgisayar Etkileşiminin Temelleri 	Seçmeli 	3 	0 	0 	5 	
+
+Kurallar
+
+Not 12 : 2024-2025 öğretim yılı ve öncesinde:
+
+• INF324 İlişkisel Veri Tabanları dersinden kalanlar, yerine INF324 Veri Tabanı Tasarımı ve Uygulamaları dersini,
+
+• INF316 Sinyaller ve Sistemler dersinden kalanlar, yerine INF345 Sayısal Sinyal İşleme dersini,
+
+• CNT350 Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi dersinden kalanlar, CNT250 Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi dersini,
+
+• INF353 Web Programlamaya Giriş dersinden kalanlar, yerine INF353 Web Programlama dersini,
+
+Not 13 : Önerilen INF kodlu seçmeli derslerden 1 adet seçilir.
+
+6. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF323 	- 	Otomatlar ve Diller Teorisi 	Zorunlu 	3 	0 	0 	4 	
+2 	INF333-A 	INF116 	İşletim Sistemleri 	Zorunlu 	2 	0 	2 	5 	
+3 	INF333-B 	INF116 	İşletim Sistemleri 	Zorunlu 	2 	0 	2 	5 	
+4 	INF325 	ING207 	Sayısal Analiz 	Zorunlu 	3 	0 	0 	4 	
+5 	INF340-A 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+6 	INF340-B 	- 	Mikroişlemciler 	Zorunlu 	2 	0 	2 	5 	
+7 	INF334 	IND211/INF256/INF257/INF211 	Bilgisayar Ağları 	Zorunlu 	2 	0 	2 	4 	
+8 	INF330 	- 	Robotik 	Seçmeli 	3 	0 	0 	5 	
+9 	INF360 	INF324 	Veri Tabanı Yönetimi ve Güvenliği 	Seçmeli 	3 	0 	0 	5 	
+10 	INF365 	- 	Haberleşme ve Multimedya 	Seçmeli 	3 	0 	0 	5 	
+11 	INF366 	- 	Sayısal Görüntü İşleme 	Seçmeli 	3 	0 	0 	5 	
+12 	INF399 	INF291 	Staj 	Zorunlu 	0 	0 	2 	2 	
+
+Kurallar
+
+Not 14 : Önerilen INF kodlu seçmeli derslerden 2 adet seçilir. 
+
+
+7. Dönem
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF443 	INF114/INF243 	Dağıtık Sistemler ve Uygulamalar 	Zorunlu 	3 	0 	0 	4 	
+2 	INF402 	- 	Nesnelerin İnternetine Giriş 	Zorunlu 	2 	0 	2 	3 	
+3 	INF444 	INF224 	Yapay Zeka 	Zorunlu 	3 	0 	0 	5 	
+4 	INF493 	- 	Bilgisayar Mühendisliğinde Araştırma Konuları 	Zorunlu 	3 	0 	0 	3 	
+5 	INF471-A 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+6 	INF471-B 	INF334 	Bilişimde Güvenlik 	Zorunlu 	2 	0 	2 	4 	
+7 	INF400 	INF114 	Veri Derlemesi 	Zorunlu 	3 	0 	0 	5 	
+8 	INF438 	INF324 	İleri Veri Tabanları 	Seçmeli 	3 	0 	0 	5 	
+9 	INF410 	- 	Medical Informatics 	Seçmeli 	3 	0 	0 	5 	
+10 	INF432 	- 	Bilgisayar Grafikleri 	Seçmeli 	3 	0 	0 	5 	
+
+Kurallar
+
+Not 15 : 2024-2025 öğretim yılı ve öncesinde:
+
+• INF430 Robotik dersinden kalanlar, yerine INF330 Robotik dersini,
+
+Not 16 : 2022-2023 öğretim yılı ve öncesinde INF470 Bilgisayar Ağ Laboratuvarı dersinden kalanlar, yerine 5. yarıyıl itibariyle seçmeleri gereken INF kodlu seçmeli derslere ilaveten bir tane ders alırlar.
+
+Not 17 : İngilizce yapılacak seçmeli dersleri almak için İngilizce dersinden muaf olunması gerekmektedir.
+
+Not 18 : Önerilen INF grubu seçmeli derslerden 1 adet seçilir.
+
+
+8. Dönem
+
+
+Dersler
+
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	INF481 	- 	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım 	Zorunlu 	4 	0 	0 	5 	
+2 	INF482 	- 	Gömülü Sistem Tasarım Temelleri 	Zorunlu 	4 	0 	0 	5 	
+3 	INF494 	INF493 	Bitirme Projesi 	Zorunlu 	0 	3 	0 	6 	
+4 	IND471 	ING207 	Yöneylem Araştırması 	Seçmeli 	2 	2 	0 	4 	
+5 	IND472 	- 	Mühendislik Ekonomisi 	Seçmeli 	2 	2 	0 	4 	
+6 	INF472 	- 	Bulut Bilişim 	Seçmeli 	3 	0 	0 	5 	
+7 	INF473 	- 	Üretken Yapay Zekaya Giriş 	Seçmeli 	3 	0 	0 	5 	
+8 	INF474 	- 	Wireless and Mobile Networks 	Seçmeli 	3 	0 	0 	5 	
+9 	INF475 	- 	Kullanıcı Arayüzü ve Deneyimi Tasarımı 	Seçmeli 	3 	0 	0 	5 	
+10 	CNT416 	- 	Sosyal Medya 	Seçmeli 	2 	0 	0 	2 	
+11 	CNT414 	- 	Felsefe 	Seçmeli 	2 	0 	0 	2 	
+12 	INF483 	IND211-INF256-INF257-INF211 	Bilgi Çıkarımı ve Veri Madenciliğine Giriş 	Seçmeli 	3 	0 	0 	5 	
+
+Kurallar
+
+Not 19 : 2024-2025 öğretim yılı ve öncesinde:
+
+• INF441 Şifrelemeye Giriş dersinden kalanlar, yerine INF441 Kriptolojinin Temelleri dersini,
+
+• CNT417 Girişimcilik dersinden kalanlar, yerine CNT120 Girişimcilik ve Kariyer Planlama dersini alırlar.
+
+• INF446 Bilgisayar Mühendisliğinde Özel Konular dersinden kalanlar, yerine 8. yarıyılda seçmeleri gereken INF kodlu seçmeli derslere ilaveten bir tane ders alırlar.
+
+Not 20 : İngilizce yapılacak seçmeli dersleri almak için İngilizce dersinden muaf olunması gerekmektedir.
+
+Not 21 : Önerilen INF grubu seçmeli derslerden 2 adet, IND grubu seçmeli derslerden 1 adet, CNT grubu seçmeli derslerden 1 adet seçilir. 
+
+Ortak Bölüm Dersleri:
+# 	Ders Kodu 	Ön Koşul 	Dersin Adı 	Türü 	Teori 	Uygulama 	Lab 	AKTS 	Erasmus
+1 	CC301 	- 	Psikolojiye Giris 	Seçmeli 	2 	0 	0 	3 	✓
+2 	CC303 	- 	Finansal Okuryazarlık 	Seçmeli 	2 	0 	0 	3 	✓
+3 	CC304 	- 	Denizcilik Tarihi ve Kültürü 	Seçmeli 	2 	0 	0 	3 	✓
+4 	CC305 	- 	Etnomüzikoloji 	Seçmeli 	2 	0 	0 	3 	✓
+5 	CC307 	- 	İstanbul’un Kültürel Mirası 	Seçmeli 	2 	0 	0 	3 	✓
+6 	CC309 	- 	Mitoloji ve İkonografi 	Seçmeli 	2 	0 	0 	3 	✓
+7 	CC311 	- 	Yapay Zekâ Çağında Yaratıcı Düşünceyle Problem Çözüm Teknikleri 	Seçmeli 	2 	0 	0 	3 	✓
+8 	CC314 	- 	Kültür Mirası 	Seçmeli 	2 	0 	0 	3 	✓
