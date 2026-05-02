@@ -86,6 +86,7 @@ GSU_BIL_REQUIREMENTS = {
                 {"code": "INF438", "name": "İleri Veri Tabanları"},
                 {"code": "INF410", "name": "Medical Informatics"},
                 {"code": "INF432", "name": "Bilgisayar Grafikleri"},
+                {"code": "INF430", "name": "Robotik"},
             ],
         },
         {
@@ -98,15 +99,20 @@ GSU_BIL_REQUIREMENTS = {
                 {"code": "INF474", "name": "Wireless and Mobile Networks"},
                 {"code": "INF475", "name": "Kullanıcı Arayüzü ve Deneyimi Tasarımı"},
                 {"code": "INF483", "name": "Bilgi Çıkarımı ve Veri Madenciliğine Giriş"},
+                {"code": "INF437", "name": "Sistem Mühendisliği"},
+                {"code": "INF441", "name": "Şifrelemeye Giriş"},
+                {"code": "INF446", "name": "Bilgisayar Mühendisliğinde Özel Konular"},
             ],
         },
         {
             "semester": 8,
             "required_count": 1,
             "ects_each": 4,
+            "description": "IND seçmeli",
             "options": [
                 {"code": "IND471", "name": "Yöneylem Araştırması"},
                 {"code": "IND472", "name": "Mühendislik Ekonomisi"},
+                {"code": "MAT383", "name": "Matematiksel Modelleme ve Simülasyona Giriş"},
             ],
         },
         {
@@ -117,6 +123,10 @@ GSU_BIL_REQUIREMENTS = {
             "options": [
                 {"code": "CNT416", "name": "Sosyal Medya", "ects": 2},
                 {"code": "CNT414", "name": "Felsefe", "ects": 2},
+                {"code": "CNT417", "name": "Girişimcilik", "ects": 2},
+                {"code": "CNT412", "name": "Bilişim Hukuku", "ects": 2},
+                {"code": "CNT411", "name": "Fotoğrafçılık", "ects": 2},
+                {"code": "MAT393", "name": "Matematik ve Toplum", "ects": 3},
                 {"code": "CC301", "name": "Psikolojiye Giriş", "ects": 3},
                 {"code": "CC303", "name": "Finansal Okuryazarlık", "ects": 3},
                 {"code": "CC304", "name": "Denizcilik Tarihi ve Kültürü", "ects": 3},
@@ -124,16 +134,34 @@ GSU_BIL_REQUIREMENTS = {
                 {"code": "CC307", "name": "İstanbul'un Kültürel Mirası", "ects": 3},
                 {"code": "CC309", "name": "Mitoloji ve İkonografi", "ects": 3},
                 {"code": "CC311", "name": "Yapay Zekâ Çağında Problem Çözüm Teknikleri", "ects": 3},
+                {"code": "CC302", "name": "Disiplinlerarası Yapay Zeka ve Uygulamaları", "ects": 3},
+                {"code": "CC306", "name": "Medeniyetler Tarihi", "ects": 3},
+                {"code": "CC308", "name": "Klasik Türk Müziği’ne Giriş", "ects": 3},
+                {"code": "CC310", "name": "Çağlar Boyunca Türk Sanatı", "ects": 3},
+                {"code": "CC312", "name": "İstanbul Tarihi ve Kültürel Mirası", "ects": 3},
                 {"code": "CC314", "name": "Kültür Mirası", "ects": 3},
             ],
         },
     ],
     "course_equivalencies": {
         # Program değişikliği notlarına göre (2024-2025 ve öncesi)
-        "ING111": ["ING127"],  # Kimya -> Ekonominin Temelleri
+        "ING111": ["ING127", "ING125"],  # Kimya derslerinden geçiş
+        "ING106": ["ING104"],  # Matematik I eski kodu
+        "ING116": ["ING114"],  # Fizik I eski kodu
+        "ING107": ["ING105"],  # Matematik II eski kodu
+        "ING117": ["ING115"],  # Fizik II eski kodu
         "INF345": ["INF316"],  # Sinyaller ve Sistemler -> Sayısal Sinyal İşleme
         "CNT250": ["CNT350"],  # Proje/Risk dersi kod değişimi
         "INF330": ["INF430"],  # Robotik kod değişimi (7. yarıyıl notu)
+        "INF402": ["INF470"],  # Ağ labı -> IoT dönüşümü
+        "INF256": ["INF204"],  # Eski elektromanyetik dalgalar dersi
+        "INF257": ["INF211"],  # Eski olasılık-istatistik dersi
+        "ING251": ["ING203"],  # Yüksek matematik I kod değişimi
+        "ING252": ["ING204"],  # Yüksek matematik II kod değişimi
+        "INF243": ["INF223"],  # OOP kod değişimi
+        "INF291": ["INF299"],  # Staj kod değişimi
+        "FLF101": ["TUR001"],  # Eski plan 1. dönem ortak ders karşılığı
+        "FLF201": ["TUR002"],  # Eski plan 2. dönem ortak ders karşılığı
         # Eski öğretim planı seçmeli kodları
         "INF454": ["INF352"],  # İnsan Bilgisayar Etkileşimi kod değişimi
         # 2020-2021 ve öncesi kod karşılıkları

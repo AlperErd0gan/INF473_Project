@@ -12,7 +12,7 @@ load_dotenv()
 
 client = Groq(api_key=os.environ["GROQ_API_KEY"])
 MODEL = "llama-3.3-70b-versatile"
-FAILED_GRADES = {"FF", "DZ", "F", "IA", "NP"}
+FAILED_GRADES = {"FF", "DZ", "F", "IA", "NP", "W", "WF"}
 
 PARSE_SYSTEM_PROMPT = """You are a university transcript parsing expert. Extract ALL courses from a GSU (Galatasaray University) transcript, including failed ones.
 
@@ -123,9 +123,42 @@ def _is_legacy_curriculum(completed_codes: set[str]) -> bool:
         "INF211",  # old plan mandatory course
         "INF223",  # old plan OOP code family
         "INF299",  # old plan internship code
+        "INF204",  # old plan electromagnetics course
         "ING204",  # old plan high math II
+        "ING203",  # old plan high math I
     }
     return bool(completed_codes & legacy_markers)
+
+
+def _legacy_extra_elective_codes(group: dict) -> set[str]:
+    """
+    Extra elective codes that are only valid for legacy curricula.
+    Keep these separate so current curricula are not under-enforced.
+    """
+    sem = group.get("semester")
+    desc = group.get("description", "INF seçmeli")
+    if sem == 6 and desc == "INF seçmeli":
+        # In 2022-2025 plans, INF345 could be used as an INF elective pool course.
+        return {"INF345"}
+    return set()
+
+
+def _failed_codes(parsed: ParsedTranscript) -> set[str]:
+    return {
+        _normalize_code(c.code)
+        for c in parsed.courses
+        if c.grade.strip().upper() in FAILED_GRADES
+    }
+
+
+def _is_language_course(code: str) -> bool:
+    normalized = _normalize_code(code)
+    return normalized.startswith("FLF") or normalized.startswith("FLE")
+
+
+def _is_b2_or_higher(name: str) -> bool:
+    upper = name.upper()
+    return bool(re.search(r"\b(B2(?:\.\d+)?|C1(?:\.\d+)?|C2(?:\.\d+)?)\b", upper))
 
 
 def _chat(system: str, user: str) -> str:
@@ -261,6 +294,7 @@ class RequirementsAgent:
     def evaluate(self, parsed: ParsedTranscript) -> AgentVerdict:
         passed = [c for c in parsed.courses if c.grade.strip().upper() not in FAILED_GRADES]
         completed_codes = {_normalize_code(c.code) for c in passed}
+        failed_codes = _failed_codes(parsed)
         legacy_curriculum = _is_legacy_curriculum(completed_codes)
 
         gpa_ok = parsed.gpa >= GSU_BIL_REQUIREMENTS["min_gpa"]
@@ -269,22 +303,85 @@ class RequirementsAgent:
         if not gpa_ok:
             issues.append(f"GNO yetersiz: {parsed.gpa:.2f} / minimum 2.00")
 
+        language_courses = [c for c in passed if _is_language_course(c.code)]
+        language_ects = sum(c.ects for c in language_courses)
+        english_b2_or_higher = any(_is_b2_or_higher(c.name) for c in language_courses)
+        language_ok = language_ects >= 12 or english_b2_or_higher
+        if not language_ok:
+            issues.append(
+                f"Dil koşulu sağlanmadı: yabancı dil AKTS {language_ects}/12 ve B2+ düzeyi tespit edilemedi"
+            )
+
         elective_issues = []
+        group_pool_codes = {}
+        group_required = {}
         for group in GSU_BIL_REQUIREMENTS["elective_groups"]:
             group_codes = set()
             for option in group["options"]:
                 group_codes.update(_accepted_codes_for_requirement(option["code"]))
+            if legacy_curriculum:
+                for code in _legacy_extra_elective_codes(group):
+                    group_codes.add(_normalize_code(code))
             taken_count = len(completed_codes & group_codes)
             required = group["required_count"]
             # Legacy plan (e.g., ayid=32) requires 1 INF elective in semester 6.
             if legacy_curriculum and group["semester"] == 6 and group.get("description", "INF seçmeli") == "INF seçmeli":
                 required = 1
+            key = (group["semester"], group.get("description", "INF seçmeli"))
+            group_pool_codes[key] = group_codes
+            group_required[key] = required
             if taken_count < required:
                 needed = required - taken_count
                 sem = group["semester"]
                 desc = group.get("description", "INF seçmeli")
                 elective_issues.append(
                     f"Dönem {sem} {desc}: {needed} ders eksik (mevcut {taken_count}/{required})"
+                )
+
+        if legacy_curriculum:
+            # Transition notes from curriculum: some failed legacy courses require extra
+            # electives on top of baseline elective obligations.
+            extra_inf_required = 0
+            extra_social_required = 0
+
+            if "INF112" in failed_codes:
+                extra_social_required += 1
+            for code in ("INF115", "INF236", "INF446", "INF470"):
+                if code in failed_codes:
+                    extra_inf_required += 1
+            if "INF204" in failed_codes:
+                extra_inf_required += 1
+
+            # ING144 failed -> INF321 technical drawing replacement requirement.
+            if "ING144" in failed_codes and "INF321" not in completed_codes:
+                elective_issues.append("ING144 başarısızlığı için INF321 Teknik Resim dersi tamamlanmalı.")
+
+            inf_group_keys = [
+                (5, "INF seçmeli"),
+                (6, "INF seçmeli"),
+                (7, "INF seçmeli"),
+                (8, "INF seçmeli"),
+            ]
+            total_inf_taken = len(
+                completed_codes
+                & set().union(*(group_pool_codes.get(k, set()) for k in inf_group_keys))
+            )
+            total_inf_required = sum(group_required.get(k, 0) for k in inf_group_keys)
+            if total_inf_taken < total_inf_required + extra_inf_required:
+                missing = (total_inf_required + extra_inf_required) - total_inf_taken
+                elective_issues.append(
+                    f"Geçiş kuralları nedeniyle ilave INF seçmeli: {missing} ders eksik "
+                    f"(mevcut {total_inf_taken}/{total_inf_required + extra_inf_required})."
+                )
+
+            social_key = (8, "CNT or CC elective")
+            social_taken = len(completed_codes & group_pool_codes.get(social_key, set()))
+            social_required = group_required.get(social_key, 0)
+            if social_taken < social_required + extra_social_required:
+                missing = (social_required + extra_social_required) - social_taken
+                elective_issues.append(
+                    f"Geçiş kuralları nedeniyle ilave sosyal seçmeli: {missing} ders eksik "
+                    f"(mevcut {social_taken}/{social_required + extra_social_required})."
                 )
 
         issues.extend(elective_issues)
@@ -308,6 +405,9 @@ class RequirementsAgent:
             details={
                 "gpa": parsed.gpa,
                 "gpa_ok": gpa_ok,
+                "language_ects": language_ects,
+                "english_b2_or_higher": english_b2_or_higher,
+                "language_ok": language_ok,
                 "elective_issues": elective_issues,
             },
         )
