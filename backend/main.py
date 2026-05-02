@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from database import engine, Base, get_db
 from models import Student, Transcript, AnalysisResult
 from agent import run_analysis_pipeline
+from transcript_validation import validate_single_transcript
 
 Base.metadata.create_all(bind=engine)
 
@@ -36,6 +37,9 @@ def read_root():
 def upload_transcript(body: TranscriptUpload, db: Session = Depends(get_db)):
     if not body.text.strip():
         raise HTTPException(status_code=400, detail="Transcript text cannot be empty")
+    validation_error = validate_single_transcript(body.text)
+    if validation_error:
+        raise HTTPException(status_code=422, detail=validation_error)
 
     transcript = Transcript(raw_text=body.text.strip())
     db.add(transcript)
@@ -49,6 +53,9 @@ def analyze_transcript(transcript_id: int, db: Session = Depends(get_db)):
     transcript = db.query(Transcript).filter(Transcript.id == transcript_id).first()
     if not transcript:
         raise HTTPException(status_code=404, detail="Transcript not found")
+    validation_error = validate_single_transcript(transcript.raw_text)
+    if validation_error:
+        raise HTTPException(status_code=422, detail=validation_error)
 
     existing = db.query(AnalysisResult).filter(
         AnalysisResult.transcript_id == transcript_id

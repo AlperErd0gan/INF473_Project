@@ -5,6 +5,83 @@ import { useLang } from "../contexts/LangContext";
 
 const CURRICULUM_RULES_URL = "https://ects.gsu.edu.tr/tr/program/programmedetails/12";
 
+const EXAMPLE_HEADER_RE = /^\s*ÖRNEK\s+\d+\s*:/im;
+const NAME_LINE_RE = /^\s*Ad\s*Soyad\s*:\s*(.+?)\s*$/im;
+const STUDENT_LINE_RE = /^\s*ÖĞRENCİ\s*:\s*(.+?)\s*$/im;
+const NUMBER_LINE_RE = /^\s*Öğrenci\s*No\s*:\s*([^\s]+)\s*$/im;
+const GENERAL_ROW_RE = /^\s*Genel\s+(.+?)\s*$/gim;
+
+function normalizeIdentityValue(value) {
+  return value.trim().replace(/\s+/g, " ").toLocaleLowerCase("tr-TR");
+}
+
+function extractNames(text) {
+  const names = new Set();
+  for (const match of text.matchAll(new RegExp(NAME_LINE_RE.source, "gim"))) {
+    names.add(normalizeIdentityValue(match[1]));
+  }
+  for (const match of text.matchAll(new RegExp(STUDENT_LINE_RE.source, "gim"))) {
+    const [name] = match[1].split("|");
+    if (name?.trim()) names.add(normalizeIdentityValue(name));
+  }
+  return names;
+}
+
+function extractNumbers(text) {
+  const numbers = new Set();
+  for (const match of text.matchAll(new RegExp(NUMBER_LINE_RE.source, "gim"))) {
+    numbers.add(normalizeIdentityValue(match[1]));
+  }
+  for (const match of text.matchAll(new RegExp(STUDENT_LINE_RE.source, "gim"))) {
+    const parts = match[1].split("|");
+    if (parts.length > 1 && parts[1].trim()) {
+      numbers.add(normalizeIdentityValue(parts[1]));
+    }
+  }
+  return numbers;
+}
+
+function parseDecimal(value) {
+  const parsed = Number.parseFloat(value.replace(",", "."));
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function extractGeneralTotals(text) {
+  const totals = [];
+  for (const match of text.matchAll(GENERAL_ROW_RE)) {
+    const row = match[1].trim();
+    const columns = row.split(/\s+/);
+    if (columns.length < 3) continue;
+    const totalEcts = parseDecimal(columns[columns.length - 1]);
+    if (totalEcts === null) continue;
+    totals.push(totalEcts);
+  }
+  return totals;
+}
+
+function hasCumulativeReset(totals) {
+  if (totals.length < 2) return false;
+  for (let i = 1; i < totals.length; i += 1) {
+    if (totals[i] + 1e-6 < totals[i - 1]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function hasMultipleTranscripts(text) {
+  if (!text.trim()) return false;
+  const exampleCount = [...text.matchAll(new RegExp(EXAMPLE_HEADER_RE.source, "gim"))].length;
+  if (exampleCount > 1) return true;
+
+  const names = extractNames(text);
+  const numbers = extractNumbers(text);
+  if (names.size > 1 || numbers.size > 1) return true;
+
+  const generalTotals = extractGeneralTotals(text);
+  return hasCumulativeReset(generalTotals);
+}
+
 export default function Upload() {
   const { t } = useLang();
   const [text, setText] = useState("");
@@ -18,6 +95,10 @@ export default function Upload() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!text.trim()) return;
+    if (hasMultipleTranscripts(text)) {
+      setError(t.upload_err_multiple);
+      return;
+    }
     setError(null);
     setLoading(true);
     setStepIndex(0);

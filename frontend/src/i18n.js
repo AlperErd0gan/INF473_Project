@@ -26,6 +26,8 @@ const t = {
     upload_hint_empty: "Transkript metni gerekli",
     upload_analyzing: "Analiz yapılıyor...",
     upload_err_filetype: "Yalnızca .txt dosyaları desteklenmektedir.",
+    upload_err_multiple:
+      "Birden fazla transkript tespit edildi. Lütfen tek seferde yalnızca bir öğrencinin transkriptini yükleyin.",
     upload_placeholder:
       "Transkript metnini buraya yapıştırın...\n\nBeklenen format:\n2021 - 2022 Güz Yarıyılı\nKodu\tDers Adı\tNotu\tKredi\tAKTS\tTürü\nINF112\tProgramlamaya Giriş\tAA\t5.0\t4\tZ\n...",
     upload_hint_ready: (n) => `${n} satır hazır`,
@@ -137,6 +139,8 @@ const t = {
     upload_hint_empty: "Transcript text required",
     upload_analyzing: "Analyzing...",
     upload_err_filetype: "Only .txt files are supported.",
+    upload_err_multiple:
+      "Multiple transcripts detected. Please upload only one student's transcript at a time.",
     upload_placeholder:
       "Paste your transcript text here...\n\nExpected format:\n2021 - 2022 Fall Semester\nCode\tCourse Name\tGrade\tCredit\tECTS\tType\nINF112\tIntro to Programming\tAA\t5.0\t4\tZ\n...",
     upload_hint_ready: (n) => `${n} lines ready`,
