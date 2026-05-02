@@ -490,7 +490,7 @@ Dersler
 
 Kurallar
 
-
+Seçmeli dersler (S) ile ifade edilir. Önerilen seçmeli derslerden 1 adet ders seçilecektir.
 
 
 6. Dönem
@@ -512,7 +512,7 @@ Dersler
 
 Kurallar
 
-
+Seçmeli dersler (S) ile ifade edilir. Önerilen seçmeli derslerden 1 adet ders seçilecektir. 
 
 7. Dönem
 
@@ -535,7 +535,7 @@ Kurallar
 
 Not 19 : 2022-2023 öğretim yılı ve öncesinde “INF 470 Bilgisayar Ağ Laboratuvarı” dersinden kalan öğrenciler “INF 402 Nesnelerin İnternetine Giriş” dersini alırlar.
 
-
+Seçmeli dersler (S) ile ifade edilir. Önerilen seçmeli derslerden 1 adet ders seçilecektir.
 
 8. Dönem
 
@@ -690,7 +690,7 @@ Dersler
 
 Kurallar
 
-
+Seçmeli dersler (S) ile ifade edilir. Önerilen seçmeli derslerden 1 adet ders seçilecektir. 
 
 
 6. Dönem
@@ -711,7 +711,7 @@ Dersler
 
 Kurallar
 
-
+Seçmeli dersler (S) ile ifade edilir. Önerilen seçmeli derslerden 1 adet ders seçilecektir.
 
 
 7. Dönem
@@ -734,6 +734,7 @@ Kurallar
 
 Not 19 : 2022-2023 öğretim yılı ve öncesinde “INF 470 Bilgisayar Ağ Laboratuvarı” dersinden kalan öğrenciler “INF 402 Nesnelerin İnternetine Giriş” dersini alırlar. 
 
+Seçmeli dersler (S) ile ifade edilir. Önerilen seçmeli derslerden 1 adet ders seçilecektir. 
 
 8. Dönem
 
