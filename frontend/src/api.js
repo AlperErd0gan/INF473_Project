@@ -10,8 +10,8 @@ export async function uploadTranscript(text) {
   return res.json();
 }
 
-export async function analyzeTranscript(transcriptId) {
-  const res = await fetch(`${BASE_URL}/analysis/analyze/${transcriptId}`, {
+export async function analyzeTranscript(transcriptId, lang = "tr") {
+  const res = await fetch(`${BASE_URL}/analysis/analyze/${transcriptId}?lang=${lang}`, {
     method: "POST",
   });
   if (!res.ok) throw new Error((await res.json()).detail || "Analiz hatası");

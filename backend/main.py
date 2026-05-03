@@ -49,7 +49,7 @@ def upload_transcript(body: TranscriptUpload, db: Session = Depends(get_db)):
 
 
 @app.post("/analysis/analyze/{transcript_id}")
-def analyze_transcript(transcript_id: int, db: Session = Depends(get_db)):
+def analyze_transcript(transcript_id: int, lang: str = "tr", db: Session = Depends(get_db)):
     transcript = db.query(Transcript).filter(Transcript.id == transcript_id).first()
     if not transcript:
         raise HTTPException(status_code=404, detail="Transcript not found")
@@ -64,7 +64,7 @@ def analyze_transcript(transcript_id: int, db: Session = Depends(get_db)):
         return _format_analysis(existing, transcript_id)
 
     try:
-        result = run_analysis_pipeline(transcript.raw_text)
+        result = run_analysis_pipeline(transcript.raw_text, lang)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Analysis error: {str(e)}")
 
@@ -86,6 +86,7 @@ def analyze_transcript(transcript_id: int, db: Session = Depends(get_db)):
         completed_courses=result.get("completed_mandatory_courses", []),
         missing_courses=result.get("missing_courses", []),
         missing_conditions=result.get("missing_conditions", []),
+        agent_verdicts=result.get("agent_verdicts", {}),
         report_text=result.get("report_text"),
     )
     db.add(analysis)
@@ -159,6 +160,7 @@ def _format_analysis(analysis: AnalysisResult, transcript_id: int) -> dict:
         "completed_courses": analysis.completed_courses or [],
         "missing_courses": analysis.missing_courses or [],
         "missing_conditions": analysis.missing_conditions or [],
+        "agent_verdicts": analysis.agent_verdicts or {},
         "report_text": analysis.report_text,
         "analyzed_at": analysis.analyzed_at.isoformat() if analysis.analyzed_at else None,
     }

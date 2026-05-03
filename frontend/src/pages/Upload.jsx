@@ -83,7 +83,7 @@ function hasMultipleTranscripts(text) {
 }
 
 export default function Upload() {
-  const { t } = useLang();
+  const { lang, t } = useLang();
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
@@ -109,7 +109,7 @@ export default function Upload() {
       }, 2200);
 
       const { transcript_id } = await uploadTranscript(text);
-      const result = await analyzeTranscript(transcript_id);
+      const result = await analyzeTranscript(transcript_id, lang);
 
       clearInterval(stepTimer);
       navigate(`/result/${result.analysis_id}`);

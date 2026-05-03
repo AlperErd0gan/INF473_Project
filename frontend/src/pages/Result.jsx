@@ -231,11 +231,13 @@ function AgentCard({ verdict, labels }) {
     CourseVerifier:      "Course Verifier",
     ECTSVerifier:        "ECTS Verifier",
     RequirementsChecker: "Requirements Checker",
+    MasterAgent:         "Master Agent",
   };
   const agentIcons = {
     CourseVerifier:      "📚",
     ECTSVerifier:        "🎯",
     RequirementsChecker: "📋",
+    MasterAgent:         "👑",
   };
 
   return (
@@ -243,6 +245,8 @@ function AgentCard({ verdict, labels }) {
       ...styles.agentCard,
       borderColor: pass ? "var(--success-border)" : "var(--error-border)",
       backgroundColor: pass ? "var(--success-bg)" : "var(--error-bg)",
+      gridColumn: verdict.agent === "MasterAgent" ? "1 / -1" : "auto",
+      borderTop: verdict.agent === "MasterAgent" ? "1px solid var(--border)" : "none",
     }}>
       <div style={styles.agentHeader}>
         <span style={styles.agentIcon}>{agentIcons[verdict.agent] || "🤖"}</span>

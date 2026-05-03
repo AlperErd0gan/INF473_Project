@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useLocation } from "react-router-dom";
 import { useLang } from "../contexts/LangContext";
 import gsuLogo from "../assets/gsu-university-logo.png";
 
@@ -49,6 +49,8 @@ export default function Layout() {
   const { lang, toggle: toggleLang, t } = useLang();
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
   const [toasts, setToasts] = useState([]);
+  const location = useLocation();
+  const isResultPage = location.pathname.startsWith("/result");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -101,9 +103,10 @@ export default function Layout() {
 
             <button
               onClick={toggleLang}
-              style={styles.langBtn}
+              style={{ ...styles.langBtn, ...(isResultPage ? styles.langBtnDisabled : {}) }}
               title={lang === "tr" ? "Switch to English" : "Türkçeye geç"}
               aria-label="Change language"
+              disabled={isResultPage}
             >
               {lang === "tr" ? "EN" : "TR"}
             </button>
@@ -222,6 +225,10 @@ const styles = {
     transition: "all 0.15s",
     flexShrink: 0,
     fontFamily: "'Inter', sans-serif",
+  },
+  langBtnDisabled: {
+    opacity: 0.5,
+    cursor: "not-allowed",
   },
   themeBtn: {
     display: "flex",

@@ -39,6 +39,7 @@ class AnalysisResult(Base):
     completed_courses = Column(JSON, default=list)
     missing_courses = Column(JSON, default=list)
     missing_conditions = Column(JSON, default=list)
+    agent_verdicts = Column(JSON, default=dict)
     report_text = Column(String, nullable=True)
     analyzed_at = Column(DateTime, default=datetime.utcnow)
 
