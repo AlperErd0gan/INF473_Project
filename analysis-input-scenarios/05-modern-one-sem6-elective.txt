@@ -1,5 +1,5 @@
 ============================================================
-ÖRNEK 5: Ece Yılmaz — MODERN PLANDA 6. DÖNEM 1 INF SEÇMELİ
+ÖRNEK 5: Ece Yılmaz — 2024-2025 PLANI (6. DÖNEMDE 1 INF SEÇMELİ)
 ============================================================
 
 Ad Soyad: Ece Yılmaz
@@ -12,7 +12,7 @@ INF112-B	Programlamaya Giriş	CB	5.0	6	Z
 INF113	Bilgisayar Mühendisliğine Giriş	CB	2.5	4	Z
 ING106	Matematik I	CC	5.0	7	Z
 ING116	Fizik I	CC	4.0	5	Z
-ING111	Ekonominin Temelleri	CC	3.0	4	Z
+ING127	Kimya	CC	3.0	4	Z
 TUR001	Türk Dili I	BA	2.0	2	Z
 AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
 Yarıyıl	2.34	23.5	30.0
@@ -60,9 +60,9 @@ Genel	2.58	84.0	113.0
 
 2024 - 2025 Güz Yarıyılı
 Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
-CNT250	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi	AA	2.0	2	Z
+CNT350	Bilgisayar Mühendisleri için Proje, Risk ve Değişiklik Yönetimi	AA	2.0	2	Z
 INF315	Kesikli Matematik	BB	3.0	4	Z
-INF345	Sayısal Sinyal İşleme	CB	3.0	4	Z
+INF316	Sinyaller ve Sistemler	CB	3.0	4	Z
 INF320	Bilgisayar Mimarisi	BB	4.0	6	Z
 INF324	İlişkisel Veri Tabanları	BB	3.0	4	Z
 INF352	İnsan Bilgisayar Etkileşimine Giriş	BB	3.0	4	S

@@ -21,8 +21,8 @@ Bu klasördeki her `.txt` dosyası **tekil bir transkripttir** ve doğrudan yük
    - Beklenti: `INF321 Teknik Resim dersi tamamlanmalı` uyarısı.
 
 5. `05-modern-one-sem6-elective.txt`
-   - Amaç: Modern plan (legacy marker yok) için 6. dönem INF seçmeli sayımını test etmek.
-   - Beklenti: `Dönem 6 INF seçmeli: 1 ders eksik`.
+   - Amaç: 2024-2025 planında 6. dönemde tek INF seçmeli ile kuralın sağlandığını test etmek.
+   - Beklenti: 6. dönem INF seçmeli eksiği oluşmaz (senaryo geçer).
 
 6. `06-equivalency-old-codes-mixed.txt`
    - Amaç: Eski/yeni kod eşdeğerliklerini (ING104->ING106, INF470->INF402 vb.) birlikte test etmek.
