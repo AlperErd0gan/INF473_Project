@@ -51,6 +51,15 @@ uvicorn main:app --reload --port 8000
 - Frontend: http://localhost:5173
 - API Docs: http://localhost:8000/docs
 
+## Testing
+
+You can run predefined transcript analysis scenarios using the included test script. This will validate if the analysis pipeline correctly determines graduation status for different student edge cases.
+
+```bash
+# From the project root, using the backend virtual environment:
+./backend/venv/bin/python test_scenarios.py
+```
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
