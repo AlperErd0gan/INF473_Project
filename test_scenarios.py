@@ -30,14 +30,17 @@ def parse_scenarios(file_path):
     return scenarios
 
 def test_all_scenarios():
-    files_to_test = ['analysis-input-scenarios.txt', 'analysis-input-example.txt']
-    
-    # Add files from analysis-input-scenarios folder
+    files_to_test = []
+
+    # Only test scenario files under analysis-input-scenarios folder
     scenarios_dir = os.path.join(os.path.dirname(__file__), 'analysis-input-scenarios')
     if os.path.exists(scenarios_dir) and os.path.isdir(scenarios_dir):
         for f in sorted(os.listdir(scenarios_dir)):
             if f.endswith('.txt'):
                 files_to_test.append(os.path.join('analysis-input-scenarios', f))
+
+    if not files_to_test:
+        raise AssertionError("No scenario files found in analysis-input-scenarios/")
     
     all_passed = True
     
