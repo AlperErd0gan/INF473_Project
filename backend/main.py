@@ -1,4 +1,5 @@
 import os
+import hashlib
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -38,14 +39,20 @@ def upload_transcript(body: TranscriptUpload, db: Session = Depends(get_db)):
     if not body.text.strip():
         raise HTTPException(status_code=400, detail="Transcript text cannot be empty")
     validation_error = validate_single_transcript(body.text)
-    if validation_error:
-        raise HTTPException(status_code=422, detail=validation_error)
 
-    transcript = Transcript(raw_text=body.text.strip())
+    cleaned_text = body.text.strip()
+    text_hash = hashlib.sha256(cleaned_text.encode()).hexdigest()
+
+    existing = db.query(Transcript).filter(Transcript.text_hash == text_hash).first()
+    if existing:
+        return {"transcript_id": existing.id}
+
+    transcript = Transcript(raw_text=cleaned_text, text_hash=text_hash)
     db.add(transcript)
     db.commit()
     db.refresh(transcript)
     return {"transcript_id": transcript.id}
+
 
 
 @app.post("/analysis/analyze/{transcript_id}")

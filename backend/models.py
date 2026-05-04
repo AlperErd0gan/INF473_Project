@@ -21,6 +21,7 @@ class Transcript(Base):
     id = Column(Integer, primary_key=True, index=True)
     student_id = Column(Integer, ForeignKey("students.id"), nullable=True)
     raw_text = Column(String, nullable=False)
+    text_hash = Column(String, nullable=True, index=True)
     uploaded_at = Column(DateTime, default=datetime.utcnow)
 
     student = relationship("Student", back_populates="transcripts")
