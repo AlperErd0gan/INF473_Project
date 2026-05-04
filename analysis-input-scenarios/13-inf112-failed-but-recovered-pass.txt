@@ -1,5 +1,5 @@
 ============================================================
-ÖRNEK 6: Ece Yılmaz — ESKİ/YENİ KOD EŞDEĞERLİK KARIŞIK SENARYO MEZUN OLABİLİR
+ÖRNEK 13: Ece Yılmaz — MEZUN OLABİLİR (INF112 TELAFİ + SOSYAL SEÇMELİ TAM)
 ============================================================
 
 Ad Soyad: Ece Yılmaz
@@ -8,10 +8,10 @@ Ad Soyad: Ece Yılmaz
 2022 - 2023 Güz Yarıyılı
 Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
 FLF101	Fransızca Cef B2.1 Akademik	BB	2.0	2	Z
-INF112-B	Programlamaya Giriş	CB	5.0	6	Z
+INF112-B	Programlamaya Giriş	FF	5.0	6	Z
 INF113	Bilgisayar Mühendisliğine Giriş	CB	2.5	4	Z
-ING104	Matematik I	CC	5.0	7	Z
-ING114	Fizik I	CC	4.0	5	Z
+ING106	Matematik I	CC	5.0	7	Z
+ING116	Fizik I	CC	4.0	5	Z
 ING127	Kimya	CC	3.0	4	Z
 TUR001	Türk Dili I	BA	2.0	2	Z
 AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
@@ -25,8 +25,8 @@ FLF201	Fransızca Cef B2.2 Akademik	BB	2.0	2	Z
 INF114	Algoritma ve İleri Bilgisayar Programlama	CB	4.0	5	Z
 INF115	Programlama Dillerinin Prensipleri	CC	2.0	2	Z
 INF116	Bilgisayar Sistemlerine Giriş	CB	2.0	2	Z
-ING105	Matematik II	CB	3.0	7	Z
-ING115-A	Fizik II	CB	4.0	5	Z
+ING107	Matematik II	CB	3.0	7	Z
+ING117-A	Fizik II	CB	4.0	5	Z
 ING144	Teknik Resim	BB	1.5	3	Z
 TUR002	Türk Dili II	BB	2.0	2	Z
 AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
@@ -37,10 +37,10 @@ Genel	2.48	45.5	60.0
 Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
 ATA001	Atatürk İlkeleri ve İnkılap Tarihi I	BA	2.0	2	Z
 INF224-B	Veri Yapısı ve Algoritmalar	CC	4.0	4	Z
-INF204	Elektromanyetik Dalgalar	CB	3.0	3	Z
+INF256	Olasılık	CB	3.0	3	Z
 ING207	Lineer Cebir	CB	3.0	5	Z
 ING229-A	Analog Elektronik	BB	4.0	7	Z
-ING203	Yüksek Matematik I	BB	2.5	4	Z
+ING251	Yüksek Matematik I	BB	2.5	4	Z
 AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
 Yarıyıl	2.71	18.5	25.0
 Genel	2.56	64.0	85.0
@@ -48,12 +48,12 @@ Genel	2.56	64.0	85.0
 2023 - 2024 Bahar Yarıyılı
 Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
 ATA002	Atatürk İlkeleri ve İnkılap Tarihi II	BA	2.0	2	Z
-INF223	Nesneye Yönelik Programlama	CB	5.0	7	Z
-INF211	İstatistik	CB	4.0	4	Z
-INF299	Staj	AA	1.0	3	Z
+INF243	Nesneye Yönelik Programlama	CB	5.0	7	Z
+INF257	İstatistik	CB	4.0	4	Z
+INF291	Staj	AA	1.0	3	Z
 ING208	Diferansiyel Denklemler	CB	2.5	4	Z
 ING220	Sayısal Elektronik	CC	3.0	4	Z
-ING204	Yüksek Matematik II	CC	2.5	4	Z
+ING252	Yüksek Matematik II	CC	2.5	4	Z
 AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
 Yarıyıl	2.63	20.0	28.0
 Genel	2.58	84.0	113.0
@@ -67,6 +67,7 @@ INF320	Bilgisayar Mimarisi	BB	4.0	6	Z
 INF324	İlişkisel Veri Tabanları	BB	3.0	4	Z
 INF352	İnsan Bilgisayar Etkileşimine Giriş	BB	3.0	4	S
 INF356	Veri Analizine Giriş	BA	3.0	4	Z
+INF112-A	Programlamaya Giriş	BB	5.0	6	Z
 AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
 Yarıyıl	2.92	21.0	28.0
 Genel	2.66	105.0	141.0
@@ -87,7 +88,7 @@ Genel	2.68	125.0	169.0
 2025 - 2026 Güz Yarıyılı
 Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
 INF400	Veri Derlemesi	CB	3.0	5	Z
-INF470	Bilgisayar Ağ Laboratuvarı	BB	3.0	3	Z
+INF402	Nesnelerin İnternetine Giriş	BB	3.0	3	Z
 INF432	Bilgisayar Grafikleri	AA	3.0	4	S
 INF443	Dağıtık Sistemler ve Uygulamalar	BA	3.0	4	Z
 INF444	Yapay Zeka	CB	3.0	5	Z
@@ -100,6 +101,7 @@ Genel	2.72	146.0	197.0
 2025 - 2026 Bahar Yarıyılı
 Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
 CNT414	Felsefe	AA	2.0	2	S
+CC307	İstanbul'un Kültürel Mirası	AA	3.0	3	S
 IND471	Yöneylem Araştırması	BB	3.0	4	S
 INF473	Üretken Yapay Zekaya Giriş	BB	3.0	5	S
 INF481	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım	CC	4.0	5	Z

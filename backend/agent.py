@@ -161,6 +161,28 @@ def _is_b2_or_higher(name: str) -> bool:
     return bool(re.search(r"\b(B2(?:\.\d+)?|C1(?:\.\d+)?|C2(?:\.\d+)?)\b", upper))
 
 
+def _extract_last_cumulative_gpa(transcript_text: str) -> Optional[float]:
+    """
+    Extract GPA from the last "Genel" summary row deterministically.
+    Expected row shape: Genel <gpa> <credit_total> <ects_total>
+    """
+    matches = list(
+        re.finditer(
+            r"^\s*Genel\s+([0-9]+(?:[.,][0-9]+)?)\s+[0-9]+(?:[.,][0-9]+)?\s+[0-9]+(?:[.,][0-9]+)?\s*$",
+            transcript_text,
+            flags=re.MULTILINE,
+        )
+    )
+    if not matches:
+        return None
+
+    raw_gpa = matches[-1].group(1).replace(",", ".")
+    try:
+        return float(raw_gpa)
+    except ValueError:
+        return None
+
+
 def _chat(system: str, user: str) -> str:
     response = client.chat.completions.create(
         model=MODEL,
@@ -179,7 +201,14 @@ class TranscriptParserAgent:
 
     def parse(self, transcript_text: str) -> ParsedTranscript:
         raw = _chat(PARSE_SYSTEM_PROMPT, transcript_text)
-        return ParsedTranscript.model_validate_json(raw)
+        parsed = ParsedTranscript.model_validate_json(raw)
+
+        # Deterministic override: GPA must come from the last "Genel" row.
+        deterministic_gpa = _extract_last_cumulative_gpa(transcript_text)
+        if deterministic_gpa is not None:
+            parsed = parsed.model_copy(update={"gpa": deterministic_gpa})
+
+        return parsed
 
 
 class CourseVerifierAgent:

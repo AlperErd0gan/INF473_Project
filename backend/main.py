@@ -6,6 +6,7 @@ load_dotenv()
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from sqlalchemy import text
 from sqlalchemy.orm import Session
 from database import engine, Base, get_db
 from models import Student, Transcript, AnalysisResult
@@ -13,6 +14,33 @@ from agent import run_analysis_pipeline
 from transcript_validation import validate_single_transcript
 
 Base.metadata.create_all(bind=engine)
+
+
+def _ensure_backward_compatible_schema() -> None:
+    """
+    Lightweight migration for existing SQLite files.
+    create_all() does not add new columns to existing tables.
+    """
+    with engine.begin() as conn:
+        has_table = conn.execute(
+            text(
+                "SELECT 1 FROM sqlite_master "
+                "WHERE type = 'table' AND name = 'analysis_results' LIMIT 1"
+            )
+        ).first()
+        if not has_table:
+            return
+
+        columns = {
+            row[1]
+            for row in conn.execute(text("PRAGMA table_info(analysis_results)")).fetchall()
+        }
+
+        if "agent_verdicts" not in columns:
+            conn.execute(text("ALTER TABLE analysis_results ADD COLUMN agent_verdicts JSON"))
+
+
+_ensure_backward_compatible_schema()
 
 app = FastAPI(title="GSU Academic Advisor API")
 
