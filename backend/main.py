@@ -22,22 +22,54 @@ def _ensure_backward_compatible_schema() -> None:
     create_all() does not add new columns to existing tables.
     """
     with engine.begin() as conn:
-        has_table = conn.execute(
+        has_analysis_results = conn.execute(
             text(
                 "SELECT 1 FROM sqlite_master "
                 "WHERE type = 'table' AND name = 'analysis_results' LIMIT 1"
             )
         ).first()
-        if not has_table:
+        if has_analysis_results:
+            columns = {
+                row[1]
+                for row in conn.execute(text("PRAGMA table_info(analysis_results)")).fetchall()
+            }
+
+            if "agent_verdicts" not in columns:
+                conn.execute(text("ALTER TABLE analysis_results ADD COLUMN agent_verdicts JSON"))
+
+        has_transcripts = conn.execute(
+            text(
+                "SELECT 1 FROM sqlite_master "
+                "WHERE type = 'table' AND name = 'transcripts' LIMIT 1"
+            )
+        ).first()
+        if not has_transcripts:
             return
 
         columns = {
             row[1]
-            for row in conn.execute(text("PRAGMA table_info(analysis_results)")).fetchall()
+            for row in conn.execute(text("PRAGMA table_info(transcripts)")).fetchall()
         }
 
-        if "agent_verdicts" not in columns:
-            conn.execute(text("ALTER TABLE analysis_results ADD COLUMN agent_verdicts JSON"))
+        if "text_hash" not in columns:
+            conn.execute(text("ALTER TABLE transcripts ADD COLUMN text_hash VARCHAR"))
+
+        rows = conn.execute(
+            text("SELECT id, raw_text FROM transcripts WHERE text_hash IS NULL")
+        ).fetchall()
+        for transcript_id, raw_text in rows:
+            text_hash = hashlib.sha256((raw_text or "").strip().encode()).hexdigest()
+            conn.execute(
+                text("UPDATE transcripts SET text_hash = :text_hash WHERE id = :id"),
+                {"text_hash": text_hash, "id": transcript_id},
+            )
+
+        conn.execute(
+            text(
+                "CREATE INDEX IF NOT EXISTS "
+                "ix_transcripts_text_hash ON transcripts (text_hash)"
+            )
+        )
 
 
 _ensure_backward_compatible_schema()

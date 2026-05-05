@@ -65,14 +65,32 @@ Rules:
 - ects must be an integer (use the AKTS column, not Kredi)
 - Return raw JSON only, no markdown, no explanation"""
 
-REPORT_SYSTEM_PROMPT = """You are a graduation advisor for the Computer Engineering department at GSU (Galatasaray University).
+REPORT_SYSTEM_PROMPT = """You are the MasterReportAgent for the Computer Engineering department at GSU (Galatasaray University).
 
-Write a concise 2-3 sentence graduation status report in Turkish using formal language.
-Base your report strictly on the provided analysis data — do not add or infer anything beyond what is given.
+Write a concise 2-3 sentence graduation status report in the target language from the user payload.
+Base your report strictly on the provided analysis data; do not add or infer anything beyond what is given.
+
+Use advisor-quality academic prose. Do not expose internal machine values, field names, enums, or raw booleans in the report text.
+Forbidden report wording includes: true, false, pass, fail, is_graduated, eligible_to_graduate, not_eligible_to_graduate, JSON, boolean.
+
+Interpret the master decision semantically:
+- If requirements are satisfied, state that the student meets the graduation requirements.
+- If requirements are not satisfied, state that the student does not currently meet the graduation requirements and summarize the main blockers.
 
 Compare courses strictly by course code. Do not infer missing courses from names. A course is only missing if its exact code does not appear in the passed courses list.
 
-Return ONLY valid JSON: {"report": "Turkish report text here"}"""
+Return ONLY valid JSON: {"report": "report text here"}"""
+
+
+REPORT_REVIEW_SYSTEM_PROMPT = """You are the ReportCriticAgent for a university graduation advisor.
+
+Review the draft report against the analysis data and rewrite it if needed.
+Preserve the factual decision and all key blockers. Keep it concise, formal, and in the requested target language.
+
+The final report must not contain internal machine values, field names, enums, or raw booleans.
+Forbidden report wording includes: true, false, pass, fail, is_graduated, eligible_to_graduate, not_eligible_to_graduate, JSON, boolean.
+
+Return ONLY valid JSON: {"report": "final polished report text here"}"""
 
 
 class CourseEntry(BaseModel):
@@ -550,7 +568,15 @@ class MasterAgent:
         logger.log_final_decision(is_graduated, all_issues)
         logger.flush()
 
-        report = self._generate_report(parsed, ects_verdict, all_issues, is_graduated, course_verdict, lang)
+        report = self._generate_report(
+            parsed,
+            course_verdict,
+            ects_verdict,
+            req_verdict,
+            all_issues,
+            is_graduated,
+            lang,
+        )
 
         master_verdict = AgentVerdict(
             agent="MasterAgent",
@@ -583,34 +609,72 @@ class MasterAgent:
     def _generate_report(
         self,
         parsed: ParsedTranscript,
+        course_verdict: AgentVerdict,
         ects_verdict: AgentVerdict,
+        req_verdict: AgentVerdict,
         all_issues: list[str],
         is_graduated: bool,
-        course_verdict: AgentVerdict,
         lang: str = "tr"
     ) -> str:
         summary = {
-            "student_name": parsed.student_name,
-            "gpa": parsed.gpa,
-            "transcript_total_ects": ects_verdict.details["transcript_total_ects"],
-            "required_ects": ects_verdict.details["required_ects"],
-            "is_graduated": is_graduated,
+            "target_language": "English" if lang == "en" else "Turkish",
+            "student": {
+                "name": parsed.student_name,
+                "number": parsed.student_number,
+            },
+            "academic_metrics": {
+                "gpa": parsed.gpa,
+                "transcript_total_ects": ects_verdict.details["transcript_total_ects"],
+                "required_ects": ects_verdict.details["required_ects"],
+            },
+            "master_decision": {
+                "internal_status": "eligible_to_graduate" if is_graduated else "not_eligible_to_graduate",
+                "use": "Use this as decision evidence only; do not quote the internal_status value.",
+            },
+            "verifier_assessments": [
+                {
+                    "agent": course_verdict.agent,
+                    "internal_result": course_verdict.verdict,
+                    "statement": course_verdict.statement,
+                    "issues": course_verdict.issues,
+                },
+                {
+                    "agent": ects_verdict.agent,
+                    "internal_result": ects_verdict.verdict,
+                    "statement": ects_verdict.statement,
+                    "issues": ects_verdict.issues,
+                },
+                {
+                    "agent": req_verdict.agent,
+                    "internal_result": req_verdict.verdict,
+                    "statement": req_verdict.statement,
+                    "issues": req_verdict.issues,
+                },
+            ],
             "missing_conditions": all_issues,
             "missing_mandatory_count": len(course_verdict.details["missing_mandatory"]),
             "missing_mandatory_courses": course_verdict.details["missing_mandatory"],
             "completed_codes": course_verdict.details["completed_codes"],
         }
-        lang_instruction = "Write a concise 2-3 sentence graduation status report in English using formal language." if lang == "en" else "Write a concise 2-3 sentence graduation status report in Turkish using formal language."
-        prompt = f'''You are a graduation advisor for the Computer Engineering department at GSU (Galatasaray University).
+        raw = _chat(REPORT_SYSTEM_PROMPT, json.dumps(summary, ensure_ascii=False, indent=2))
+        draft_report = json.loads(raw).get("report", "").strip()
+        if not draft_report:
+            return ""
+        return self._review_report(draft_report, summary)
 
-{lang_instruction}
-Base your report strictly on the provided analysis data — do not add or infer anything beyond what is given.
-
-Compare courses strictly by course code. Do not infer missing courses from names. A course is only missing if its exact code does not appear in the passed courses list.
-
-Return ONLY valid JSON: {{"report": "report text here"}}'''
-        raw = _chat(prompt, json.dumps(summary, ensure_ascii=False, indent=2))
-        return json.loads(raw).get("report", "")
+    def _review_report(self, draft_report: str, summary: dict) -> str:
+        review_payload = {
+            "target_language": summary["target_language"],
+            "draft_report": draft_report,
+            "analysis_data": summary,
+        }
+        try:
+            raw = _chat(REPORT_REVIEW_SYSTEM_PROMPT, json.dumps(review_payload, ensure_ascii=False, indent=2))
+            reviewed_report = json.loads(raw).get("report", "").strip()
+            return reviewed_report or draft_report
+        except Exception as e:
+            print(f"Warning: ReportCriticAgent failed ({e}). Using draft report.")
+            return draft_report
 
 
 def run_analysis_pipeline(transcript_text: str, lang: str = "tr") -> dict:
