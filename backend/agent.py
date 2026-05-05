@@ -11,7 +11,14 @@ from logger import CaseLogger
 load_dotenv()
 
 client = Groq(api_key=os.environ["GROQ_API_KEY"])
-MODEL = "llama-3.3-70b-versatile"
+# Primary model with fallbacks for rate limits or other failures
+MODELS = [
+    "llama-3.3-70b-versatile",
+    "llama-3.1-70b-versatile",
+    "llama-3.1-8b-instant",
+    "mixtral-8x7b-32768"
+]
+
 FAILED_GRADES = {"FF", "DZ", "F", "IA", "NP", "W", "WF"}
 
 PARSE_SYSTEM_PROMPT = """You are a university transcript parsing expert. Extract ALL courses from a GSU (Galatasaray University) transcript, including failed ones.
@@ -184,16 +191,33 @@ def _extract_last_cumulative_gpa(transcript_text: str) -> Optional[float]:
 
 
 def _chat(system: str, user: str) -> str:
-    response = client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        response_format={"type": "json_object"},
-        temperature=0.0,
-    )
-    return response.choices[0].message.content
+    """Wrapper for Groq API calls with multi-model fallback logic."""
+    last_exception = None
+    
+    for model_name in MODELS:
+        try:
+            response = client.chat.completions.create(
+                model=model_name,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user},
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.0,
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            last_exception = e
+            # Only print warning if there are more models to try
+            if model_name != MODELS[-1]:
+                print(f"Warning: Model {model_name} failed ({e}). Attempting fallback...")
+            continue
+            
+    # If all models fail, raise the last encountered error
+    if last_exception:
+        raise last_exception
+    raise Exception("All configured Groq models failed to respond.")
+
 
 
 class TranscriptParserAgent:
