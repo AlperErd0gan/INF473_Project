@@ -67,3 +67,19 @@ Bu klasördeki her `.txt` dosyası **tekil bir transkripttir** ve doğrudan yük
 16. `16-2020-code-equivalency-pass.txt`
     - Amaç: `INF102/INF101/INF103` gibi 2020 kodlarının eşdeğerlikten sayılmasını test etmek.
     - Beklenti: Eşdeğerlikler doğru sayılır ve senaryo geçer.
+
+17. `17-modern-missing-semester5-inf-elective.txt`
+    - Amaç: Modern planda 5. dönem INF seçmeli grubunun eksik kalmasını test etmek.
+    - Beklenti: `Dönem 5 INF seçmeli` eksikliği nedeniyle mezun olamaz.
+
+18. `18-modern-missing-semester7-inf-elective.txt`
+    - Amaç: Modern planda 7. dönem INF seçmeli grubunun eksik kalmasını test etmek.
+    - Beklenti: `Dönem 7 INF seçmeli` eksikliği nedeniyle mezun olamaz.
+
+19. `19-modern-missing-ind-elective.txt`
+    - Amaç: Modern planda 8. dönem IND seçmeli koşulunun eksik kalmasını test etmek.
+    - Beklenti: `Dönem 8 IND seçmeli` eksikliği nedeniyle mezun olamaz.
+
+20. `20-modern-missing-social-elective.txt`
+    - Amaç: Modern planda CNT/CC sosyal seçmeli koşulunun eksik kalmasını test etmek.
+    - Beklenti: `Dönem 8 CNT or CC elective` eksikliği nedeniyle mezun olamaz.

@@ -1,0 +1,111 @@
+============================================================
+ÖRNEK 20: Deniz Arslan — MEZUN OLAMAZ (MODERN PLAN / CNT-CC SOSYAL SEÇMELİ EKSİK)
+============================================================
+
+Ad Soyad: Deniz Arslan
+Öğrenci No: 2023401020
+
+2023 - 2024 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+FLF101	Fransızca Cef B2.1 Akademik	BB	2.0	2	Z
+INF112	Programlamaya Giriş	BA	5.0	4	Z
+INF113	Bilgisayar Mühendisliğine Giriş	BB	2.5	4	Z
+ING106	Matematik I	CB	5.0	7	Z
+ING116	Fizik I	CC	4.0	5	Z
+ING111	Ekonominin Temelleri	BB	3.0	4	Z
+TUR001	Türk Dili I	AA	2.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.78	23.5	28.0
+Genel	2.78	23.5	28.0
+
+2023 - 2024 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT120	Girişimcilik ve Kariyer Planlama	AA	1.5	2	Z
+FLF201	Fransızca Cef B2.2 Akademik	BA	2.0	2	Z
+INF114	İleri Bilgisayar Programlama	BB	4.0	5	Z
+INF116	Bilgisayar Sistemlerine Giriş	CB	2.0	5	Z
+ING107	Matematik II	CB	3.0	7	Z
+ING117	Fizik II	CC	4.0	5	Z
+TUR002	Türk Dili II	AA	2.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.71	18.5	28.0
+Genel	2.74	42.0	56.0
+
+2024 - 2025 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA001	Atatürk İlkeleri ve İnkılap Tarihi I	AA	2.0	2	Z
+INF224	Veri Yapısı ve Algoritmalar	BB	4.0	5	Z
+INF256	Olasılık	CB	3.0	5	Z
+ING207	Lineer Cebir	BB	3.0	5	Z
+ING229	Analog Elektronik	CC	4.0	7	Z
+ING251	Yüksek Matematik I	BB	2.5	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.69	18.5	28.0
+Genel	2.72	60.5	84.0
+
+2024 - 2025 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+ATA002	Atatürk İlkeleri ve İnkılap Tarihi II	AA	2.0	2	Z
+INF243	Nesneye Yönelik Programlama	CB	5.0	5	Z
+INF257	İstatistik ve Veri Analizi	BB	4.0	5	Z
+INF291	Staj I	AA	1.0	3	Z
+ING208	Diferansiyel Denklemler	CB	2.5	4	Z
+ING220	Sayısal Elektronik	CC	3.0	5	Z
+ING252	Yüksek Matematik II	BB	2.5	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.76	20.0	28.0
+Genel	2.73	80.5	112.0
+
+2025 - 2026 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+CNT250	Bilgisayar Mühendisleri için Proje Risk ve Değişiklik Yönetimi	AA	2.0	2	Z
+INF315	Kesikli Matematik	BB	3.0	4	Z
+INF320	Bilgisayar Mimarisi	CB	4.0	5	Z
+INF324	Veri Tabanı Tasarımı ve Uygulamaları	BB	3.0	5	Z
+INF345	Sayısal Sinyal İşleme	CB	3.0	5	Z
+INF353	Web Programlama	AA	3.0	5	S
+INF356	Veri Analizine Giriş	BA	3.0	4	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.81	21.0	30.0
+Genel	2.75	101.5	142.0
+
+2025 - 2026 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+INF323	Otomatlar ve Diller Teorisi	AA	3.0	4	Z
+INF325	Sayısal Analiz	BB	3.0	4	Z
+INF330	Robotik	CB	3.0	5	S
+INF333	İşletim Sistemleri	CB	3.0	5	Z
+INF334	Bilgisayar Ağları	BB	4.0	4	Z
+INF340	Mikroişlemciler	CC	3.0	5	Z
+INF360	Veri Tabanı Yönetimi ve Güvenliği	BA	3.0	5	S
+INF399	Staj II	AA	1.0	2	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.86	23.0	34.0
+Genel	2.77	124.5	176.0
+
+2026 - 2027 Güz Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+INF400	Veri Derlemesi	BB	3.0	5	Z
+INF402	Nesnelerin İnternetine Giriş	BB	3.0	3	Z
+INF432	Bilgisayar Grafikleri	AA	3.0	5	S
+INF443	Dağıtık Sistemler ve Uygulamalar	BA	3.0	4	Z
+INF444	Yapay Zeka	CB	3.0	5	Z
+INF471	Bilişimde Güvenlik	CB	3.0	4	Z
+INF493	Bilgisayar Mühendisliğinde Araştırma Konuları	AA	3.0	3	Z
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.90	21.0	29.0
+Genel	2.79	145.5	205.0
+
+2026 - 2027 Bahar Yarıyılı
+Kodu	Ders Adı	Notu	Kredi	AKTS	Türü
+IND471	Yöneylem Araştırması	BB	3.0	4	S
+INF472	Bulut Bilişim	BB	3.0	5	S
+INF473	Üretken Yapay Zekaya Giriş	BA	3.0	5	S
+INF481	Yazılım Mühendisliği ve Nesneye Yönelik Tasarım	CC	4.0	5	Z
+INF482	Gömülü Sistem Tasarım Temelleri	CB	4.0	5	Z
+INF494	Bitirme Projesi	AA	15.0	6	Z
+UNI304	Genel Seçmeli IV	AA	2.0	2	S
+UNI401	Toplumsal Sorumluluk Projesi	AA	2.0	6	S
+AKADEMİK NOT ORTALAMASI	ANO	KREDİ TOPLAMI	AKTS TOPLAMI
+Yarıyıl	2.96	36.0	38.0
+Genel	2.82	181.5	243.0
