@@ -302,15 +302,23 @@ class CourseVerifierAgent:
             },
         )
 
-    def cross_examine(self, ects_verdict: "AgentVerdict") -> str:
+    def cross_examine(self, ects_verdict: "AgentVerdict", lang: str = "tr") -> str:
         """Comment on ECTS result from a course perspective."""
         failed_ects = ects_verdict.details["required_ects"] - ects_verdict.details["transcript_total_ects"]
-        if ects_verdict.verdict == "fail":
-            return (
-                f"AKTS açığı ({failed_ects} AKTS) kısmen başarısız derslerden kaynaklanıyor olabilir. "
-                f"Eksik zorunlu dersler tamamlanırsa AKTS açığı da kapanabilir."
-            )
-        return "AKTS durumu yeterli, ders tamamlama açısından ek sorun yok."
+        if lang == "en":
+            if ects_verdict.verdict == "fail":
+                return (
+                    f"ECTS deficit ({failed_ects} ECTS) may be caused by failed courses. "
+                    f"Completing missing mandatory courses may close this gap."
+                )
+            return "ECTS status is sufficient, no additional issues from a course perspective."
+        else:
+            if ects_verdict.verdict == "fail":
+                return (
+                    f"AKTS açığı ({failed_ects} AKTS) kısmen başarısız derslerden kaynaklanıyor olabilir. "
+                    f"Eksik zorunlu dersler tamamlanırsa AKTS açığı da kapanabilir."
+                )
+            return "AKTS durumu yeterli, ders tamamlama açısından ek sorun yok."
 
 
 class ECTSVerifierAgent:
@@ -325,14 +333,23 @@ class ECTSVerifierAgent:
         ects_ok = transcript_total_ects >= required_ects
         issues = []
         if not ects_ok:
-            issues.append(f"AKTS yetersiz: {transcript_total_ects} / minimum {required_ects}")
+            if lang == "en":
+                issues.append(f"Insufficient ECTS: {transcript_total_ects} / minimum {required_ects}")
+            else:
+                issues.append(f"AKTS yetersiz: {transcript_total_ects} / minimum {required_ects}")
 
         if ects_ok:
             surplus = transcript_total_ects - required_ects
-            statement = f"Toplam AKTS {transcript_total_ects} / {required_ects}. Eşik sağlandı (+{surplus} fazla)."
+            if lang == "en":
+                statement = f"Total ECTS {transcript_total_ects} / {required_ects}. Threshold met (+{surplus} surplus)."
+            else:
+                statement = f"Toplam AKTS {transcript_total_ects} / {required_ects}. Eşik sağlandı (+{surplus} fazla)."
         else:
             deficit = required_ects - transcript_total_ects
-            statement = f"Toplam AKTS {transcript_total_ects} / {required_ects}. {deficit} AKTS açığı var."
+            if lang == "en":
+                statement = f"Total ECTS {transcript_total_ects} / {required_ects}. {deficit} ECTS deficit."
+            else:
+                statement = f"Toplam AKTS {transcript_total_ects} / {required_ects}. {deficit} AKTS açığı var."
 
         return AgentVerdict(
             agent="ECTSVerifier",
@@ -345,20 +362,33 @@ class ECTSVerifierAgent:
             },
         )
 
-    def cross_examine(self, course_verdict: "AgentVerdict") -> str:
+    def cross_examine(self, course_verdict: "AgentVerdict", lang: str = "tr") -> str:
         """Comment on course situation from an ECTS perspective."""
         missing = course_verdict.details["missing_mandatory"]
-        if missing:
-            missing_ects = sum(
-                c["ects"]
-                for c in GSU_BIL_REQUIREMENTS["mandatory_courses"]
-                if f"{c['code']} - {c['name']}" in missing
-            )
-            return (
-                f"Eksik {len(missing)} zorunlu dersin toplam AKTS değeri yaklaşık {missing_ects}. "
-                f"Bu dersler tamamlanırsa AKTS dengesi de iyileşebilir."
-            )
-        return "Zorunlu ders durumu AKTS hesabını olumsuz etkilemiyor."
+        if lang == "en":
+            if missing:
+                missing_ects = sum(
+                    c["ects"]
+                    for c in GSU_BIL_REQUIREMENTS["mandatory_courses"]
+                    if f"{c['code']} - {c['name']}" in missing
+                )
+                return (
+                    f"Missing {len(missing)} mandatory courses account for approximately {missing_ects} ECTS. "
+                    f"Completing these will improve the ECTS balance."
+                )
+            return "Mandatory course status does not negatively impact the ECTS calculation."
+        else:
+            if missing:
+                missing_ects = sum(
+                    c["ects"]
+                    for c in GSU_BIL_REQUIREMENTS["mandatory_courses"]
+                    if f"{c['code']} - {c['name']}" in missing
+                )
+                return (
+                    f"Eksik {len(missing)} zorunlu dersin toplam AKTS değeri yaklaşık {missing_ects}. "
+                    f"Bu dersler tamamlanırsa AKTS dengesi de iyileşebilir."
+                )
+            return "Zorunlu ders durumu AKTS hesabını olumsuz etkilemiyor."
 
 
 class RequirementsAgent:
@@ -485,15 +515,23 @@ class RequirementsAgent:
             },
         )
 
-    def cross_examine(self, course_verdict: "AgentVerdict", ects_verdict: "AgentVerdict") -> str:
+    def cross_examine(self, course_verdict: "AgentVerdict", ects_verdict: "AgentVerdict", lang: str = "tr") -> str:
         """Comment on overall picture from a requirements perspective."""
         comments = []
-        if course_verdict.verdict == "fail":
-            comments.append("Eksik zorunlu dersler not ortalamasını olumsuz etkilemiş olabilir.")
-        if ects_verdict.verdict == "fail":
-            comments.append("AKTS açığı seçmeli ders eksikliğiyle bağlantılı olabilir.")
-        if not comments:
-            return "GNO ve seçmeli ders koşulları diğer bulgularla çelişmiyor."
+        if lang == "en":
+            if course_verdict.verdict == "fail":
+                comments.append("Missing mandatory courses may have negatively impacted the GPA.")
+            if ects_verdict.verdict == "fail":
+                comments.append("ECTS deficit may be linked to missing elective courses.")
+            if not comments:
+                return "GPA and elective course requirements do not conflict with other findings."
+        else:
+            if course_verdict.verdict == "fail":
+                comments.append("Eksik zorunlu dersler not ortalamasını olumsuz etkilemiş olabilir.")
+            if ects_verdict.verdict == "fail":
+                comments.append("AKTS açığı seçmeli ders eksikliğiyle bağlantılı olabilir.")
+            if not comments:
+                return "GNO ve seçmeli ders koşulları diğer bulgularla çelişmiyor."
         return " ".join(comments)
 
 
@@ -542,15 +580,15 @@ class MasterAgent:
         logger.open_cross_examination()
         logger.log_cross_comment(
             "CourseVerifier",
-            self.course_agent.cross_examine(ects_verdict),
+            self.course_agent.cross_examine(ects_verdict, lang),
         )
         logger.log_cross_comment(
             "ECTSVerifier",
-            self.ects_agent.cross_examine(course_verdict),
+            self.ects_agent.cross_examine(course_verdict, lang),
         )
         logger.log_cross_comment(
             "RequirementsChecker",
-            self.requirements_agent.cross_examine(course_verdict, ects_verdict),
+            self.requirements_agent.cross_examine(course_verdict, ects_verdict, lang),
         )
 
         # Step 4: Master deliberation + final decision

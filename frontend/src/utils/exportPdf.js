@@ -248,32 +248,19 @@ export async function exportToPdf(data) {
   }
 
   /* ════════ COURSE LISTS ════════ */
-  if (y > 240) { doc.addPage(); y = 20; }
-  y = sectionHeading(doc, y, "V", "Completed Mandatory Courses");
-
   const completedMandatory = (data.completed_mandatory_courses ?? []);
   if (completedMandatory.length > 0) {
+    if (y > 240) { doc.addPage(); y = 20; }
+    y = sectionHeading(doc, y, "V", "Completed Mandatory Courses");
     y = bulletList(doc, completedMandatory, y, C.success, 8);
-  } else {
-    doc.setFontSize(8.5);
-    doc.setFont("helvetica", "italic");
-    doc.setTextColor(...C.gray3);
-    doc.text("None found", margin + 4, y);
-    y += 8;
+    y += 4;
   }
-  y += 4;
-
-  if (y > 240) { doc.addPage(); y = 20; }
-  y = sectionHeading(doc, y, "X", "Missing Mandatory Courses");
 
   const missing = data.missing_courses ?? [];
   if (missing.length > 0) {
+    if (y > 240) { doc.addPage(); y = 20; }
+    y = sectionHeading(doc, y, "X", "Missing Mandatory Courses");
     y = bulletList(doc, missing, y, C.error, 8);
-  } else {
-    doc.setFontSize(8.5);
-    doc.setFont("helvetica", "italic");
-    doc.setTextColor(...C.success);
-    doc.text("All mandatory courses completed", margin + 4, y);
     y += 8;
   }
 
