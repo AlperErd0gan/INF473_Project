@@ -2,14 +2,16 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getAnalysis, deleteAnalysis } from "../api";
 import { useLang } from "../contexts/LangContext";
+import { exportToPdf } from "../utils/exportPdf";
 
 export default function Result() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { id } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [agentsOpen, setAgentsOpen] = useState(true);
+  const [pdfLoading, setPdfLoading] = useState(false);
 
   useEffect(() => {
     getAnalysis(id)
@@ -24,6 +26,16 @@ export default function Result() {
       navigate("/history");
     } catch (err) {
       alert(t.result_delete_error + err.message);
+    }
+  };
+
+  const handleExportPdf = async () => {
+    if (!data || pdfLoading) return;
+    setPdfLoading(true);
+    try {
+      await exportToPdf(data);
+    } finally {
+      setPdfLoading(false);
     }
   };
 
@@ -202,6 +214,20 @@ export default function Result() {
         </button>
         <button onClick={() => navigate("/history")} style={styles.secondaryBtn}>
           {t.result_btn_history}
+        </button>
+        <button
+          onClick={handleExportPdf}
+          disabled={pdfLoading}
+          style={{ ...styles.pdfBtn, opacity: pdfLoading ? 0.65 : 1 }}
+        >
+          {pdfLoading ? (
+            <>
+              <span style={styles.pdfSpinner} />
+              {t.result_btn_pdf_loading}
+            </>
+          ) : (
+            <>↓ {t.result_btn_pdf}</>
+          )}
         </button>
         <button onClick={handleDelete} style={styles.dangerBtn}>
           {t.result_btn_delete}
@@ -594,6 +620,30 @@ const styles = {
     fontWeight: 500,
     cursor: "pointer",
     transition: "border-color 0.15s",
+  },
+  pdfBtn: {
+    backgroundColor: "transparent",
+    color: "var(--success)",
+    border: "1px solid var(--success-border)",
+    borderRadius: 7,
+    padding: "10px 22px",
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: "pointer",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 7,
+    transition: "background-color 0.15s, opacity 0.15s",
+  },
+  pdfSpinner: {
+    display: "inline-block",
+    width: 12,
+    height: 12,
+    border: "2px solid var(--success-border)",
+    borderTopColor: "var(--success)",
+    borderRadius: "50%",
+    animation: "spin 0.75s linear infinite",
+    flexShrink: 0,
   },
   dangerBtn: {
     backgroundColor: "var(--error-bg)",
