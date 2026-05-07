@@ -99,6 +99,8 @@ def upload_transcript(body: TranscriptUpload, db: Session = Depends(get_db)):
     if not body.text.strip():
         raise HTTPException(status_code=400, detail="Transcript text cannot be empty")
     validation_error = validate_single_transcript(body.text)
+    if validation_error:
+        raise HTTPException(status_code=422, detail=validation_error)
 
     cleaned_text = body.text.strip()
     text_hash = hashlib.sha256(cleaned_text.encode()).hexdigest()
@@ -206,20 +208,34 @@ def delete_analysis(analysis_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Analysis not found")
     
     transcript_id = analysis.transcript_id
-    db.delete(analysis)
-    
     transcript = db.query(Transcript).filter(Transcript.id == transcript_id).first()
+    student_id = transcript.student_id if transcript else None
+
+    db.delete(analysis)
     if transcript:
         db.delete(transcript)
-        
+
+    if student_id:
+        other_transcripts = db.query(Transcript).filter(
+            Transcript.student_id == student_id,
+            Transcript.id != transcript_id,
+        ).count()
+        if other_transcripts == 0:
+            student = db.query(Student).filter(Student.id == student_id).first()
+            if student:
+                db.delete(student)
+
     db.commit()
     return {"message": "Analysis deleted"}
 
 
 def _format_analysis(analysis: AnalysisResult, transcript_id: int) -> dict:
+    student = analysis.transcript.student if analysis.transcript else None
     return {
         "analysis_id": analysis.id,
         "transcript_id": transcript_id,
+        "student_name": student.name if student else None,
+        "student_number": student.student_number if student else None,
         "gpa": analysis.gpa,
         "transcript_total_ects": analysis.transcript_total_ects,
         "required_ects": analysis.required_ects,

@@ -78,6 +78,7 @@ const t = {
       CourseVerifier:      "Ders Doğrulayıcı",
       ECTSVerifier:        "AKTS Doğrulayıcı",
       RequirementsChecker: "Koşul Denetçisi",
+      MasterAgent:         "Baş Ajan",
     },
 
     /* ── History ── */
@@ -193,6 +194,7 @@ const t = {
       CourseVerifier:      "Course Verifier",
       ECTSVerifier:        "ECTS Verifier",
       RequirementsChecker: "Requirements Checker",
+      MasterAgent:         "Master Agent",
     },
 
     /* ── History ── */

@@ -248,7 +248,7 @@ export async function exportToPdf(data) {
   }
 
   /* ════════ COURSE LISTS ════════ */
-  const completedMandatory = (data.completed_mandatory_courses ?? []);
+  const completedMandatory = (data.completed_courses ?? []);
   if (completedMandatory.length > 0) {
     if (y > 240) { doc.addPage(); y = 20; }
     y = sectionHeading(doc, y, "V", "Completed Mandatory Courses");
