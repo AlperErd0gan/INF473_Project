@@ -76,8 +76,8 @@ Multi-agent analysis pipeline:
 
 1. **Parse**: LLM (`TranscriptParserAgent`) extracts raw transcript text → structured JSON (student name, GPA, ECTS, completed courses).
 2. **Evaluate**: Pure Python logic validates the structured data using `CourseVerifierAgent`, `ECTSVerifierAgent`, and `RequirementsAgent`.
-3. **Report**: LLM (`MasterAgent`) takes the validation results and generates a concise graduation report in Turkish.
+3. **Report & Tool Calling**: LLM (`MasterAgent`) takes the validation results and generates a concise graduation report. **During this phase, the MasterAgent is equipped with native Tool Calling capabilities.** It can autonomously query the SQLite database (`check_student_history`) mid-generation to look up a student's past transcripts and adapt its final report based on their historical progress.
 
-LLM calls use Groq API (`llama-3.3-70b-versatile`) with JSON mode for structured output.
+LLM calls use Groq API (`llama-3.3-70b-versatile`), dynamically switching between native Tool Calling and JSON mode for reliable structured output.
 
 Database: SQLite (`backend/transcript_agent.db`), 3 tables: `students`, `transcripts`, `analysis_results`.

@@ -208,22 +208,31 @@ def _extract_last_cumulative_gpa(transcript_text: str) -> Optional[float]:
         return None
 
 
-def _chat(system: str, user: str) -> str:
-    """Wrapper for Groq API calls with multi-model fallback logic."""
+def _chat(system: str, user: str, tools: list = None, messages: list = None) -> object:
+    """Wrapper for Groq API calls with multi-model fallback and optional tool calling."""
     last_exception = None
     
+    if messages is None:
+        messages = [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ]
+        
     for model_name in MODELS:
         try:
-            response = client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user},
-                ],
-                response_format={"type": "json_object"},
-                temperature=0.0,
-            )
-            return response.choices[0].message.content
+            kwargs = {
+                "model": model_name,
+                "messages": messages,
+                "temperature": 0.0,
+            }
+            if tools:
+                kwargs["tools"] = tools
+                kwargs["tool_choice"] = "auto"
+            else:
+                kwargs["response_format"] = {"type": "json_object"}
+                
+            response = client.chat.completions.create(**kwargs)
+            return response.choices[0].message
         except Exception as e:
             last_exception = e
             # Only print warning if there are more models to try
@@ -242,7 +251,7 @@ class TranscriptParserAgent:
     """Parses raw transcript text into structured data using LLM."""
 
     def parse(self, transcript_text: str) -> ParsedTranscript:
-        raw = _chat(PARSE_SYSTEM_PROMPT, transcript_text)
+        raw = _chat(PARSE_SYSTEM_PROMPT, transcript_text).content
         parsed = ParsedTranscript.model_validate_json(raw)
 
         # Deterministic override: GPA must come from the last "Genel" row.
@@ -547,6 +556,33 @@ class MasterAgent:
         self.ects_agent = ECTSVerifierAgent()
         self.requirements_agent = RequirementsAgent()
 
+    def _check_student_history_tool(self, student_number: str) -> str:
+        """Database tool for the existing MasterAgent."""
+        if not student_number:
+            return json.dumps({"status": "error", "message": "No student number provided."})
+        try:
+            from database import SessionLocal
+            from models import Student, AnalysisResult, Transcript
+            db = SessionLocal()
+            student = db.query(Student).filter(Student.student_number == student_number).first()
+            if not student:
+                return json.dumps({"status": "no_history", "message": "First time analyzing."})
+            past_analysis = db.query(AnalysisResult).join(Transcript).filter(
+                Transcript.student_id == student.id
+            ).order_by(AnalysisResult.analyzed_at.desc()).first()
+            if past_analysis:
+                return json.dumps({
+                    "status": "history_found",
+                    "previous_gpa": past_analysis.gpa,
+                    "was_graduated": past_analysis.is_graduated,
+                })
+        except Exception as e:
+            return json.dumps({"status": "error", "message": str(e)})
+        finally:
+            if 'db' in locals():
+                db.close()
+        return json.dumps({"status": "no_history"})
+
     def run(self, transcript_text: str, lang: str = "tr") -> dict:
         # Step 1: Parse
         parsed = self.parser.parse(transcript_text)
@@ -606,7 +642,7 @@ class MasterAgent:
         logger.log_final_decision(is_graduated, all_issues)
         logger.flush()
 
-        report = self._generate_report(
+        report, tool_logs = self._generate_report(
             parsed,
             course_verdict,
             ects_verdict,
@@ -621,7 +657,10 @@ class MasterAgent:
             verdict="pass" if is_graduated else "fail",
             statement=report,
             issues=[],
-            details={"is_graduated": is_graduated}
+            details={
+                "is_graduated": is_graduated,
+                "tool_logs": tool_logs
+            }
         )
 
         return {
@@ -653,7 +692,7 @@ class MasterAgent:
         all_issues: list[str],
         is_graduated: bool,
         lang: str = "tr"
-    ) -> str:
+    ) -> tuple[str, list]:
         summary = {
             "target_language": "English" if lang == "en" else "Turkish",
             "student": {
@@ -694,11 +733,87 @@ class MasterAgent:
             "missing_mandatory_courses": course_verdict.details["missing_mandatory"],
             "completed_codes": course_verdict.details["completed_codes"],
         }
-        raw = _chat(REPORT_SYSTEM_PROMPT, json.dumps(summary, ensure_ascii=False, indent=2))
-        draft_report = json.loads(raw).get("report", "").strip()
+        
+        tools = [
+            {
+                "type": "function",
+                "function": {
+                    "name": "check_student_history",
+                    "description": "Queries the SQLite database to check the student's historical GPA and graduation status.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "student_number": {"type": "string"}
+                        },
+                        "required": ["student_number"],
+                    },
+                },
+            }
+        ]
+
+        system_prompt = REPORT_SYSTEM_PROMPT + "\n\nYou have access to a tool to check the student's history in the database. Use it if a student number is provided. Incorporate any historical progress into your final report JSON."
+        user_prompt = json.dumps(summary, ensure_ascii=False, indent=2)
+        
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
+        
+        # 1. Ask MasterReportAgent to generate report OR call tool
+        message = _chat(system_prompt, user_prompt, tools=tools, messages=messages)
+        
+        tool_logs = []
+        
+        if message.tool_calls:
+            print(f"\n[MasterAgent] 🛠️  CALLING DB TOOL: {[t.function.name for t in message.tool_calls]}")
+            messages.append({
+                "role": "assistant",
+                "content": message.content or "",
+                "tool_calls": [{"id": t.id, "type": "function", "function": {"name": t.function.name, "arguments": t.function.arguments}} for t in message.tool_calls]
+            })
+            
+            for tool_call in message.tool_calls:
+                if tool_call.function.name == "check_student_history":
+                    args = json.loads(tool_call.function.arguments)
+                    result = self._check_student_history_tool(args.get("student_number"))
+                    
+                    # Create a comment for the frontend
+                    parsed_result = json.loads(result)
+                    if parsed_result.get("status") == "history_found":
+                        comment = f"I checked the database and found a previous analysis with a GPA of {parsed_result.get('previous_gpa')}." if lang == "en" else f"Veritabanını kontrol ettim ve {parsed_result.get('previous_gpa')} not ortalamasına sahip önceki bir analiz buldum."
+                    else:
+                        comment = f"I checked the database but found no prior records for this student." if lang == "en" else f"Veritabanını kontrol ettim ancak bu öğrenci için geçmiş bir kayıt bulamadım."
+                        
+                    tool_logs.append({
+                        "tool": "check_student_history",
+                        "action": "Database Query",
+                        "comment": comment
+                    })
+                    
+                    messages.append({
+                        "role": "tool",
+                        "tool_call_id": tool_call.id,
+                        "name": tool_call.function.name,
+                        "content": result
+                    })
+            
+            # 2. Get final JSON report without tools so it forces JSON output
+            message = _chat(system_prompt, user_prompt, tools=None, messages=messages)
+
+        try:
+            content = message.content.strip()
+            if content.startswith("```json"):
+                content = content[7:-3].strip()
+            elif content.startswith("```"):
+                content = content[3:-3].strip()
+            draft_report = json.loads(content).get("report", "").strip()
+        except Exception as e:
+            print(f"Failed to parse JSON draft: {e}")
+            draft_report = message.content
+            
         if not draft_report:
-            return ""
-        return self._review_report(draft_report, summary)
+            return "", tool_logs
+        return self._review_report(draft_report, summary), tool_logs
 
     def _review_report(self, draft_report: str, summary: dict) -> str:
         review_payload = {
@@ -707,7 +822,7 @@ class MasterAgent:
             "analysis_data": summary,
         }
         try:
-            raw = _chat(REPORT_REVIEW_SYSTEM_PROMPT, json.dumps(review_payload, ensure_ascii=False, indent=2))
+            raw = _chat(REPORT_REVIEW_SYSTEM_PROMPT, json.dumps(review_payload, ensure_ascii=False, indent=2)).content
             reviewed_report = json.loads(raw).get("report", "").strip()
             return reviewed_report or draft_report
         except Exception as e:

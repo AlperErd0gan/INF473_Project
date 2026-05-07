@@ -303,6 +303,21 @@ function AgentCard({ verdict, labels }) {
           ))}
         </ul>
       )}
+
+      {verdict.details?.tool_logs?.length > 0 && (
+        <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px dashed var(--border)" }}>
+          <div style={{ fontSize: 11, fontWeight: 600, color: "var(--gold)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em", display: "flex", alignItems: "center", gap: 4 }}>
+            <span>🛠️</span> Tool Activity
+          </div>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 6 }}>
+            {verdict.details.tool_logs.map((log, i) => (
+              <li key={i} style={{ fontSize: 12, color: "var(--text-secondary)", backgroundColor: "rgba(255, 215, 0, 0.05)", padding: "8px 10px", borderRadius: 4, borderLeft: "2px solid var(--gold)", lineHeight: 1.4 }}>
+                <strong style={{ color: "var(--text-primary)" }}>{log.action}:</strong> {log.comment}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
