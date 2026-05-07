@@ -14,9 +14,8 @@ client = Groq(api_key=os.environ["GROQ_API_KEY"])
 # Primary model with fallbacks for rate limits or other failures
 MODELS = [
     "llama-3.3-70b-versatile",
-    "llama-3.1-70b-versatile",
     "llama-3.1-8b-instant",
-    "mixtral-8x7b-32768"
+    "gemma2-9b-it",
 ]
 
 FAILED_GRADES = {"FF", "DZ", "F", "IA", "NP", "W", "WF"}
@@ -556,20 +555,26 @@ class MasterAgent:
         self.ects_agent = ECTSVerifierAgent()
         self.requirements_agent = RequirementsAgent()
 
-    def _check_student_history_tool(self, student_number: str) -> str:
+    def _check_student_history_tool(self, student_number: str = None, student_name: str = None) -> str:
         """Database tool for the existing MasterAgent."""
-        if not student_number:
-            return json.dumps({"status": "error", "message": "No student number provided."})
+        if not student_number and not student_name:
+            return json.dumps({"status": "error", "message": "No student information provided."})
         try:
             from database import SessionLocal
             from models import Student, AnalysisResult, Transcript
+            from sqlalchemy import or_
             db = SessionLocal()
-            student = db.query(Student).filter(Student.student_number == student_number).first()
-            if not student:
-                return json.dumps({"status": "no_history", "message": "First time analyzing."})
-            past_analysis = db.query(AnalysisResult).join(Transcript).filter(
-                Transcript.student_id == student.id
-            ).order_by(AnalysisResult.analyzed_at.desc()).first()
+            
+            query = db.query(AnalysisResult).join(Transcript).join(Student)
+            
+            conditions = []
+            if student_number:
+                conditions.append(Student.student_number == student_number)
+            if student_name:
+                conditions.append(Student.name == student_name)
+                
+            past_analysis = query.filter(or_(*conditions)).order_by(AnalysisResult.analyzed_at.desc()).first()
+            
             if past_analysis:
                 return json.dumps({
                     "status": "history_found",
@@ -739,13 +744,13 @@ class MasterAgent:
                 "type": "function",
                 "function": {
                     "name": "check_student_history",
-                    "description": "Queries the SQLite database to check the student's historical GPA and graduation status.",
+                    "description": "Queries the SQLite database to check the student's historical GPA and graduation status by student number or name.",
                     "parameters": {
                         "type": "object",
                         "properties": {
-                            "student_number": {"type": "string"}
-                        },
-                        "required": ["student_number"],
+                            "student_number": {"type": "string"},
+                            "student_name": {"type": "string"}
+                        }
                     },
                 },
             }
@@ -775,12 +780,46 @@ class MasterAgent:
             for tool_call in message.tool_calls:
                 if tool_call.function.name == "check_student_history":
                     args = json.loads(tool_call.function.arguments)
-                    result = self._check_student_history_tool(args.get("student_number"))
+                    result = self._check_student_history_tool(
+                        student_number=args.get("student_number"),
+                        student_name=args.get("student_name")
+                    )
                     
                     # Create a comment for the frontend
                     parsed_result = json.loads(result)
                     if parsed_result.get("status") == "history_found":
-                        comment = f"I checked the database and found a previous analysis with a GPA of {parsed_result.get('previous_gpa')}." if lang == "en" else f"Veritabanını kontrol ettim ve {parsed_result.get('previous_gpa')} not ortalamasına sahip önceki bir analiz buldum."
+                        prev_gpa = parsed_result.get("previous_gpa")
+                        curr_gpa = summary.get("academic_metrics", {}).get("gpa")
+                        was_graduated = parsed_result.get("was_graduated")
+                        
+                        gpa_diff_text = ""
+                        if prev_gpa is not None and curr_gpa is not None:
+                            diff = curr_gpa - prev_gpa
+                            if diff > 0.001:
+                                gpa_diff_text = f"an increase of {diff:.2f}" if lang == "en" else f"{diff:.2f} puanlık bir artış"
+                            elif diff < -0.001:
+                                gpa_diff_text = f"a decrease of {abs(diff):.2f}" if lang == "en" else f"{abs(diff):.2f} puanlık bir düşüş"
+                            else:
+                                gpa_diff_text = "no change" if lang == "en" else "değişim yok"
+                                
+                        grad_text = ""
+                        if was_graduated is False and is_graduated is True:
+                            grad_text = " The student has now fulfilled graduation requirements." if lang == "en" else " Öğrenci artık mezuniyet şartlarını sağlıyor."
+                        elif was_graduated is True and is_graduated is False:
+                            grad_text = " The student lost their graduation status." if lang == "en" else " Öğrenci mezuniyet durumunu kaybetmiş."
+                        elif was_graduated is False and is_graduated is False:
+                            grad_text = " The student still has missing requirements." if lang == "en" else " Öğrencinin hala eksik şartları var."
+                        elif was_graduated is True and is_graduated is True:
+                            grad_text = " The student remains eligible for graduation." if lang == "en" else " Öğrenci mezuniyet hakkını koruyor."
+
+                        if lang == "en":
+                            prev_gpa_str = f"{prev_gpa:.2f}" if prev_gpa is not None else "unknown"
+                            curr_gpa_str = f"{curr_gpa:.2f}" if curr_gpa is not None else "unknown"
+                            comment = f"I compared the new transcript with the past record. The GPA went from {prev_gpa_str} to {curr_gpa_str} ({gpa_diff_text}).{grad_text}"
+                        else:
+                            prev_gpa_str = f"{prev_gpa:.2f}" if prev_gpa is not None else "bilinmeyen"
+                            curr_gpa_str = f"{curr_gpa:.2f}" if curr_gpa is not None else "bilinmeyen"
+                            comment = f"Yeni transkripti eski kayıtla karşılaştırdım. Not ortalaması {prev_gpa_str}'den {curr_gpa_str}'ye değişmiş ({gpa_diff_text}).{grad_text}"
                     else:
                         comment = f"I checked the database but found no prior records for this student." if lang == "en" else f"Veritabanını kontrol ettim ancak bu öğrenci için geçmiş bir kayıt bulamadım."
                         
