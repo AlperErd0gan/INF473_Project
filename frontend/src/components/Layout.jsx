@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink, Link, useLocation } from "react-router-dom";
 import { useLang } from "../contexts/LangContext";
 import gsuLogo from "../assets/gsu-university-logo.png";
 
@@ -76,13 +76,13 @@ export default function Layout() {
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <header style={styles.header}>
         <div style={styles.headerInner}>
-          <div style={styles.brand}>
+          <Link to="/" style={styles.brandLink}>
             <img src={gsuLogo} alt="Galatasaray Üniversitesi logosu" style={styles.brandLogo} />
             <div>
               <div style={styles.brandTitle}>{t.brand_title}</div>
               <div style={styles.brandSub}>{t.brand_sub}</div>
             </div>
-          </div>
+          </Link>
 
           <div style={styles.headerRight}>
             <nav style={styles.nav}>
@@ -159,6 +159,13 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
     height: 68,
+  },
+  brandLink: {
+    display: "flex",
+    alignItems: "center",
+    gap: 14,
+    textDecoration: "none",
+    cursor: "pointer",
   },
   brand: {
     display: "flex",
