@@ -82,3 +82,7 @@ Multi-agent analysis pipeline:
 LLM calls use Groq API (`llama-3.3-70b-versatile`), dynamically switching between native Tool Calling and JSON mode for reliable structured output.
 
 Database: SQLite (`backend/transcript_agent.db`), 3 tables: `students`, `transcripts`, `analysis_results`.
+
+### Database Schema
+
+![Database Schema](db_schema.svg)

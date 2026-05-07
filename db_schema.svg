@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="579px" preserveAspectRatio="none" style="width:617px;height:579px;background:#F4F6F9;" version="1.1" viewBox="0 0 617 579" width="617px" zoomAndPan="magnify"><defs/><g><rect fill="#F4F6F9" height="33.2813" id="_title" rx="5" ry="5" style="stroke:#F4F6F9;stroke-width:0.0;" width="594" x="10" y="10"/><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="20" font-weight="bold" lengthAdjust="spacing" textLength="584" x="15" y="33.5645">&#55356;&#57235; GSU Virtual Academic Advisor - Database Schema</text><!--MD5=[778f5062d6aeb06cb1abb57c97617757]
+class students--><g id="elem_students"><rect codeLine="42" fill="#FFFFFF" height="101.6641" id="students" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="230.6667" x="32.9167" y="56.2813"/><rect fill="#3B82F6" height="25.1328" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="230.6667" x="32.9167" y="56.2813"/><rect fill="#3B82F6" height="5" style="stroke:#3B82F6;stroke-width:2.0;" width="230.6667" x="32.9167" y="76.4141"/><rect codeLine="42" fill="none" height="101.6641" id="students" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="230.6667" x="32.9167" y="56.2813"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="56" x="120.25" y="73.3481">students</text><line style="stroke:#3B82F6;stroke-width:2.0;" x1="33.9167" x2="262.5833" y1="81.4141" y2="81.4141"/><path d="M45.875,88.6302 C44.38,88.6302 43.1667,89.8435 43.1667,91.3385 C43.1667,91.5119 43.1667,91.6852 43.1992,91.8477 L39.9167,95.1302 L39.9167,97.2969 L43.1667,97.2969 L43.1667,95.1302 L45.3333,95.1302 L45.3333,94.0469 L45.3658,94.0144 C45.5283,94.0469 45.7017,94.0469 45.875,94.0469 C47.37,94.0469 48.5833,92.8335 48.5833,91.3385 C48.5833,89.8435 47.37,88.6302 45.875,88.6302 M46.4167,89.7135 C47.0125,89.7135 47.5,90.201 47.5,90.7969 C47.5,91.3927 47.0125,91.8802 46.4167,91.8802 C45.8208,91.8802 45.3333,91.3927 45.3333,90.7969 C45.3333,90.201 45.8208,89.7135 46.4167,89.7135 " fill="#F59E0B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="54.5833" y="97.481">id</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="53" x="72.5833" y="97.481">: Integer</text><line style="stroke:#3B82F6;stroke-width:1.0;" x1="33.9167" x2="262.5833" y1="104.5469" y2="104.5469"/><line style="stroke:#3B82F6;stroke-width:1.0;" x1="33.9167" x2="262.5833" y1="106.5469" y2="106.5469"/><path d="M43.1667,111.763 C41.3683,111.763 39.9167,113.2147 39.9167,115.013 C39.9167,116.8114 41.3683,118.263 43.1667,118.263 C44.965,118.263 46.4167,116.8114 46.4167,115.013 C46.4167,113.2147 44.965,111.763 43.1667,111.763 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="87" x="53.5833" y="120.6138">name : String</text><path d="M43.1667,126.8958 C41.3683,126.8958 39.9167,128.3475 39.9167,130.1458 C39.9167,131.9442 41.3683,133.3958 43.1667,133.3958 C44.965,133.3958 46.4167,131.9442 46.4167,130.1458 C46.4167,128.3475 44.965,126.8958 43.1667,126.8958 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="156" x="53.5833" y="135.7466">student_number : String</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-style="italic" lengthAdjust="spacing" textLength="44" x="213.5833" y="135.7466">[Index]</text><path d="M43.1667,142.0286 C41.3683,142.0286 39.9167,143.4803 39.9167,145.2786 C39.9167,147.077 41.3683,148.5286 43.1667,148.5286 C44.965,148.5286 46.4167,147.077 46.4167,145.2786 C46.4167,143.4803 44.965,142.0286 43.1667,142.0286 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="143" x="53.5833" y="150.8794">created_at : DateTime</text></g><!--MD5=[dd65a91ea49ee12bafe376cf91a203c9]
+class transcripts--><g id="elem_transcripts"><rect codeLine="50" fill="#FFFFFF" height="116.7969" id="transcripts" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="197.6667" x="49.4167" y="286.2813"/><rect fill="#3B82F6" height="25.1328" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="197.6667" x="49.4167" y="286.2813"/><rect fill="#3B82F6" height="5" style="stroke:#3B82F6;stroke-width:2.0;" width="197.6667" x="49.4167" y="306.4141"/><rect codeLine="50" fill="none" height="116.7969" id="transcripts" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="197.6667" x="49.4167" y="286.2813"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="68" x="114.25" y="303.3481">transcripts</text><line style="stroke:#3B82F6;stroke-width:2.0;" x1="50.4167" x2="246.0833" y1="311.4141" y2="311.4141"/><path d="M62.375,318.6302 C60.88,318.6302 59.6667,319.8435 59.6667,321.3385 C59.6667,321.5119 59.6667,321.6852 59.6992,321.8477 L56.4167,325.1302 L56.4167,327.2969 L59.6667,327.2969 L59.6667,325.1302 L61.8333,325.1302 L61.8333,324.0469 L61.8658,324.0144 C62.0283,324.0469 62.2017,324.0469 62.375,324.0469 C63.87,324.0469 65.0833,322.8335 65.0833,321.3385 C65.0833,319.8435 63.87,318.6302 62.375,318.6302 M62.9167,319.7135 C63.5125,319.7135 64,320.201 64,320.7969 C64,321.3927 63.5125,321.8802 62.9167,321.8802 C62.3208,321.8802 61.8333,321.3927 61.8333,320.7969 C61.8333,320.201 62.3208,319.7135 62.9167,319.7135 " fill="#F59E0B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="71.0833" y="327.481">id</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="53" x="89.0833" y="327.481">: Integer</text><line style="stroke:#3B82F6;stroke-width:1.0;" x1="50.4167" x2="246.0833" y1="334.5469" y2="334.5469"/><line style="stroke:#3B82F6;stroke-width:1.0;" x1="50.4167" x2="246.0833" y1="336.5469" y2="336.5469"/><path d="M62.7867,341.7955 C62.5917,341.8064 62.3967,341.828 62.2125,341.893 C61.92,342.0014 61.6383,342.1639 61.4,342.4022 A0.5417,0.5417 0 1 0 62.1475,343.1497 C62.2667,343.0305 62.4075,342.9655 62.5592,342.9114 C62.9383,342.7814 63.4042,342.8355 63.7075,343.1497 C64.13,343.5722 64.13,344.2764 63.7075,344.7097 L62.0825,346.3347 C61.6058,346.8114 61.2158,346.8547 60.9342,346.8439 C60.6525,346.833 60.49,346.703 60.49,346.703 A0.5417,0.5417 0 1 0 59.9483,347.6564 C60.3167,347.8947 60.3167,347.8947 60.8583,347.9272 C61.4,347.9597 62.1583,347.7539 62.8192,347.0822 L64.4442,345.4572 C65.2892,344.6122 65.2892,343.2472 64.4442,342.413 C64.1408,342.1097 63.7833,341.9255 63.3933,341.8389 C63.1983,341.7955 62.9817,341.7955 62.7867,341.8064 M60.62,344.298 C60.0783,344.2764 59.3308,344.4605 58.6917,345.1105 L57.0667,346.7355 C56.2217,347.5805 56.2217,348.9455 57.0667,349.7797 C57.6733,350.3864 58.54,350.5597 59.2983,350.2889 C59.5908,350.1805 59.8725,350.018 60.1108,349.7797 A0.5417,0.5417 0 1 0 59.3633,349.0322 C59.2442,349.1514 59.1033,349.2164 58.9517,349.2705 C58.5725,349.4005 58.1067,349.3464 57.8033,349.0322 C57.3808,348.6097 57.3808,347.9055 57.8033,347.4722 L59.4283,345.8472 C59.8617,345.4139 60.2408,345.3597 60.5442,345.3705 C60.8475,345.3814 61.0533,345.468 61.0533,345.468 A0.5417,0.5417 0 1 0 61.53,344.5147 C61.1617,344.298 61.1617,344.298 60.62,344.2764 " fill="#8B5CF6" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="78" x="71.0833" y="350.6138">student_id</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="53" x="153.0833" y="350.6138">: Integer</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-style="italic" lengthAdjust="spacing" textLength="31" x="210.0833" y="350.6138">«FK»</text><path d="M59.6667,356.8958 C57.8683,356.8958 56.4167,358.3475 56.4167,360.1458 C56.4167,361.9442 57.8683,363.3958 59.6667,363.3958 C61.465,363.3958 62.9167,361.9442 62.9167,360.1458 C62.9167,358.3475 61.465,356.8958 59.6667,356.8958 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="104" x="70.0833" y="365.7466">raw_text : String</text><path d="M59.6667,372.0286 C57.8683,372.0286 56.4167,373.4803 56.4167,375.2786 C56.4167,377.077 57.8683,378.5286 59.6667,378.5286 C61.465,378.5286 62.9167,377.077 62.9167,375.2786 C62.9167,373.4803 61.465,372.0286 59.6667,372.0286 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="113" x="70.0833" y="380.8794">text_hash : String</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-style="italic" lengthAdjust="spacing" textLength="44" x="187.0833" y="380.8794">[Index]</text><path d="M59.6667,387.1615 C57.8683,387.1615 56.4167,388.6131 56.4167,390.4115 C56.4167,392.2098 57.8683,393.6615 59.6667,393.6615 C61.465,393.6615 62.9167,392.2098 62.9167,390.4115 C62.9167,388.6131 61.465,387.1615 59.6667,387.1615 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="153" x="70.0833" y="396.0122">uploaded_at : DateTime</text></g><!--MD5=[6139157b78e9ea9411183579bc64c5bb]
+class analysis_results--><g id="elem_analysis_results"><rect codeLine="59" fill="#FFFFFF" height="222.7266" id="analysis_results" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="225.6667" x="369.4167" y="233.2813"/><rect fill="#3B82F6" height="25.1328" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="225.6667" x="369.4167" y="233.2813"/><rect fill="#3B82F6" height="5" style="stroke:#3B82F6;stroke-width:2.0;" width="225.6667" x="369.4167" y="253.4141"/><rect codeLine="59" fill="none" height="222.7266" id="analysis_results" rx="5" ry="5" style="stroke:#3B82F6;stroke-width:2.0;" width="225.6667" x="369.4167" y="233.2813"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="101" x="431.75" y="250.3481">analysis_results</text><line style="stroke:#3B82F6;stroke-width:2.0;" x1="370.4167" x2="594.0833" y1="258.4141" y2="258.4141"/><path d="M382.375,265.6302 C380.88,265.6302 379.6667,266.8435 379.6667,268.3385 C379.6667,268.5119 379.6667,268.6852 379.6992,268.8477 L376.4167,272.1302 L376.4167,274.2969 L379.6667,274.2969 L379.6667,272.1302 L381.8333,272.1302 L381.8333,271.0469 L381.8658,271.0144 C382.0283,271.0469 382.2017,271.0469 382.375,271.0469 C383.87,271.0469 385.0833,269.8335 385.0833,268.3385 C385.0833,266.8435 383.87,265.6302 382.375,265.6302 M382.9167,266.7135 C383.5125,266.7135 384,267.201 384,267.7969 C384,268.3927 383.5125,268.8802 382.9167,268.8802 C382.3208,268.8802 381.8333,268.3927 381.8333,267.7969 C381.8333,267.201 382.3208,266.7135 382.9167,266.7135 " fill="#F59E0B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="391.0833" y="274.481">id</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="53" x="409.0833" y="274.481">: Integer</text><line style="stroke:#3B82F6;stroke-width:1.0;" x1="370.4167" x2="594.0833" y1="281.5469" y2="281.5469"/><line style="stroke:#3B82F6;stroke-width:1.0;" x1="370.4167" x2="594.0833" y1="283.5469" y2="283.5469"/><path d="M382.7867,288.7955 C382.5917,288.8064 382.3967,288.828 382.2125,288.893 C381.92,289.0014 381.6383,289.1639 381.4,289.4022 A0.5417,0.5417 0 1 0 382.1475,290.1497 C382.2667,290.0305 382.4075,289.9655 382.5592,289.9114 C382.9383,289.7814 383.4042,289.8355 383.7075,290.1497 C384.13,290.5722 384.13,291.2764 383.7075,291.7097 L382.0825,293.3347 C381.6058,293.8114 381.2158,293.8547 380.9342,293.8439 C380.6525,293.833 380.49,293.703 380.49,293.703 A0.5417,0.5417 0 1 0 379.9483,294.6564 C380.3167,294.8947 380.3167,294.8947 380.8583,294.9272 C381.4,294.9597 382.1583,294.7539 382.8192,294.0822 L384.4442,292.4572 C385.2892,291.6122 385.2892,290.2472 384.4442,289.413 C384.1408,289.1097 383.7833,288.9255 383.3933,288.8389 C383.1983,288.7955 382.9817,288.7955 382.7867,288.8064 M380.62,291.298 C380.0783,291.2764 379.3308,291.4605 378.6917,292.1105 L377.0667,293.7355 C376.2217,294.5805 376.2217,295.9455 377.0667,296.7797 C377.6733,297.3864 378.54,297.5597 379.2983,297.2889 C379.5908,297.1805 379.8725,297.018 380.1108,296.7797 A0.5417,0.5417 0 1 0 379.3633,296.0322 C379.2442,296.1514 379.1033,296.2164 378.9517,296.2705 C378.5725,296.4005 378.1067,296.3464 377.8033,296.0322 C377.3808,295.6097 377.3808,294.9055 377.8033,294.4722 L379.4283,292.8472 C379.8617,292.4139 380.2408,292.3597 380.5442,292.3705 C380.8475,292.3814 381.0533,292.468 381.0533,292.468 A0.5417,0.5417 0 1 0 381.53,291.5147 C381.1617,291.298 381.1617,291.298 380.62,291.2764 " fill="#8B5CF6" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="93" x="391.0833" y="297.6138">transcript_id</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="53" x="488.0833" y="297.6138">: Integer</text><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-style="italic" lengthAdjust="spacing" textLength="31" x="545.0833" y="297.6138">«FK»</text><path d="M379.6667,303.8958 C377.8683,303.8958 376.4167,305.3475 376.4167,307.1458 C376.4167,308.9442 377.8683,310.3958 379.6667,310.3958 C381.465,310.3958 382.9167,308.9442 382.9167,307.1458 C382.9167,305.3475 381.465,303.8958 379.6667,303.8958 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="67" x="390.0833" y="312.7466">gpa : Float</text><path d="M379.6667,319.0286 C377.8683,319.0286 376.4167,320.4803 376.4167,322.2786 C376.4167,324.077 377.8683,325.5286 379.6667,325.5286 C381.465,325.5286 382.9167,324.077 382.9167,322.2786 C382.9167,320.4803 381.465,319.0286 379.6667,319.0286 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="188" x="390.0833" y="327.8794">transcript_total_ects : Integer</text><path d="M379.6667,334.1615 C377.8683,334.1615 376.4167,335.6131 376.4167,337.4115 C376.4167,339.2098 377.8683,340.6615 379.6667,340.6615 C381.465,340.6615 382.9167,339.2098 382.9167,337.4115 C382.9167,335.6131 381.465,334.1615 379.6667,334.1615 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="187" x="390.0833" y="343.0122">required_ects : Integer = 240</text><path d="M379.6667,349.2943 C377.8683,349.2943 376.4167,350.7459 376.4167,352.5443 C376.4167,354.3426 377.8683,355.7943 379.6667,355.7943 C381.465,355.7943 382.9167,354.3426 382.9167,352.5443 C382.9167,350.7459 381.465,349.2943 379.6667,349.2943 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="199" x="390.0833" y="358.145">is_graduated : Boolean = False</text><path d="M379.6667,364.4271 C377.8683,364.4271 376.4167,365.8788 376.4167,367.6771 C376.4167,369.4754 377.8683,370.9271 379.6667,370.9271 C381.465,370.9271 382.9167,369.4754 382.9167,367.6771 C382.9167,365.8788 381.465,364.4271 379.6667,364.4271 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="169" x="390.0833" y="373.2778">completed_courses : JSON</text><path d="M379.6667,379.5599 C377.8683,379.5599 376.4167,381.0116 376.4167,382.8099 C376.4167,384.6082 377.8683,386.0599 379.6667,386.0599 C381.465,386.0599 382.9167,384.6082 382.9167,382.8099 C382.9167,381.0116 381.465,379.5599 379.6667,379.5599 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="150" x="390.0833" y="388.4106">missing_courses : JSON</text><path d="M379.6667,394.6927 C377.8683,394.6927 376.4167,396.1444 376.4167,397.9427 C376.4167,399.741 377.8683,401.1927 379.6667,401.1927 C381.465,401.1927 382.9167,399.741 382.9167,397.9427 C382.9167,396.1444 381.465,394.6927 379.6667,394.6927 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="165" x="390.0833" y="403.5435">missing_conditions : JSON</text><path d="M379.6667,409.8255 C377.8683,409.8255 376.4167,411.2772 376.4167,413.0755 C376.4167,414.8739 377.8683,416.3255 379.6667,416.3255 C381.465,416.3255 382.9167,414.8739 382.9167,413.0755 C382.9167,411.2772 381.465,409.8255 379.6667,409.8255 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="138" x="390.0833" y="418.6763">agent_verdicts : JSON</text><path d="M379.6667,424.9583 C377.8683,424.9583 376.4167,426.41 376.4167,428.2083 C376.4167,430.0067 377.8683,431.4583 379.6667,431.4583 C381.465,431.4583 382.9167,430.0067 382.9167,428.2083 C382.9167,426.41 381.465,424.9583 379.6667,424.9583 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="121" x="390.0833" y="433.8091">report_text : String</text><path d="M379.6667,440.0911 C377.8683,440.0911 376.4167,441.5428 376.4167,443.3411 C376.4167,445.1395 377.8683,446.5911 379.6667,446.5911 C381.465,446.5911 382.9167,445.1395 382.9167,443.3411 C382.9167,441.5428 381.465,440.0911 379.6667,440.0911 " fill="#475569" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#334155" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="151" x="390.0833" y="448.9419">analyzed_at : DateTime</text></g><g id="elem_GMN137"><path d="M299.4167,84.7813 L299.4167,103.2813 L264.0067,107.2813 L299.4167,111.2813 L299.4167,130.1797 A5,5 0 0 0 304.4167,135.1797 L500.4167,135.1797 A5,5 0 0 0 505.4167,130.1797 L505.4167,89.7813 L495.4167,79.7813 L304.4167,79.7813 A5,5 0 0 0 299.4167,84.7813 " fill="#E0F2FE" style="stroke:#000000;stroke-width:1.0;"/><path d="M495.4167,79.7813 L495.4167,87.2813 A2.5,2.5 0 0 0 497.9167,89.7813 L505.4167,89.7813 L495.4167,79.7813 " fill="#E0F2FE" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="58" x="305.4167" y="96.8481">Student</text><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="149" x="305.4167" y="111.981">Stores unique students</text><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="185" x="305.4167" y="127.1138">using their student numbers.</text></g><g id="elem_GMN140"><path d="M383.4167,522.2813 L383.4167,567.6797 A5,5 0 0 0 388.4167,572.6797 L576.4167,572.6797 A5,5 0 0 0 581.4167,567.6797 L581.4167,527.2813 L571.4167,517.2813 L486.4167,517.2813 L482.4167,456.3613 L478.4167,517.2813 L388.4167,517.2813 A5,5 0 0 0 383.4167,522.2813 " fill="#FEF3C7" style="stroke:#000000;stroke-width:1.0;"/><path d="M571.4167,517.2813 L571.4167,524.7813 A2.5,2.5 0 0 0 573.9167,527.2813 L581.4167,527.2813 L571.4167,517.2813 " fill="#FEF3C7" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="111" x="389.4167" y="534.3481">Analysis Result</text><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="169" x="389.4167" y="549.481">Stores the final LLM report</text><text fill="#000000" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="13" lengthAdjust="spacing" textLength="177" x="389.4167" y="564.6138">and all JSON agent verdicts.</text></g><!--MD5=[2c1a203047eba4d462e99577456921c8]
+link students to transcripts--><g id="link_students_transcripts"><path codeLine="77" d="M148.4167,158.5113 C148.4167,194.3213 148.4167,242.7213 148.4167,281.0613 " fill="none" id="students-to-transcripts" style="stroke:#10B981;stroke-width:2.0;"/><polygon fill="#10B981" points="148.4167,286.1713,152.4167,277.1713,148.4167,281.1713,144.4167,277.1713,148.4167,286.1713" style="stroke:#10B981;stroke-width:2.0;"/><text fill="#10B981" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="58" x="153.4167" y="200.4199">Uploads</text><text fill="#10B981" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="8" x="139.9255" y="177.1302">1</text><text fill="#10B981" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="24" x="122.8266" y="275.6395">0..*</text></g><!--MD5=[6231bb601cdb83e95f1f40ba043804ed]
+link transcripts to analysis_results--><g id="link_transcripts_analysis_results"><path codeLine="78" d="M247.7267,344.7813 C284.2567,344.7813 325.9867,344.7813 364.0267,344.7813 " fill="none" id="transcripts-to-analysis_results" style="stroke:#10B981;stroke-width:2.0;"/><polygon fill="#10B981" points="369.1267,344.7813,360.1267,340.7813,364.1267,344.7813,360.1267,348.7813,369.1267,344.7813" style="stroke:#10B981;stroke-width:2.0;"/><text fill="#10B981" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="81" x="269.9167" y="338.9199">Is Analyzed</text><text fill="#10B981" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="8" x="255.0024" y="342.5041">1</text><text fill="#10B981" font-family="&quot;Inter, Helvetica, sans-serif&quot;" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="8" x="353.2574" y="342.5249">1</text></g><!--MD5=[99120205321be83a51735e89d991867b]
+@startuml
+!theme plain
+
+' Colors and General Design
+skinparam backgroundColor #F4F6F9
+skinparam defaultFontName "Inter, Helvetica, sans-serif"
+skinparam roundcorner 10
+
+' Table Headers and Borders
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #3B82F6
+    BorderThickness 2
+    HeaderBackgroundColor #3B82F6
+    HeaderFontColor #FFFFFF
+    AttributeFontColor #334155
+    AttributeFontSize 13
+}
+
+' Arrows and Relationships
+skinparam arrow {
+    Color #10B981
+    Thickness 2
+    FontColor #10B981
+    FontSize 12
+    FontStyle bold
+}
+
+' Icons (Macros)
+!define primary_key(x) <b><color:#F59E0B><&key></color> x</b>
+!define foreign_key(x) <b><color:#8B5CF6><&link-intact></color> x</b>
+!define column(x) <color:#475569><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+
+hide circle
+hide methods
+hide stereotypes
+
+title "<size:20><b>🎓 GSU Virtual Academic Advisor - Database Schema</b></size>"
+
+' - - - TABLES - - -
+
+table(students) {
+    primary_key(id) : Integer
+    ==
+    column(name) : String
+    column(student_number) : String <i>[Index]</i>
+    column(created_at) : DateTime
+}
+
+table(transcripts) {
+    primary_key(id) : Integer
+    ==
+    foreign_key(student_id) : Integer <i><<FK>></i>
+    column(raw_text) : String
+    column(text_hash) : String <i>[Index]</i>
+    column(uploaded_at) : DateTime
+}
+
+table(analysis_results) {
+    primary_key(id) : Integer
+    ==
+    foreign_key(transcript_id) : Integer <i><<FK>></i>
+    column(gpa) : Float
+    column(transcript_total_ects) : Integer
+    column(required_ects) : Integer = 240
+    column(is_graduated) : Boolean = False
+    column(completed_courses) : JSON
+    column(missing_courses) : JSON
+    column(missing_conditions) : JSON
+    column(agent_verdicts) : JSON
+    column(report_text) : String
+    column(analyzed_at) : DateTime
+}
+
+' - - - RELATIONSHIPS - - -
+
+students "1" -down-> "0..*" transcripts : " Uploads"
+transcripts "1" -right-> "1" analysis_results : " Is Analyzed"
+
+note right of students #E0F2FE
+  <b>Student</b>
+  Stores unique students
+  using their student numbers.
+end note
+
+note bottom of analysis_results #FEF3C7
+  <b>Analysis Result</b>
+  Stores the final LLM report
+  and all JSON agent verdicts.
+end note
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor white
+    FontColor black
+    FontName Verdana
+    HyperLinkColor blue
+    LineColor black
+    LineThickness 1
+    Margin 5
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  header {
+    LineThickness 0
+  }
+  node {
+    MaximumWidth 300
+  }
+  title {
+    FontSize 22
+    LineThickness 0
+  }
+</style>
+
+skinparam ArrowLollipopColor black
+skinparam BackgroundColor white
+skinparam DefaultFontName Verdana
+skinparam DefaultMonospacedFontName Courier
+skinparam LifelineStrategy nosolid
+skinparam ParticipantPadding 10
+skinparam SequenceLifeLineBorderColor black
+skinparam Shadowing false
+skinparam UseBetaStyle true
+
+skinparam Activity {
+  BackgroundColor white
+  BarColor black
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam Boundary {
+  FontColor black
+}
+skinparam Box {
+  Padding 5
+}
+skinparam CircledCharacter {
+  FontColor black
+  FontName Courier
+  Radius 9
+}
+skinparam Class {
+  BackgroundColor white
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassAttribute {
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassStereotype {
+  FontColor black
+  FontName Verdana
+}
+skinparam Footer {
+  FontColor black
+  FontName Verdana
+}
+skinparam Header {
+  FontColor black
+  FontName Verdana
+}
+skinparam Hyperlink {
+  Color blue
+}
+skinparam IconPackage {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPrivate {
+  Color black
+  BackgroundColor white
+}
+skinparam IconProtected {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPublic {
+  Color black
+  BackgroundColor white
+}
+skinparam Note {
+  FontColor black
+  FontName Verdana
+}
+skinparam Object {
+  BorderColor black
+}
+skinparam Package {
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam State {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeA {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeC {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeE {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeI {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeN {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam UseCaseStereoType {
+  FontColor black
+  FontName Verdana
+}
+
+skinparam backgroundColor #F4F6F9
+skinparam defaultFontName "Inter, Helvetica, sans-serif"
+skinparam roundcorner 10
+
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #3B82F6
+    BorderThickness 2
+    HeaderBackgroundColor #3B82F6
+    HeaderFontColor #FFFFFF
+    AttributeFontColor #334155
+    AttributeFontSize 13
+}
+
+skinparam arrow {
+    Color #10B981
+    Thickness 2
+    FontColor #10B981
+    FontSize 12
+    FontStyle bold
+}
+
+
+hide circle
+hide methods
+hide stereotypes
+
+title "<size:20><b>🎓 GSU Virtual Academic Advisor - Database Schema</b></size>"
+
+
+entity students << (T, white) >> {
+    <b><color:#F59E0B><&key></color> id</b> : Integer
+    ==
+    <color:#475569><&media-record></color> name : String
+    <color:#475569><&media-record></color> student_number : String <i>[Index]</i>
+    <color:#475569><&media-record></color> created_at : DateTime
+}
+
+entity transcripts << (T, white) >> {
+    <b><color:#F59E0B><&key></color> id</b> : Integer
+    ==
+    <b><color:#8B5CF6><&link-intact></color> student_id</b> : Integer <i><<FK>></i>
+    <color:#475569><&media-record></color> raw_text : String
+    <color:#475569><&media-record></color> text_hash : String <i>[Index]</i>
+    <color:#475569><&media-record></color> uploaded_at : DateTime
+}
+
+entity analysis_results << (T, white) >> {
+    <b><color:#F59E0B><&key></color> id</b> : Integer
+    ==
+    <b><color:#8B5CF6><&link-intact></color> transcript_id</b> : Integer <i><<FK>></i>
+    <color:#475569><&media-record></color> gpa : Float
+    <color:#475569><&media-record></color> transcript_total_ects : Integer
+    <color:#475569><&media-record></color> required_ects : Integer = 240
+    <color:#475569><&media-record></color> is_graduated : Boolean = False
+    <color:#475569><&media-record></color> completed_courses : JSON
+    <color:#475569><&media-record></color> missing_courses : JSON
+    <color:#475569><&media-record></color> missing_conditions : JSON
+    <color:#475569><&media-record></color> agent_verdicts : JSON
+    <color:#475569><&media-record></color> report_text : String
+    <color:#475569><&media-record></color> analyzed_at : DateTime
+}
+
+
+students "1" -down-> "0..*" transcripts : " Uploads"
+transcripts "1" -right-> "1" analysis_results : " Is Analyzed"
+
+note right of students #E0F2FE
+  <b>Student</b>
+  Stores unique students
+  using their student numbers.
+end note
+
+note bottom of analysis_results #FEF3C7
+  <b>Analysis Result</b>
+  Stores the final LLM report
+  and all JSON agent verdicts.
+end note
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
