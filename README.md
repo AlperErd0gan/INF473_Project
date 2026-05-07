@@ -85,4 +85,4 @@ Database: SQLite (`backend/transcript_agent.db`), 3 tables: `students`, `transcr
 
 ### Database Schema
 
-![Database Schema](db_schema.svg)
+![Database Schema](db_schema.png)
