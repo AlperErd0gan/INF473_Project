@@ -43,8 +43,7 @@ Or separately:
 uvicorn main:app --reload --port 8000
 
 # Frontend (inside frontend/)
-
-
+npm run dev
 ```
 
 - Backend: http://localhost:8000
