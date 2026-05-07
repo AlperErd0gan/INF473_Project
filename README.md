@@ -72,6 +72,8 @@ You can run predefined transcript analysis scenarios using the included test scr
 
 ## Architecture
 
+![Sequence Diagram](sequence-diagram.png)
+
 Multi-agent analysis pipeline:
 
 1. **Parse**: LLM (`TranscriptParserAgent`) extracts raw transcript text → structured JSON (student name, GPA, ECTS, completed courses).
