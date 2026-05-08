@@ -92,7 +92,7 @@ export default function Result() {
       </div>
 
       {/* ── Stats ── */}
-      <div style={styles.statsRow}>
+      <div className="grid-stats" style={styles.statsRow}>
         <StatCard
           label={t.result_stat_gpa}
           value={data.gpa?.toFixed(2) ?? "—"}
@@ -155,7 +155,7 @@ export default function Result() {
           </button>
 
           {agentsOpen && (
-            <div style={styles.agentGrid}>
+            <div className="grid-agents" style={styles.agentGrid}>
               {Object.entries(verdicts).map(([key, v]) => (
                 <AgentCard key={key} verdict={v} labels={t.agent_labels} />
               ))}
@@ -165,7 +165,7 @@ export default function Result() {
       )}
 
       {/* ── Course lists ── */}
-      <div style={styles.listsRow}>
+      <div className="grid-lists" style={styles.listsRow}>
         <div style={styles.listCard}>
           <div style={styles.sectionHeader}>
             <span style={{ color: "var(--success)", fontSize: 15 }}>✓</span>
@@ -209,15 +209,16 @@ export default function Result() {
 
       {/* ── Actions ── */}
       <div style={styles.actions}>
-        <button onClick={() => navigate("/")} style={styles.primaryBtn}>
+        <button onClick={() => navigate("/")} className="btn-primary" style={styles.primaryBtn}>
           {t.result_btn_new}
         </button>
-        <button onClick={() => navigate("/history")} style={styles.secondaryBtn}>
+        <button onClick={() => navigate("/history")} className="btn-secondary" style={styles.secondaryBtn}>
           {t.result_btn_history}
         </button>
         <button
           onClick={handleExportPdf}
           disabled={pdfLoading}
+          className="btn-pdf"
           style={{ ...styles.pdfBtn, opacity: pdfLoading ? 0.65 : 1 }}
         >
           {pdfLoading ? (
@@ -229,7 +230,7 @@ export default function Result() {
             <>↓ {t.result_btn_pdf}</>
           )}
         </button>
-        <button onClick={handleDelete} style={styles.dangerBtn}>
+        <button onClick={handleDelete} className="btn-danger" style={styles.dangerBtn}>
           {t.result_btn_delete}
         </button>
       </div>
@@ -387,12 +388,7 @@ const styles = {
     color: "var(--text-secondary)",
     marginTop: 2,
   },
-  statsRow: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: 12,
-    marginBottom: 20,
-  },
+  statsRow: {},
   statCard: {
     backgroundColor: "var(--card)",
     borderRadius: 8,
@@ -461,11 +457,7 @@ const styles = {
     letterSpacing: "0.08em",
     color: "var(--text-secondary)",
   },
-  agentGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: 0,
-  },
+  agentGrid: {},
   agentCard: {
     padding: "18px 20px",
     borderRight: "1px solid var(--border)",
@@ -522,12 +514,7 @@ const styles = {
     gap: 6,
     lineHeight: 1.4,
   },
-  listsRow: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: 16,
-    marginBottom: 20,
-  },
+  listsRow: {},
   listCard: {
     backgroundColor: "var(--card)",
     border: "1px solid var(--border)",
@@ -623,7 +610,6 @@ const styles = {
     fontSize: 14,
     fontWeight: 600,
     cursor: "pointer",
-    transition: "opacity 0.15s",
   },
   secondaryBtn: {
     backgroundColor: "transparent",
@@ -634,7 +620,6 @@ const styles = {
     fontSize: 14,
     fontWeight: 500,
     cursor: "pointer",
-    transition: "border-color 0.15s",
   },
   pdfBtn: {
     backgroundColor: "transparent",
@@ -648,7 +633,6 @@ const styles = {
     display: "inline-flex",
     alignItems: "center",
     gap: 7,
-    transition: "background-color 0.15s, opacity 0.15s",
   },
   pdfSpinner: {
     display: "inline-block",

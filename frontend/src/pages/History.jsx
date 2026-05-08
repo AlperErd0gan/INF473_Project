@@ -77,7 +77,7 @@ export default function History() {
           <h1 style={styles.title}>{t.history_title}</h1>
           <p style={styles.subtitle}>{t.history_subtitle(records.length, gradCount, failCount)}</p>
         </div>
-        <button onClick={() => navigate("/")} style={styles.newBtn}>
+        <button onClick={() => navigate("/")} className="btn-new" style={styles.newBtn}>
           {t.history_btn_new}
         </button>
       </div>
@@ -106,7 +106,8 @@ export default function History() {
               <button
                 key={key}
                 onClick={() => setFilter(key)}
-                style={{ ...styles.filterBtn, ...(filter === key ? styles.filterBtnActive : {}) }}
+                className={`btn-filter${filter === key ? " btn-filter-active" : ""}`}
+              style={{ ...styles.filterBtn, ...(filter === key ? styles.filterBtnActive : {}) }}
               >
                 {label}
               </button>
@@ -128,7 +129,7 @@ export default function History() {
           <div style={{ fontSize: 15, color: "var(--text-secondary)" }}>
             {t.history_empty_title}
           </div>
-          <button onClick={() => navigate("/")} style={styles.newBtn}>
+          <button onClick={() => navigate("/")} className="btn-new" style={styles.newBtn}>
             {t.history_empty_btn}
           </button>
         </div>

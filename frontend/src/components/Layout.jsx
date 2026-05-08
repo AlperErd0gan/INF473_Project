@@ -165,6 +165,7 @@ const styles = {
     alignItems: "center",
     gap: 14,
     textDecoration: "none",
+    color: "inherit",
     cursor: "pointer",
   },
   brand: {

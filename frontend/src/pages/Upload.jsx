@@ -261,6 +261,7 @@ export default function Upload() {
           <div style={styles.submitRow}>
             <button
               type="submit"
+              className={isEmpty ? "" : "btn-primary"}
               style={{ ...styles.button, ...(isEmpty ? styles.buttonDisabled : {}) }}
               disabled={isEmpty}
             >
@@ -273,7 +274,7 @@ export default function Upload() {
         )}
       </form>
 
-      <div style={styles.infoGrid}>
+      <div className="grid-info" style={styles.infoGrid}>
         {t.info_cards.map(({ icon, title, desc }) => (
           <div key={title} style={styles.infoCard}>
             <div style={styles.infoIcon}>{icon}</div>
@@ -499,9 +500,6 @@ const styles = {
     fontSize: 14,
   },
   infoGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: 12,
     marginTop: 48,
     paddingTop: 32,
     borderTop: "1px solid var(--border)",

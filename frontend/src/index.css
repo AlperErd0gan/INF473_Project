@@ -159,7 +159,67 @@ textarea:focus {
 .toast-error { border-color: var(--error-border); color: var(--error); }
 .toast-success { border-color: var(--success-border); color: var(--success); }
 
-/* ── Scrollbar (dark) ────────────────────────────────────────────── */
+/* ── Responsive grids ────────────────────────────────────────────── */
+.grid-stats  { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); margin-bottom: 20px; }
+.grid-agents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.grid-info   { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
+.grid-lists  { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+  .grid-stats  { grid-template-columns: repeat(2, 1fr); }
+  .grid-agents { grid-template-columns: 1fr; }
+  .grid-info   { grid-template-columns: repeat(2, 1fr); }
+  .grid-lists  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .grid-info { grid-template-columns: 1fr; }
+}
+
+/* ── Button interaction states ───────────────────────────────────── */
+.btn-primary  { transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s; }
+.btn-primary:hover  { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(212,175,55,0.3); }
+.btn-primary:active { transform: scale(0.97); opacity: 1; box-shadow: none; }
+
+.btn-secondary { transition: border-color 0.15s, color 0.15s, transform 0.1s; }
+.btn-secondary:hover  { border-color: var(--text-muted) !important; color: var(--text-primary) !important; }
+.btn-secondary:active { transform: scale(0.97); }
+
+.btn-danger { transition: opacity 0.15s, transform 0.1s; }
+.btn-danger:hover  { opacity: 0.82; }
+.btn-danger:active { transform: scale(0.97); }
+
+.btn-pdf { transition: background-color 0.15s, opacity 0.15s, transform 0.1s; }
+.btn-pdf:hover  { background-color: var(--success-bg) !important; }
+.btn-pdf:active { transform: scale(0.97); }
+
+.btn-new { transition: opacity 0.15s, transform 0.1s; }
+.btn-new:hover  { opacity: 0.85; }
+.btn-new:active { transform: scale(0.97); }
+
+.btn-filter { transition: all 0.15s; }
+.btn-filter:hover { border-color: var(--gold-muted) !important; color: var(--gold) !important; }
+
+/* ── Focus rings (accessibility) ─────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Disabled state ──────────────────────────────────────────────── */
+button:disabled { cursor: not-allowed; }
+
+/* ── Reduced motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fade-in { animation: none; opacity: 1; transform: none; }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
