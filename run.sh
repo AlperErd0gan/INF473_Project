@@ -10,7 +10,7 @@ FRONTEND_PORT="${FRONTEND_PORT:-5173}"
 
 # Teslimden once API key'i buraya koyarsan hocanin ekstra key girmesi gerekmez.
 # Alternatif olarak terminalde export GROQ_API_KEY="..." ile de calisabilir.
-EMBEDDED_GROQ_API_KEY="${EMBEDDED_GROQ_API_KEY:-PASTE_YOUR_GROQ_API_KEY_HERE}"
+EMBEDDED_GROQ_API_KEY="${EMBEDDED_GROQ_API_KEY:-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}"
 
 BACKEND_PID=""
 FRONTEND_PID=""
