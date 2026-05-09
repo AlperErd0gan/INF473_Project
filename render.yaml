@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: gsu-advisor
+    runtime: python
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: chmod +x start.sh && ./start.sh
+    plan: free
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false     # set in Render dashboard → Environment
+
+# SQLite note: free tier has no persistent disk; data resets on redeploy.
+# To persist across deploys, uncomment the disk block and upgrade to Starter ($7/mo):
+#
+#    disk:
+#      name: advisor-data
+#      mountPath: /var/data
+#      sizeGB: 1
+#
+# Then also set env var:
+#      - key: DB_PATH
+#        value: /var/data/transcript_agent.db
+# And update database.py line 4 to:
+#   SQLALCHEMY_DATABASE_URL = f"sqlite:///{os.environ.get('DB_PATH', './transcript_agent.db')}"
