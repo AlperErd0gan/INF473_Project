@@ -30,6 +30,7 @@ chmod +x run.sh
 
 - If `GROQ_API_KEY` is already set in your shell, it is used directly.
 - Else if `backend/.env` contains a valid `GROQ_API_KEY`, it is used.
+- Else script asks for the key once, saves it into `backend/.env`, and continues.
 - Else if `run.sh` contains a non-placeholder `EMBEDDED_GROQ_API_KEY`, `backend/.env` is created automatically and no extra key entry is required on the target machine.
 
 Before delivery, you can put your key into this line in `run.sh`:

@@ -10,7 +10,7 @@ FRONTEND_PORT="${FRONTEND_PORT:-5173}"
 
 # Teslimden once API key'i buraya koyarsan hocanin ekstra key girmesi gerekmez.
 # Alternatif olarak terminalde export GROQ_API_KEY="..." ile de calisabilir.
-EMBEDDED_GROQ_API_KEY="${EMBEDDED_GROQ_API_KEY:-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}"
+EMBEDDED_GROQ_API_KEY="${EMBEDDED_GROQ_API_KEY:-PASTE_YOUR_GROQ_API_KEY_HERE}"
 
 BACKEND_PID=""
 FRONTEND_PID=""
@@ -150,6 +150,20 @@ ensure_runtime_dependencies() {
   fi
 }
 
+ensure_supported_python_version() {
+  local py_version py_major py_minor
+  py_version="$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
+  py_major="${py_version%%.*}"
+  py_minor="${py_version##*.}"
+
+  if [[ "$py_major" -ne 3 || "$py_minor" -lt 10 ]]; then
+    echo "Error: Python $py_version tespit edildi. Bu proje Python 3.10+ gerektiriyor."
+    exit 1
+  fi
+
+  echo "-> Python surumu: $py_version"
+}
+
 file_hash() {
   local file="$1"
   if command -v shasum >/dev/null 2>&1; then
@@ -210,9 +224,24 @@ EOF
     return
   fi
 
+  if [[ -t 0 ]]; then
+    local entered_key
+    read -r -s -p "Groq API key girin (gsk_...): " entered_key
+    echo
+    if ! is_placeholder_key "$entered_key"; then
+      cat >"$env_file" <<EOF
+GROQ_API_KEY=$entered_key
+EOF
+      export GROQ_API_KEY="$entered_key"
+      echo "-> API key backend/.env dosyasina kaydedildi."
+      return
+    fi
+  fi
+
   echo "Error: Gecerli bir GROQ_API_KEY bulunamadi."
-  echo "run.sh icindeki EMBEDDED_GROQ_API_KEY degerini doldurun"
-  echo "veya terminalde once export GROQ_API_KEY=\"...\" calistirin."
+  echo "1) Terminalde export GROQ_API_KEY=\"...\" ayarlayin, veya"
+  echo "2) backend/.env dosyasina GROQ_API_KEY=... ekleyin, veya"
+  echo "3) run.sh icinde EMBEDDED_GROQ_API_KEY degerini doldurun (onerilmez)."
   exit 1
 }
 
@@ -232,6 +261,7 @@ trap cleanup EXIT INT TERM
 echo "GSU Transcript Agent sistemi baslatiliyor..."
 
 ensure_runtime_dependencies
+ensure_supported_python_version
 
 ensure_api_key
 
