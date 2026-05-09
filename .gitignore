@@ -1,5 +1,6 @@
 # Python / Backend
 backend/venv/
+backend/.requirements.sha256
 __pycache__/
 *.py[cod]
 *$py.class
@@ -26,6 +27,7 @@ wheels/
 
 # Node / Frontend
 frontend/node_modules/
+frontend/.package-lock.sha256
 node_modules/
 dist/
 dist-ssr/

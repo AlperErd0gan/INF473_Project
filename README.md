@@ -6,49 +6,51 @@ Graduation analysis system for the Computer Engineering department at Galatasara
 
 - Python 3.10+
 - Node.js 18+
-- Groq API key
+- npm
+- Groq API key (already embeddable in `run.sh` for zero extra setup on target machine)
 
-## Setup
+Not: `run.sh`, `python3/node/npm` eksikse bunu algilar ve "otomatik kurayim mi?" sorusu sorar.
+Desteklenen otomatik kurulumlar: macOS (Homebrew), Linux (apt/dnf/yum/pacman).
 
-### Backend
-
-```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-# Add your GROQ_API_KEY to .env
-```
-
-### Frontend
+## One-command run (recommended for submission)
 
 ```bash
-cd frontend
-npm install
-```
-
-## Running
-
-Start both services with one command:
-
-```bash
+chmod +x run.sh
 ./run.sh
 ```
 
-Or separately:
+`run.sh` automatically:
+- checks `python3`, `node`, `npm` and asks for auto-install if missing
+- creates backend virtualenv if missing
+- installs backend requirements
+- installs frontend dependencies (with `npm ci` when lockfile exists)
+- starts backend (`127.0.0.1:8000`) and frontend (`127.0.0.1:5173`)
+
+## API key behavior
+
+- If `GROQ_API_KEY` is already set in your shell, it is used directly.
+- Else if `backend/.env` contains a valid `GROQ_API_KEY`, it is used.
+- Else if `run.sh` contains a non-placeholder `EMBEDDED_GROQ_API_KEY`, `backend/.env` is created automatically and no extra key entry is required on the target machine.
+
+Before delivery, you can put your key into this line in `run.sh`:
+
+```bash
+EMBEDDED_GROQ_API_KEY="${EMBEDDED_GROQ_API_KEY:-PASTE_YOUR_GROQ_API_KEY_HERE}"
+```
+
+## Manual run (optional)
 
 ```bash
 # Backend (inside backend/, venv active)
-uvicorn main:app --reload --port 8000
+uvicorn main:app --host 127.0.0.1 --port 8000
 
 # Frontend (inside frontend/)
-npm run dev
+npm run dev -- --host 127.0.0.1 --port 5173 --strictPort
 ```
 
-- Backend: http://localhost:8000
-- Frontend: http://localhost:5173
-- API Docs: http://localhost:8000/docs
+- Backend: http://127.0.0.1:8000
+- Frontend: http://127.0.0.1:5173
+- API Docs: http://127.0.0.1:8000/docs
 
 ## Testing
 
