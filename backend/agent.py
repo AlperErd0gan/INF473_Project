@@ -207,6 +207,81 @@ def _extract_last_cumulative_gpa(transcript_text: str) -> Optional[float]:
         return None
 
 
+_TAB_SKIP_PREFIXES = (
+    "AKADEMİK NOT ORTALAMASI",
+    "Yarıyıl",
+    "Genel",
+    "Kodu",
+)
+_TAB_SEMESTER_RE = re.compile(r"^\d{4}\s*-\s*\d{4}")
+_TAB_COURSE_CODE_RE = re.compile(r"^[A-Za-z]{2,}[0-9]")
+
+
+def _parse_tab_format(text: str) -> list[dict] | None:
+    """
+    Deterministically parse GSU OBS tab-separated transcript.
+    Columns: Kodu  Ders Adı  Notu  Kredi(skip)  AKTS  Türü
+    Returns list of course dicts or None if fewer than 3 courses found.
+    """
+    courses = []
+    for raw_line in text.splitlines():
+        stripped = raw_line.strip()
+        if not stripped:
+            continue
+        if _TAB_SEMESTER_RE.match(stripped):
+            continue
+        if any(stripped.startswith(p) for p in _TAB_SKIP_PREFIXES):
+            continue
+
+        parts = raw_line.split("\t")
+        if len(parts) < 5:
+            parts = re.split(r"  +", stripped)
+        if len(parts) < 5:
+            continue
+
+        code = parts[0].strip().upper()
+        if not _TAB_COURSE_CODE_RE.match(code):
+            continue
+
+        name = parts[1].strip()
+        grade = parts[2].strip().upper()
+        try:
+            ects = int(round(float(parts[4].strip())))
+        except (ValueError, IndexError):
+            continue
+
+        if not name or not grade or ects <= 0:
+            continue
+
+        courses.append({"code": code, "name": name, "grade": grade, "ects": ects})
+
+    return courses if len(courses) >= 3 else None
+
+
+def _extract_student_meta(text: str) -> tuple[Optional[str], Optional[str]]:
+    """Extract student name and number from transcript header lines."""
+    name: Optional[str] = None
+    number: Optional[str] = None
+
+    m = re.search(r"(?im)^\s*Ad\s*Soyad\s*:\s*(.+?)\s*$", text)
+    if m:
+        name = m.group(1).strip() or None
+
+    m = re.search(r"(?im)^\s*Öğrenci\s*No\s*:\s*([^\s]+)\s*$", text)
+    if m:
+        number = m.group(1).strip() or None
+
+    m = re.search(r"(?im)^\s*ÖĞRENCİ\s*:\s*(.+?)\s*$", text)
+    if m:
+        parts = m.group(1).split("|")
+        if not name and parts[0].strip():
+            name = parts[0].strip()
+        if not number and len(parts) > 1 and parts[1].strip():
+            number = parts[1].strip()
+
+    return name, number
+
+
 def _chat(system: str, user: str, tools: list = None, messages: list = None) -> object:
     """Wrapper for Groq API calls with multi-model fallback and optional tool calling."""
     last_exception = None
@@ -250,10 +325,21 @@ class TranscriptParserAgent:
     """Parses raw transcript text into structured data using LLM."""
 
     def parse(self, transcript_text: str) -> ParsedTranscript:
-        raw = _chat(PARSE_SYSTEM_PROMPT, transcript_text).content
-        parsed = ParsedTranscript.model_validate_json(raw)
+        det_courses = _parse_tab_format(transcript_text)
 
-        # Deterministic override: GPA must come from the last "Genel" row.
+        if det_courses is not None:
+            student_name, student_number = _extract_student_meta(transcript_text)
+            course_entries = [CourseEntry(**c) for c in det_courses]
+            parsed = ParsedTranscript(
+                student_name=student_name,
+                student_number=student_number,
+                gpa=0.0,
+                courses=course_entries,
+            )
+        else:
+            raw = _chat(PARSE_SYSTEM_PROMPT, transcript_text).content
+            parsed = ParsedTranscript.model_validate_json(raw)
+
         deterministic_gpa = _extract_last_cumulative_gpa(transcript_text)
         if deterministic_gpa is not None:
             parsed = parsed.model_copy(update={"gpa": deterministic_gpa})
