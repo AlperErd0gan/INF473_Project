@@ -14,6 +14,8 @@
 \usepackage{enumitem}
 \usepackage{fvextra}
 \usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 
 \hypersetup{
   colorlinks=true,
@@ -77,6 +79,24 @@ is the curriculum reference used by the project. The page lists the semester
 curriculum, general graduation rules such as the minimum GPA requirement,
 foreign-language requirement, and the rule that students below 240 ECTS must
 complete missing credits with INF electives.\footnote{\url{https://ects.gsu.edu.tr/tr/program/programmedetails/12}}
+
+\section{Project Motivation}
+
+We chose this project because graduation eligibility is a practical and
+high-impact problem for students. A student may have completed many courses but
+still be blocked by a missing mandatory course, an elective-group rule, a low
+GPA, insufficient ECTS, or a foreign-language requirement. Manually checking
+these conditions is time-consuming and error-prone, especially when transcripts
+include old course codes, repeated courses, failed courses, or curriculum
+transition rules.
+
+The project is also a suitable use case for an agentic LLM system. The input is
+unstructured academic text, which is difficult to process with only static
+forms, while the final graduation decision must remain deterministic and
+explainable. Therefore, the project allowed us to combine the language
+understanding capability of LLMs with rule-based verification. This combination
+matches the academic advising domain: flexible parsing is useful, but the
+decision itself must be based on explicit university requirements.
 
 \section{System Scope}
 
@@ -209,6 +229,32 @@ Python dictionary named \texttt{GSU\_BIL\_REQUIREMENTS}. It contains:
 
 The backend is the source of truth for graduation decisions. The frontend currently displays a hard-coded mandatory-course denominator of 43 in the result card, while the backend requirement list contains 44 entries. This does not change the backend decision, but it is an implementation detail that should be aligned in a future cleanup.
 
+\subsection{Data Description}
+
+The project data consists of two main sources. The first source is unstructured
+student transcript text. A transcript contains student identity fields when
+available, semester headers, course rows, grades, course credits, ECTS values,
+and cumulative GPA rows. The parser specifically uses course code, course name,
+grade, and ECTS fields because these values are required for graduation
+analysis. Failed courses are kept in the parsed output because they affect
+legacy transition rules and because they must be excluded from passed-ECTS and
+completed-course calculations.
+
+The second source is the academic rule data derived from the official GSU
+Computer Engineering curriculum. This data is encoded in the project as
+mandatory courses, minimum GPA, minimum ECTS, language requirements, elective
+groups, old-code equivalencies, and transition notes for legacy curriculum
+cases. These rules form the structured knowledge base used by the verifier
+agents.
+
+For evaluation, the repository includes 20 text-based transcript scenarios
+under \texttt{analysis-input-scenarios/}. These scenarios cover both successful
+and unsuccessful graduation cases, including low GPA, insufficient ECTS,
+missing mandatory courses, missing language requirements, modern elective
+failures, legacy elective obligations, and old course-code equivalencies. This
+scenario set was used instead of relying on production student records, which
+keeps the project easier to test while reducing privacy risk.
+
 \subsection{Database and Persistence}
 
 The project uses SQLite through SQLAlchemy. The data model contains three
@@ -294,6 +340,89 @@ GPA and previous graduation status when found. \\
 \bottomrule
 \caption{Agent responsibilities in the implemented system.}
 \end{longtable}
+
+\section{Algorithmic Approach}
+
+The project does not use a single classical machine-learning algorithm for the
+graduation decision. Instead, it uses a hybrid agentic rule-based pipeline. The
+algorithm starts by converting raw transcript text into a structured
+\texttt{ParsedTranscript} object with an LLM-backed parser. Then independent
+rule-verifier agents evaluate different parts of the graduation requirements:
+mandatory course completion, passed ECTS, GPA, language requirements, elective
+groups, and legacy transition conditions.
+
+The main aggregation algorithm is strict logical conjunction. Each verifier
+returns a verdict with supporting details, and the \texttt{MasterAgent} marks a
+student eligible for graduation only if all verifier agents return a positive
+verdict. This choice was made because graduation eligibility is a rule-governed
+academic decision. A probabilistic or majority-vote decision could hide a
+blocking requirement, while strict aggregation makes every missing condition
+visible.
+
+This design separates uncertain language understanding from deterministic rule
+checking. The LLM is used where it is strongest: extracting structured
+information from flexible transcript text and producing readable reports. The
+actual academic decision is handled by explicit Python rules, which makes the
+system easier to test, debug, and explain.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=0.9cm and 0.85cm,
+    process/.style={
+      rectangle,
+      rounded corners=2pt,
+      draw=blue!55!black,
+      fill=blue!5,
+      align=center,
+      minimum width=3.0cm,
+      minimum height=1.0cm,
+      font=\small
+    },
+    verifier/.style={
+      rectangle,
+      rounded corners=2pt,
+      draw=green!45!black,
+      fill=green!7,
+      align=center,
+      minimum width=3.0cm,
+      minimum height=1.0cm,
+      font=\small
+    },
+    decision/.style={
+      rectangle,
+      rounded corners=2pt,
+      draw=orange!70!black,
+      fill=orange!10,
+      align=center,
+      minimum width=3.2cm,
+      minimum height=1.0cm,
+      font=\small
+    },
+    arrow/.style={-{Latex[length=2.2mm]}, thick}
+  ]
+    \node[process] (input) {Raw transcript\\text};
+    \node[process, right=of input] (parser) {LLM parser\\\texttt{ParsedTranscript}};
+    \node[verifier, above right=of parser] (course) {Course verifier\\mandatory courses};
+    \node[verifier, right=of parser] (ects) {ECTS verifier\\passed credits};
+    \node[verifier, below right=of parser] (requirements) {Requirements verifier\\GPA, language, electives};
+    \node[decision, right=1.2cm of ects] (master) {MasterAgent\\strict AND aggregation};
+    \node[process, right=of master] (report) {Final advisor\\report};
+
+    \draw[arrow] (input) -- (parser);
+    \draw[arrow] (parser) -- (course);
+    \draw[arrow] (parser) -- (ects);
+    \draw[arrow] (parser) -- (requirements);
+    \draw[arrow] (course) -- (master);
+    \draw[arrow] (ects) -- (master);
+    \draw[arrow] (requirements) -- (master);
+    \draw[arrow] (master) -- (report);
+  \end{tikzpicture}
+  }
+  \caption{Hybrid agentic rule-based algorithm used for graduation analysis.}
+  \label{fig:algorithmic-approach}
+\end{figure}
 
 \section{Decision Logic}
 
@@ -536,6 +665,38 @@ used by the tool-augmented reporting agent.
   \item The UI exposes agent verdicts, making the system more transparent than
   a single opaque eligibility label.
 \end{itemize}
+
+\section{Problems Encountered During Development}
+
+Several implementation challenges appeared during the project. The first
+challenge was transcript structure. Transcript text contains semester headers,
+course rows, summary rows, cumulative GPA rows, and sometimes repeated or
+failed courses. Early parsing attempts could confuse summary rows with course
+rows or extract GPA from the wrong location. To reduce this risk, the project
+uses a strict parser prompt and a deterministic GPA override based on the last
+cumulative \texttt{Genel} row.
+
+Another difficulty was course matching. The same course can appear with section
+suffixes such as \texttt{-A} or \texttt{-B}, and older students may have course
+codes that map to newer curriculum requirements. The verifier logic therefore
+normalizes course codes and applies explicit equivalency mappings instead of
+matching only by course name. This was important because translated or slightly
+different course names can create false matches.
+
+The legacy curriculum rules also made the decision logic more complex than a
+simple checklist. Some failed old courses create extra INF or social elective
+obligations, and failed grades must not contribute to completed ECTS. These
+cases required separate test scenarios and verifier details so that the final
+report could explain not only that a student is blocked, but also why.
+
+Finally, some integration issues appeared between the backend and frontend. For
+example, the backend requirement list contains 44 mandatory entries while the
+frontend result card currently displays a hard-coded denominator of 43. This
+does not affect the backend decision, but it showed the importance of keeping
+displayed metrics derived from the same source of truth as the verification
+logic. The input flow also needed validation against multi-transcript
+submissions, because combining more than one transcript in a single request can
+produce misleading parsing and analysis results.
 
 \section{Limitations and Future Work}
 
