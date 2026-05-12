@@ -228,7 +228,7 @@ export default function Upload() {
           <div style={styles.errorBox}>
             <span style={styles.errorIcon}>⚠</span>
             <div>
-              <strong>Hata:</strong> {error}
+              <strong>{t.upload_error_prefix}</strong> {error}
             </div>
           </div>
         )}

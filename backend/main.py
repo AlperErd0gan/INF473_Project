@@ -5,9 +5,9 @@ load_dotenv()
 
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+from pydantic import BaseModel, ValidationError
 from database import engine, Base, get_db
 from models import Student, Transcript, AnalysisResult
 from agent import run_analysis_pipeline
@@ -135,8 +135,12 @@ def analyze_transcript(transcript_id: int, lang: str = "tr", db: Session = Depen
 
     try:
         result = run_analysis_pipeline(transcript.raw_text, lang)
+    except ValidationError:
+        msg = "Failed to parse transcript. Please ensure the text format is correct and readable." if lang == "en" else "Transkript ayrıştırılamadı. Lütfen yüklediğiniz metnin doğru bir transkript formatında olduğundan emin olun."
+        raise HTTPException(status_code=422, detail=msg)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Analysis error: {str(e)}")
+        msg = "An unexpected error occurred during analysis. Please try again later." if lang == "en" else "Analiz sırasında beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+        raise HTTPException(status_code=500, detail=msg)
 
     if result.get("student_name") or result.get("student_number"):
         student = Student(
