@@ -1,5 +1,7 @@
 # GSU Virtual Academic Advisor
 
+**Live demo:** https://gsu-advisor.onrender.com/
+
 Graduation analysis system for the Computer Engineering department at Galatasaray University. Upload a student transcript and the system parses it, evaluates graduation eligibility against curriculum rules, and generates a report — with historical comparison via tool calling.
 
 ## Requirements
