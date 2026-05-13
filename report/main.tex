@@ -297,17 +297,17 @@ It provides:
 
 \section{Role of Agents}
 
+The implemented result screen exposes four agent verdicts: three independent
+verifier agents and one master aggregation agent. The parser, report writer,
+report critic, and database history tool are supporting pipeline roles around
+these four displayed verdicts; they are not counted as independent
+graduation-verifier agents.
+
 \begin{longtable}{p{0.28\textwidth}p{0.30\textwidth}p{0.38\textwidth}}
 \toprule
 \textbf{Agent / Role} & \textbf{Input and Output} & \textbf{Responsibility} \\
 \midrule
 \endhead
-\texttt{TranscriptParserAgent} &
-Raw transcript text to \texttt{ParsedTranscript}. &
-Uses the LLM parser prompt to extract student identity, cumulative GPA, and all
-courses, including failed courses. A deterministic override then extracts GPA
-from the last \texttt{Genel} row when available. \\
-\midrule
 \texttt{CourseVerifierAgent} &
 \texttt{ParsedTranscript} to \texttt{AgentVerdict}. &
 Checks mandatory course completion against normalized course codes and
@@ -326,28 +326,20 @@ Checks GPA, language requirement, elective groups, legacy curriculum markers,
 and transition rules that require extra INF/social electives or INF321. \\
 \midrule
 \texttt{MasterAgent} &
-Raw transcript and language parameter to final analysis dictionary. &
-Orchestrates parsing, verification, cross-examination, master aggregation,
-logging, report generation, tool calling, and final result formatting. \\
-\midrule
-\texttt{MasterReportAgent} &
-Structured analysis summary to JSON report. &
-LLM role created by \texttt{REPORT\_SYSTEM\_PROMPT}; writes the concise final
-advisor-style status report. It may use the history tool. \\
-\midrule
-\texttt{ReportCriticAgent} &
-Draft report and analysis data to revised JSON report. &
-LLM role created by \texttt{REPORT\_REVIEW\_SYSTEM\_PROMPT}; reviews the
-report for factual consistency and removes internal machine values or raw
-boolean wording. \\
-\midrule
-\texttt{check\_student\_history} tool &
-Student number/name to JSON history result. &
-Queries SQLite for the student's most recent prior analysis and returns prior
-GPA and previous graduation status when found. \\
+Verifier verdicts to final \texttt{AgentVerdict}. &
+Aggregates the three independent verifier results with strict conjunction,
+marks the student eligible only if all three pass, and exposes the final
+advisor-style decision on the result screen. \\
 \bottomrule
-\caption{Agent responsibilities in the implemented system.}
+\caption{The four agent verdicts exposed by the implemented system.}
 \end{longtable}
+
+Around these displayed agents, \texttt{TranscriptParserAgent} prepares
+\texttt{ParsedTranscript}, \texttt{MasterAgent} also handles parsing
+orchestration, cross-examination, logging, report generation, and final
+formatting, \texttt{MasterReportAgent} writes the advisor-style report,
+\texttt{ReportCriticAgent} reviews the report text, and
+\texttt{check\_student\_history} is a tool used only during report generation.
 
 \section{Algorithmic Approach}
 
