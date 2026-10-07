@@ -137,4 +137,6 @@ Database: SQLite (`backend/transcript_agent.db`), 3 tables: `students`, `transcr
 This script was written so that our instructor could run the project for
 grading without creating a Groq account. The API key it contained was a
 temporary, course-only key and has since been revoked. To run the project,
-set your own `GROQ_API_KEY` (see "API key behavior" above).
+set your own `GROQ_API_KEY` (see "API key behavior" above). 
+
+Do not reuse this pattern in production: use `backend/.env` instead !!!
