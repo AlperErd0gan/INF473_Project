@@ -131,3 +131,10 @@ Database: SQLite (`backend/transcript_agent.db`), 3 tables: `students`, `transcr
 ### Database Schema
 
 ![Database Schema](db_schema.png)
+
+### Note on `run_without_external_api_key.sh`
+
+This script was written so that our instructor could run the project for
+grading without creating a Groq account. The API key it contained was a
+temporary, course-only key and has since been revoked. To run the project,
+set your own `GROQ_API_KEY` (see "API key behavior" above).
